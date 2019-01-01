@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+		.da{
+			width: 150px;
+			height: 200px;
+			background-color: #00f;
+		}
+		.xiao{
+			width: 200px;
+			height: 200px;
+			background-color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/1.jpg" id="image">
+	<script>
+		// 得到图片
+		var image = document.getElementById('image');
+		// 改变图片路径
+		image.src = 'images/2.jpg';
+	</script>
+
+	<a href="htt://www.baidu.com" id="aLink">百度</a>
+	<script>
+		// 获取a
+		var mya = document.getElementById('aLink');
+		// 改变链接
+		mya.href = 'http://www.163.com';
+	</script>
+
+	<input type="text" value="哈哈哈" id="inp" placeholder="">
+	<script>
+		var inp = document.getElementById('inp');
+		inp.value = '嘻嘻';
+	</script>
+	<div class="xiao" id="box"></div>
+	<script>
+		var oBox = document.getElementById('box');
+		oBox.className = 'da';
+		console.log(oBox.getAttribute('class'));
+	</script>
+</body>
+</html>

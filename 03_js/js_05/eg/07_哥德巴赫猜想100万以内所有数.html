@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// 找约数的函数
+		function yueshu(a) {
+			// 计算a的约数的个数
+			var count = 0;
+			for (var i = 0; i <= a; i++) {
+				if (a % i == 0) {
+					count++;
+				}
+			}
+			return count;
+		}
+
+		// 判断是不是质数
+		function isZhishu(m) {
+			if (yueshu(m) == 2) {
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		// 拆分，拆分的思想就是穷举
+		var num = 0;
+		waiceng : for(var i = 4;i <= 100000;i += 2){
+			for(var j = 1;j <= i / 2;j++){
+				if (isZhishu(j) && isZhishu(i - j)) {
+					num++;
+					console.log(num , i + '可拆分为' + j + '与' + (i - j) +'的和');
+					continue waiceng;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

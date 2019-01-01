@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            //当页面内容全部加载完毕以后，然后执行该事件处理函数
+
+            var oDiv = document.getElementById('div1');
+            console.log(oDiv);
+            //为什么是null
+            //浏览器从上往下执行我们的代码，没有读取到div元素
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatibus tempora nam tempore iusto, natus fuga nostrum commodi consequuntur impedit amet blanditiis veniam corporis reiciendis in, quis, ipsam atque quas.
+    </div>
+</body>
+
+</html>

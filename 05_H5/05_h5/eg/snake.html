@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+        
+        canvas {
+            background-color: #fff;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c1" width="500" height="500"></canvas>
+    <script>
+        (function() {
+            var c1 = document.getElementById("c1"),
+                context = c1.getContext("2d"),
+                speed = 160, // 速度
+                x = 8, // 坐标x
+                y = 8, // 坐标y
+                size = 8, // 大小
+                rx = 2, // 食物位置x随机数
+                ry = 2, // 食物位置y随机数
+                t = 10, // 蛇的长度
+                map = [], // 蛇的运动路径
+                direction = 2, // 蛇的运动方向 1：向上，2：向右，3：向下，0：向左
+                restart = false, // 重新开始
+                interval;
+
+            function set_game() {
+                switch (direction) {
+                    case 0:
+                        x -= size;
+                        break;
+                    case 1:
+                        y -= size;
+                        break;
+                    case 2:
+                        x += size;
+                        break;
+                    case 3:
+                        y += size;
+                        break;
+                }
+
+                // 判断是否触碰边界
+                if (x > c1.width || y > c1.height || x < 0 || y < 0) {
+                    clearInterval(interval);
+                    restart = confirm("恭喜你碰壁了！...... 是否重新开始");
+                    if (restart) window.location.reload();
+                }
+
+                for (var i = 0; i < map.length; i++) {
+                    if (map[i].x === x & map[i].y === y) {
+                        clearInterval(interval);
+                        restart = confirm("恭喜你吃到自己了！...... 是否重新开始");
+                        if (restart) window.location.reload();
+                    }
+                }
+
+                // 擦除蛇尾
+                if (map.length > t) {
+                    var cl = map.shift();
+                    context.clearRect(cl.x, cl.y, size, size);
+                }
+
+                // 
+                map.push({
+                    "x": x,
+                    "y": y
+                });
+
+                context.fillStyle = "#006699";
+                context.fillRect(x, y, size, size);
+
+                if (rx * 8 === x && ry * 8 === y) {
+                    t++;
+                    rand_frog();
+                }
+            }
+
+            function rand_frog() {
+                rx = Math.floor(Math.random() * 50);
+                ry = Math.floor(Math.random() * 50);
+
+                for (var i = 0; i < map.lenght; i++) {
+                    if (map[i].x === xr * 8 && map[i].y === xy * 8) {
+
+                    }
+                }
+                context.fillStyle = "#cc00dd";
+                context.fillRect(rx * 8, ry * 8, size, size);
+            }
+            rand_frog();
+            document.addEventListener("keydown", function(ev) {
+                var code = ev.keyCode - 37;
+                switch (code) {
+                    case 0:
+                        direction = 0;
+                        break;
+                    case 1:
+                        direction = 1;
+                        break;
+                    case 2:
+                        direction = 2;
+                        break;
+                    case 3:
+                        direction = 3;
+                        break;
+                }
+            });
+            interval = setInterval(set_game, speed)
+        })(window, document)
+    </script>
+</body>
+
+<ml>

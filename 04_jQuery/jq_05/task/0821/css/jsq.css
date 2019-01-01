@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.jsq {
+  width: 300px;
+  height: 420px;
+  border: 1px solid #A6A6A6;
+  border-radius: 5px;
+  box-shadow: 2px 5px 3px #A6A6A6;
+  margin: 0 auto;
+}
+.jsq .xsp {
+  margin: 10px;
+  width: 280px;
+  height: 100px;
+  border: 1px solid #ccc;
+  float: left;
+  text-align: right;
+}
+.jsq .xsp .equation {
+  width: 200px;
+  height: 50px;
+  float: right;
+}
+.jsq .xsp .val {
+  width: 200px;
+  height: 50px;
+  float: right;
+}
+.jsq .btns {
+  width: 290px;
+  margin-left: 5px;
+  height: 300px;
+  float: left;
+  user-select: none;
+}
+.jsq .btns .no {
+  background-color: #EEEEEE ;
+}
+.jsq .btns dd {
+  cursor: pointer;
+  width: 50px;
+  height: 40px;
+  float: left;
+  margin: 3px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #868686;
+  border-radius: 10px;
+}
+.jsq .btns dd:active {
+  background-color: skyblue;
+}
+.jsq .btns dt {
+  cursor: pointer;
+  width: 105px;
+  height: 40px;
+  float: left;
+  margin: 3px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #868686;
+  border-radius: 10px;
+}
+.jsq .btns .gn {
+  width: 290px;
+  height: 100px;
+  float: left;
+}
+.jsq .btns .number {
+  width: 170px;
+  height: 160px;
+  float: left;
+}
+.jsq .btns .jsf {
+  width: 120px;
+  height: 160px;
+  float: right;
+}
+.jsq .btns .jsf dt {
+  height: 90px;
+  width: 50px;
+  float: right;
+  line-height: 90px;
+  margin-right: 10px;
+}

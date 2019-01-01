@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>数组</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		p,u{
+			color: red;
+			font-weight: bold;
+		}
+		p{
+			text-indent: 2em;
+		}
+		p:before{
+			content: url(../../q.png);
+		}
+	</style>
+</head>
+<body>
+<pre>
+一，复习
+	函数：将多个语句封装到一起，便于调用
+	function a(){
+		console.log(1);
+		console.log(2);
+		console.log(3);
+	}
+	a();
+	函数声明提升：
+		只有function定义的函数可以提升，使用函数表达式定义的函数是不能提升的
+二，作用域
+	1，函数能封闭作用域==局部变量
+		一个变量如果定义在function里边，那么这个变量只能在function里有用，函数外是没有这个变量的
+	2，作用域列
+		当遇到一个变量的时候，js引擎会从其所在的作用域依次向外查找，查找会在找到第一个匹配标识符的时候停止
+		<p>注：js中的function可以嵌套</p>
+	3，不写var会变成全局变量
+		一个变量，如果声明的时候没有写var，那么这个变量就是全局变量
+	4，函数的参数会默认变成自己的局部变量
+		function(a,b,c){
+			abc三个变量只能在函数内部使用，出了函数就没有定义了
+		}
+	5，全局变量的作用
+		1)，通信，共同操作一个变量
+			两个或多个函数同时操作一个变量，实现函数之间的通信
+			var num = 0;
+			function add(){
+				num++;
+			}
+			function reduce(){
+				num--;
+			}
+			console.log(num);
+		2)，累加，重复调用函数不会清0
+			var num = 0;
+			function fun(){
+				num++;
+				console.log(num);
+			}
+			fun();//1
+			fun();//2
+			fun();//3
+	6，函数的定义也是有作用域的
+		公示;
+			function dahanshu(){
+				function xiaohanshu(){
+
+				}
+			}
+			xiaohanshu();//error
+三，闭包
+	任何一个函数都是一个闭包
+	1，闭包
+		function outer(){
+			var a = 333;
+			function inner(){
+				console.log(a);
+			}
+			<p>return inner;</p>
+		}
+		var inn = outer();
+		inn();//这里就是调用了inner函数
+		说明了inner函数能够持久的保存自己定义时所处的环境，所以即使他在其他环境被调用，依然可以访问自己定义时所处的环境
+		什么是闭包？
+			一个函数可以把自己内部的语句，和自己声明时所处的作用域一起封装成一个密闭的环境，称之为闭包
+			1）函数本身
+			2）函数所在的作用域
+			3）函数内部的语句
+		每一个函数都是闭包，每一个函数天生都能记忆<u>自己定义时所处的环境</u>，但是为了观察闭包，我们需要将这个函数挪到别的作用域执行，才能实验它到底有没有把自己的作用域给记住
+		闭包在工作中是一个用来防止产生隐患的事情，而不是加以利用的性质
+	2，闭包的性质
+		每次重新引用函数的时候，闭包都是全新的（环境只寻找一次）
+		
+		每次重新引用函数的时候，闭包都是全新的
+		无论闭包在哪里调用，他总是能访问他定义时所处的作用域中的全部变量
+四，数组
+	1，数组的概念
+		数组（array）：是一个有序的数据集合，数组就是一组数据
+		var arr = [1,2,3,4,5,6,123456];
+		数组的字面量形式就是方括号，这是定义数组最简单的方式，其中的内容用逗号隔开，最后一项 没有逗号
+		变量 arr就是数组变量，里边存储了一组数组，可以使用下标或者叫索引值来精确访问数组中的每一项，下表从零开始
+		数组中存放的数据不一定必须是相同的类型，但是实际应用中一般情况都是讲相同类型的数据保存在其中var arr = [1,true,'hello',fun,'汉语'];
+		数组的一个属性：length 长度
+		表示这个数组的长度，也就是数组中有多少个元素
+		属性：数组是一个对象，对象就有属性，属性就是描述对象的特点，特性，特征，使用点语法调用属性arr.length
+	2，数组的遍历
+		数组中存放的是一堆数据，我们需要拿出来处理，操作，需要使用for循环遍历数组，这是一个经典的for循环壳子
+		var arr = [1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9];
+		for (var i = 0; i < arr.length; i++) {
+			if(arr[i] % 2 == 0 ){
+				console.log(arr[i]);
+			}
+		}
+	3，数组也是一种引用类型（数组变量存放数组地址）
+		typeof 
+		var arr = [1,2,3,4];
+		alert(typeof arr);//object对象
+		数组的类型是对象，以后再说
+		证明数组是引用类型？
+		数组变量arr是一个存放数组地址的变量
+		var str1 = 'hello';
+		var str2 = 'hello';
+		console.log(str1 == str2);//false true
+五，数组的常用方法
+	数组是一个对象，对象都有属性和方法
+	属性：描述一个对象的特征，特性，特点，如姓名、性别、年龄
+	方法：就是对象能够调用执行的事物，吃饭、睡觉、打游戏
+	1，数组首尾操作，pop();push();shift();unshift()
+		// push 从尾部添加一个或多个元素，并返回新的长度
+			var arr = ['east','west','south','north','middle','a','b','c','d','e','f','g'];
+			alert(arr.push(1,2,3,4));//返回新的长度
+			alert(arr);
+		// pop 只允许删除最后一个元素，并返回最后一个
+			alert(arr.pop());
+			alert(arr);
+		// shift 删除数组开头元素,并返回开头元素
+			alert(arr.shift());
+			alert(arr);
+		// unshift 开头添加一个或多个，返回长度
+			alert(arr.unshift(9,8));
+			alert(arr);
+	2，数组的合并与查分concat()和slice()
+		// concat、 合并两个或多个数组
+			var arr1 = [1,2,3,4,5,6];
+			var arr2 = [9,8,7,6,5,4];
+			alert(arr1.concat(arr2));
+		//slice   	返回选定的数组元素
+			alert(arr.slice(2,5));//从下标为2的元素开始取，到下标为5的停止，包括2不包括5，也就是取下标为2,3,4的三个元素
+			alert(arr.slice(-5,-2));//从倒数第五个元素开始取，到倒数第二个停止，包括五不包括二，为从cde三元素
+	3，多功能splice()插入，删除，替换
+		一旦数组调用这个方法，数组会立马变化，不会返回新的数组
+		var arr = ['东','西','南','北','一条','二条'];
+		arr.splice(3,2,'X','Y','Z');// 从数组下标为3的这一项开始连续2项被替换为'X','Y','Z'
+	4，逆序reverse()
+		就是让数组颠倒
+	5，排序sort()
+		sort()方法就是讲数组排序
+		1）默认按照字符的顺序排，隐式的转为字符串
+		2）手动干预可以实现数字数组按大小排列，按个数排列
+		var arr = [32234,244,234,43,43,322,3,23,54,7,2,76,443];
+		arr.sort(function(a,b) {
+			// 如果a要放在b的前边，返回-1
+			if (a < b) {
+				return -1;
+			}else if (a > b) {
+			// 如果a要放在b的后边，返回1
+				return 1;
+			}else if (a == b) {
+			// 如果a和b不区分大小，返回0
+				return 0;
+			}
+		});
+		console.log(arr);
+	6，数组转为字符串join()
+		var arr = [1,2,3,4,5];
+		var str = arr.join('*');//默认逗号隔开
+		alert(str);//1*2*3*4*5
+六，字符串的常见属性和方法
+	1，length属性
+		返回字符串长度，中文，数字，英语字母，空格都是1个长度
+	2,charAt()  方法
+		返回在指定下标的字符
+		'abcs'.charAt(0) == a
+	3,concat()
+		链接字符串
+	4,indexOf()
+		检索字符串，检索子串在父串中的位置
+		'abcd'.indexOf('c') == 2
+		'abcd'.indexOf('e') == -1 //没有是-1
+	5,replace()
+		替换字符串
+		'abcd'.replace('ab','xy');//xycd
+	6,slice()
+		提取
+		'abcd'.slice(-2,-1);//c 倒数第二到倒数第一，包括二不包括一
+	7,split()
+		将字符串转为数组
+		'我爱你亲爱的祖国的人民币'.split('的');
+	8,substr()
+		截取子串
+		'abvcdefghigklmn'.substr(3,5);//从下标为3的开始取，取5个字符 包括3
+	9,substring()
+		截取子串
+		'abvcdefghigklmn'.substr(3,5);//从下标为3的开始取，取到下标为5的，不包括5
+	10,toLowCase(),toUpperCase()
+		转为大小写
+		'abcd'.toUpperCase();//ABCD
+</pre>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [123, 66, 333, 123, 123, 111, 66, 333, 123, 111];
+        //数组重复项只保留1个，其余重复项都忽略
+        function fn(arr) {
+            var temp = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (temp.indexOf(arr[i]) === -1) {
+                    temp.push(arr[i]);
+                }
+            }
+            return temp;
+        }
+        console.log(fn(arr));
+    </script>
+</body>
+
+</html>

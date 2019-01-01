@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jigsaw</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            height:300px;
+            border: 1px solid #000;
+
+        }
+        #box div{
+            display:inline-block;
+            border: 1px solid #f00;
+            margin-bottom: -4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" ondragover="allowDrop(event)">
+
+    </div>
+    <div id="options">
+        <select name="level" id="level">
+            <option value="4">16</option>
+            <option value="5">25</option>
+            <option value="6">36</option>
+            <option value="7">49</option>
+        </select><button>start</button>
+    </div>
+<script>
+    function allowDrop(ev)
+    {
+        ev.preventDefault();
+    }
+    box = document.querySelector('#box'),img=null;
+    box.addEventListener('drop',function(ev){
+        ev.preventDefault();
+        console.log(ev.dataTransfer.files[0]);
+        var reader = new FileReader();
+        reader.readAsDataURL(ev.dataTransfer.files[0]);
+        reader.onload = function(){
+            console.log(this)
+            img = new Image();
+            img.src = reader.result;
+            box.style.background = "url("+reader.result+") no-repeat center top";
+            box.style.margin ="auto";
+            box.style.width = img.width+"px";
+            box.style.height = img.width+"px";
+        }       
+    })
+
+    // 生成顺序数组
+    function order(n,m){
+        var arr = [];
+        for(var i = 0 ; n<m; i++,n++){
+            arr[i] = n;
+        }
+        return arr;
+    }
+    // 延时函数
+    function delay(ms) {
+        var unixtime_ms = new Date().getTime();
+        while(new Date().getTime() < unixtime_ms + ms) {}
+    }
+    var level = document.querySelector("#level"),
+    btn = document.querySelector("button");
+    btn.addEventListener('click',function(){
+        var value = level.options[level.selectedIndex].value;
+        var px = img.width/value-2;
+        var arr = order(0,value*value).sort(function(a,b){return Math.random()>0.5?1:-1;});
+        console.log(arr)
+        for(var i = 0 ; i<arr.length; i++){
+            var div = document.createElement('div');
+            div.draggable="true";
+            div.classList.add('adc');
+            var temx = arr[i]%value;
+            var temy = Math.floor(arr[i]/value);
+            console.log(temx,temy);
+            div.style = "width:"+px+'px;height:'+px+'px;background:url('+ img.src+') no-repeat '+-temx*px+'px '+-temy*px+'px;';
+            box.appendChild(div);
+        }
+        box.style.background="";
+    })
+    var childs = document.querySelectorAll('#box div');
+    childs.addEventListener('dragover',function(ev){
+        ev.preventDefault();
+    }).addEventListener('drop',function(ev){
+        console.log(ev.offsetX);
+    })
+
+</script>
+</body>
+</html>

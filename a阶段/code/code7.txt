@@ -1,0 +1,103 @@
+打开 langsin.html  将
+
+<div class="left_model_top"><span>活力地带</span></div>  下的
+
+            <br />新浪在线
+            <br />http://www.sina.com   删除
+
+加入
+
+
+ <div id="zone">
+            	<ul>
+                	<li><a href="#"><img src="images/1.jpg" /><span>个人首页</span></a></li>
+                    <li><a href="#"><img src="images/1.jpg" /><span>管理博客</span></a></li>
+                    <li><a href="#"><img src="images/1.jpg" /><span>我的文章</span></a></li>
+                    <li><a class="zone_char" href="#"><img src="images/1.jpg" /><span>我的相册</span></a></li>
+                    <li><a href="#"><img src="images/1.jpg" /><span>我的圈子</span></a></li>
+                    <li><a href="#"><img src="images/1.jpg" /><span>我的博客</span></a></li>
+                    <li><a href="#"><img src="images/1.jpg" /><span>我的好友</span></a></li>
+                    <li><a href="#"><img src="images/1.jpg" /><span>给我留言</span></a></li>
+                </ul>
+            </div>
+
+  将 1.jpg  放到 iamges下
+
+预览  langsin.html
+
+修改 style.css   加入
+
+
+#zone
+{
+	height:135px;
+}
+#zone ul
+{
+	list-style-type:none;
+	position:relative;
+	margin-left:10px;
+	margin-top:8px;
+}
+
+预览  langsin.html
+
+修改 style.css   加入
+
+#zone li
+{
+	float:left;
+	font-size:12px;
+	margin:5px 8px 5px 8px;
+}
+
+预览  langsin.html
+
+修改 style.css   加入
+
+#zone a
+{
+	text-decoration:none;
+	color:#000000;
+}
+
+预览  langsin.html    
+
+修改 style.css   加入
+
+.zone_char
+{
+	font-weight:bold;
+	color:red;
+}
+
+
+预览  langsin.html     如何使文字与图片在同一行呢？
+
+修改 style.css   加入
+
+#zone span
+{
+	vertical-align:3px;
+}
+
+预览  langsin.html 
+
+
+将  style.css 中的
+
+#zone
+{
+	height:135px;
+}                            删除体验效果
+
+预览  langsin.html
+
+
+
+
+
+
+
+
+

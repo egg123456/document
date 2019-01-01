@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Computer(cpu, ssd, ram, keyboard, mouse) {
+            //工厂函数
+            var computer = new Object();
+            computer.cup = cpu;
+            computer.ssd = ssd;
+            computer.ram = ram;
+            computer.keyboard = keyboard;
+            computer.mouse = mouse;
+            Computer.start = function() {
+                console.log('您的电脑正在开启')
+            }
+            return computer;
+        }
+        var c1 = Computer('i5', '250g', '8g', 'shuangfeiyan', 'lingse');
+        c1.start;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

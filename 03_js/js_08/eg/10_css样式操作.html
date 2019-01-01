@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<div id="box" style="width: 200px;height: 200px;background-color: #f00;border: 10px solid;font-size: 20px;border-top-color: blue;"></div>
+	<script>
+		var oBox = document.getElementById('box');
+		console.log(oBox.style.backgroundColor);
+		console.log(oBox.style.borderTopColor);
+		console.log(oBox.style.fontSize);
+	</script>
+
+	<p id="pp">123</p>
+	<script>
+		var op = document.getElementById('pp');
+		op.style.border = '10px solid red';
+	</script>
+</body>
+</html>

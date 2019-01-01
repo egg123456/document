@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body style="background-color: skyblue">
+    <img src="./clock.jpg" alt="" style="display: none;">
+    <div style="width: 520px;margin: 0 auto;">
+        <canvas width="520" height="520" id="myCanvas" style="opacity: 0.6;"></canvas>
+    </div>
+    <script>
+        var canvas = document.getElementById('myCanvas'),
+            ctx = canvas.getContext('2d');
+
+        function drawClock() {
+            var now = new Date(),
+                hour = now.getHours(),
+                minute = now.getMinutes(),
+                second = now.getSeconds();
+            hour = hour + (minute / 60);
+            hour = hour > 12 ? hour - 12 : hour;
+
+            ctx.clearRect(0, 0, 520, 520);
+            //background
+            ctx.beginPath();
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = 'blue';
+            ctx.arc(260, 260, 200, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.closePath();
+
+            //刻度
+            for (var i = 0; i < 12; i++) {
+                ctx.save();
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = "#000";
+                ctx.translate(260, 260);
+                ctx.rotate(i * 30 / 180 * Math.PI);
+                ctx.beginPath();
+                ctx.moveTo(0, -190);
+                ctx.lineTo(0, -170);
+                ctx.closePath();
+                ctx.stroke();
+                ctx.restore();
+            }
+            for (var i = 0; i < 60; i++) {
+                ctx.save();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#000";
+                ctx.translate(260, 260);
+                ctx.rotate(i * 6 / 180 * Math.PI);
+                ctx.beginPath();
+                ctx.moveTo(0, -190);
+                ctx.lineTo(0, -180);
+                ctx.closePath();
+                ctx.stroke();
+                ctx.restore();
+            }
+            //针
+            ctx.save();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#f00";
+            ctx.translate(260, 260);
+            ctx.rotate(second * 6 / 180 * Math.PI);
+            ctx.beginPath();
+            ctx.moveTo(0, -170);
+            ctx.lineTo(0, 0);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.restore();
+
+            ctx.save();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#f00";
+            ctx.translate(260, 260);
+            ctx.rotate(second * 6 / 180 * Math.PI);
+            ctx.beginPath();
+            ctx.arc(0, -150, 5, 0, Math.PI * 2)
+            ctx.closePath();
+            ctx.stroke();
+            ctx.restore();
+
+            ctx.save();
+            ctx.fillStyle = '#f00';
+            ctx.translate(260, 260);
+            ctx.rotate(second * 6 / 180 * Math.PI);
+            ctx.beginPath();
+            ctx.arc(0, 0, 10, 0, Math.PI * 2)
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+
+            ctx.save();
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = "#000";
+            ctx.translate(260, 260);
+            ctx.rotate(minute * 6 / 180 * Math.PI);
+            ctx.beginPath();
+            ctx.moveTo(0, -120);
+            ctx.lineTo(0, 0);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.restore();
+
+
+            ctx.save();
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = "#000";
+            ctx.translate(260, 260);
+            ctx.rotate(hour * 30 / 180 * Math.PI);
+            ctx.beginPath();
+            ctx.moveTo(0, -70);
+            ctx.lineTo(0, 0);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.restore();
+
+
+        }
+        // drawClock();
+        setInterval(drawClock, 1000);
+    </script>
+    <div class="canvasbox" style="position: absolute; top: -38px;z-index: -1;left: 380px;opacity: 0.4;">
+        <canvas width="500" height="500" id="myc">
+            您的浏览器不支持canvas。请升级到IE9+
+        </canvas>
+    </div>
+    <script>
+        var myc = document.getElementById('myc'),
+            context = myc.getContext('2d');
+        var i = 0;
+        var timeout = setInterval(function() {
+            context.clearRect(0, 0, 500, 500);
+            context.beginPath();
+            context.arc(300, 300, 200, Math.PI / 2 + i, Math.PI * 3 / 2 + i, true);
+            context.stroke();
+            context.fillStyle = "black";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300, 300, 200, Math.PI / 2 + i, Math.PI * 3 / 2 + i);
+            context.stroke();
+            context.fillStyle = "white";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300 + 100 * Math.cos(Math.PI * 3 / 2 - i), 300 - 100 * Math.sin(Math.PI * 3 / 2 - i), 100, 0, Math.PI * 2);
+            // context.stroke();
+            context.fillStyle = "white";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300 + 100 * Math.cos(Math.PI * 3 / 2 - i), 300 - 100 * Math.sin(Math.PI * 3 / 2 - i), 20, 0, Math.PI * 2);
+            context.stroke();
+            context.fillStyle = "black";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300 + 100 * Math.cos(Math.PI / 2 - i), 300 - 100 * Math.sin(Math.PI / 2 - i), 100, 0, Math.PI * 2);
+            context.stroke();
+            context.fillStyle = "black";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300 + 100 * Math.cos(Math.PI / 2 - i), 300 - 100 * Math.sin(Math.PI / 2 - i), 20, 0, Math.PI * 2);
+            context.stroke();
+            context.fillStyle = "white";
+            context.fill();
+            context.closePath();
+            i += 0.01;
+        }, 10)
+    </script>
+</body>
+
+</html>

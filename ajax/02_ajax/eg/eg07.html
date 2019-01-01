@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var inp = document.getElementById('inp');
+            inp.onkeyup = function() {
+                var val = this.value;
+                var url = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + val + "&json=1&cb=showData";
+                var s = document.createElement('script');
+                s.src = url;
+                // console.log(s);
+                document.body.appendChild(s);
+                document.body.removeChild(s);
+            }
+        }
+
+        function showData(data) {
+            console.log(data);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="inp">
+</body>
+
+</html>

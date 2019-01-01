@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 60%;
+            height: 40%;
+            border: 1px solid red;
+        }
+        
+        .d1 {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .d3 {
+            display: table-cell;
+            height: 80px;
+            vertical-align: middle;
+        }
+    </style>
+
+    <script>
+        window.onload = function() {
+            var html = document.documentElement.childNodes;
+            console.log(document.childNodes);
+            console.log(html);
+            console.log(html[0]);
+            var span = document.querySelector('span').childNodes;
+            console.log(span);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="d1">
+        <div id="d21" class="d21"></div>
+        <div id="d22" class="d22">
+            <div class="d3">
+                China
+                <span>-----</span> cn
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

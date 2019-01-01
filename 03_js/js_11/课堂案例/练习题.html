@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // var str = "<div class='d1'>里面有内容</div>";
+        // var reg = /<.+>(.+)<\/.+>/;
+        // console.log(str.match(reg)[1]);
+
+        var str = "no,zuo,no,die";
+        //  No Zuo No Die
+        var arr = str.split(',');
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i].substr(1), arr[i]);
+            arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substr(1);
+        }
+        console.log(arr[0].charAt(0));
+        str = arr.join(' ');
+        console.log(str);
+        //substr(1);表示取得下标1以后所有字符、注原字符串不变
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// for(var i = 1;i <= 100;i++){
+		// 	console.log(i);
+		// 	if (i == 5) {
+		// 		break;//找到5之后后边的都不在进行
+		// 	}
+		// }
+
+		// break只能跳出内部循环
+		// for (var i = 0; i <= 10; i++) {
+		// 	for(var j = 1;j <= 10;j++){
+		// 		console.log(i,j);
+		// 		if (j == 5) {
+		// 			break;
+		// 		}
+		// 	}
+		// }
+
+		// break终止外部循环，label语法
+		waiceng : for (var i = 0; i <= 10; i++) {
+			for(var j = 1;j <= 10;j++){
+				console.log(i,j);
+				if (j == 5) {
+					break waiceng;//当j=5的时候，关闭外层循环，内层其实也被终止了
+				}
+			}
+		}
+	</script>
+</body>
+</html>

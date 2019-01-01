@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $("#content").delegate("*", "focus blur", function(event) {
+            var elem = $(this);
+            setTimeout(function() {
+                elem.toggleClass("focused", elem.is("focus"));
+            }, 0);
+        });
+        alert($(":root")[0]);
+        console.log($(":root")[0]);
+    </script>
+    <style>
+        .focused {
+            background-color: red;
+        }
+        
+        html {
+            width: 500px;
+            height: 800px;
+            background-color: yellow;
+        }
+        
+        //head不显示，白设
+        head {
+            width: 1000px;
+            height: 300px;
+            background-color: red;
+        }
+        
+        body {
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <input tabIndex="1">
+        <input tabIndex="2">
+        <select tabIndex="3">
+        <option>select menu</option>
+    </select>
+        <div tabIndex="4" class="focused">
+            a div
+        </div>
+    </div>
+</body>
+
+</html>

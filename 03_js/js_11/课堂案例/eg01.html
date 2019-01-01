@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var btn = document.getElementById('btn');
+            var oDiv = document.getElementById('div1');
+            btn.onclick = function() {
+                var attr = oDiv.attributes;
+                //获取属性节点集合
+                for (var i = 0; i < attr.length; i++) {
+                    if (attr[i].nodeName === 'class') {
+                        oDiv.removeAttributeNode(attr[i]);
+                        console.log(1);
+                    } else {
+                        oDiv.setAttribute('class', '');
+                        console.log(2);
+                        break;
+                    }
+                }
+            }
+            if (oDiv.hasAttribute('class')) {
+                oDiv.elen
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <div id="div1"></div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #ccc;
+		}
+		.header{
+			width: 1000px;
+			margin: 40px auto;
+			overflow: hidden;
+		}
+		.logo{
+			float: left;
+		}
+		.logo h1{
+			width: 151px;
+			height: 103px;
+			background: url(images/logo.png) no-repeat;
+			text-indent: -99em;
+			overflow: hidden;
+		}
+		.logo h1 a{
+			display: block;
+			height: 103px;
+		}
+		
+		.nav{
+			float: left;
+			width: 841px;
+		}
+		.nav ul{
+			list-style: none;
+		}
+		.nav ul li{
+			float: left;
+			width: 120px;
+			height: 91px;
+			border-right: 1px solid gray;
+		}
+		.nav ul li.current{
+			width: 115px;
+			background-color: #eee;
+		}
+		.nav ul li.last{
+			border-right: none;
+		}
+		.nav ul li a{
+			display: block;
+			height: 91px;
+			text-align: center;
+			line-height: 91px;
+			background-color: #fff;
+			border: 1px solid orange;
+		}
+		.nav ul li a:hover{
+			border-top: 3px solid red;
+			position: relative;
+			top: 3px;
+			left: 0;
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+			<h1><a href="">蓝科教育</a></h1>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="#">网站栏目</a></li>
+				<li class="current"><a href="#">网站栏目</a></li>
+				<li><a href="#">网站栏目</a></li>
+				<li><a href="#">网站栏目</a></li>
+				<li><a href="#">网站栏目</a></li>
+				<li class="last"><a href="#">网站栏目</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

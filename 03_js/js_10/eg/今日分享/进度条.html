@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport
+    " content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 600px;
+            height: 30px;
+            border: 2px solid gray;
+            padding: none;
+        }
+        
+        #stick {
+            width: 10px;
+            height: 29px;
+            background-color: blue;
+        }
+    </style>
+    <script>
+        var arr = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
+
+        function pxFilter(str) {
+            var index = str.indexOf('px');
+            if (index > 0) {
+                return parselnt(str.slice(0, index));
+            }
+            return str;
+        }
+        window.onload = function() {
+            var container = document.getElementById('container');
+            var stick = document.getElementById('stick');
+            var i = 0;
+            var inter = window.setInterval(function() {
+                if (i == arr.length) {
+                    clearInterval(inter);
+                    return;
+                }
+                // stick.style.width = (pxFilter(container.style.width) * parseFloat(arr[i]) - 2) + 'px';
+                stick.style.width = '30px';
+                i++;
+            }, 1000);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="stick"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<p id="demo">点击按钮获取今年的年份。</p>
+	<button onclick="myFunction()">点我</button>
+	<script>
+		function myFunction(){
+			var d = new Date();
+			var x = document.getElementById("demo");
+			x.innerHTML=d.getFullYear();
+		}
+	</script>
+</body>
+</html>

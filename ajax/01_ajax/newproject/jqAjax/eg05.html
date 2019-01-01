@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script src="./jquery-1.11.3.js"></script>
+    <script>
+        var obj = {
+            username: 'admin'
+        };
+        var url = "../php/eg03.php";
+        $.ajax({
+            type: "post", //请求方式
+            url: url, //请求地址
+            // data: obj, //需要发送的数据
+            dataType: "json", //响应数据类型
+            success: function(response) {
+                //成功的回调函数
+                console.log(response);
+                response.forEach(function(elem, index) {
+                    $('table').append($('<tr></tr>').append($('<td>' + elem.id + '</td>')).append($('<td>' + elem.bookname + '</td>')).append($('<td>' + elem.price + '</td>')).append($('<td>' + elem.tips + '</td>')));
+                });
+            },
+            error: function() {
+                // $(selector).load('404.html')
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <table class="table table-bordered text-center">
+        <tr>
+            <td>编号</td>
+            <td>书名</td>
+            <td>价格</td>
+            <td>描述</td>
+        </tr>
+    </table>
+</body>
+
+</html>

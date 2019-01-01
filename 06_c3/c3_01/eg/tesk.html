@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 700px;
+            margin: 50px auto;
+        }
+        
+        a {
+            perspective: 100px;
+            /* height: 40px;
+            width: 100px;
+            overflow: hidden;
+            position: absolute; */
+        }
+        
+        span {
+            color: white;
+            display: inline-block;
+            width: 100px;
+            front-size: 20px;
+            height: 40px;
+            line-height: 40px;
+            position: relative;
+            text-align: center;
+            background-color: blue;
+            transform-style: preserve-3d;
+            transition: all .5s;
+            transform-origin: center;
+        }
+        
+        span::after {
+            content: attr(data-test);
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            width: 100%;
+            transform: rotateX(-90deg) translateY(20px) translateZ(-20px);
+            background-color: purple;
+            color: white;
+        }
+        
+        span::before {
+            content: attr(data-bf);
+            position: absolute;
+            top: 0%;
+            left: 0px;
+            width: 100%;
+            transform: rotateX(-180deg) translateY(0px) translateZ(20px);
+            background-color: purple;
+            color: white;
+        }
+        
+        a:hover span {
+            transform: rotateX(180deg);
+        }
+        
+        i {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            background-color: pink;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href=""><span data-test="bottom1" data-bf="up">front1</span></a>
+        <a><span data-test="bottom2" data-bf="up">front2</span></a>
+        <a><span data-test="bottom3" data-bf="up">front3</span></a>
+        <a><span data-test="bottom4" data-bf="up">front4</span></a>
+        <a><span data-test="bottom5" data-bf="up">front5</span></a>
+        <a><span data-test="bottom6" data-bf="up">front6</span></a>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="../../../jquery-3.2.1.js"></script>
+<script>
+    //延迟3秒之后  广告出来
+    setTimeout(function() {
+        $("#testDiv2").slideDown(1000, function() {
+            //延迟5秒之后  广告隐藏
+            test_timeOut_id = setTimeout(function() {
+                $("#testDiv2").slideUp(1000);
+            }, 5000);
+        });
+    }, 3000);
+    //关闭广告
+    $("#close_div").click(function() {
+        if (window.test_timeOut_id) {
+            //两秒淡入进去
+            $("#testDiv2").slideDown(600);
+
+        }
+    });
+</script>
+
+<body>
+    <div style="background: white; width: 180px; height: 350px; bottom: 0px; position: absolute; right: 2px; display: none;" id="testDiv2">
+        <a style="float: right;" href="javascript:;" id="close_div">x</a> <img src="1.png" alt=""> 广告
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://api.51ditu.com/js/ajax.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    #contextmenu {
+        border: 1px solid #ccc;
+        background: #eee;
+        color: black;
+        width: 100px;
+        padding: 5px;
+        display: none;
+        position: absolute;
+        text-shadow: 3px 5px 2px #666;
+        box-shadow: 3px 5px 2px #666;
+    }
+</style>
+<script>
+    //当用户使用鼠标右键单击客户区打开上下文菜单时触发函数 
+    document.oncontextmenu = function() {
+        console.log(this);
+        //定位 id 为 contextmenu 的层的 X 坐标到鼠标单击时的 X 坐标偏右10象素 
+        contextmenu.style.posLeft = document.body.scrollLeft + event.x + 10
+            //定位 id 为 contextmenu 的层的 Y 坐标到鼠标单击时的 Y 坐标偏下10象素 
+        contextmenu.style.posTop = document.body.scrollTop + event.y + 10
+            //以行内元素方式显示 contextmenu 层 
+        contextmenu.style.display = "inline"
+        return false //返回 false，以屏蔽真正的右键菜单的显示 
+    }
+    document.onclick = function() { //当用户用鼠标左键单击客户区时触发函数 
+            //如果 contextmenu 层非当前焦点对象 
+            if (document.activeElement != contextmenu)
+            // console.log(document.activeElement);
+                contextmenu.style.display = "none" //隐藏 contextmenu 层 
+        }
+        // console.log(document.activeElement)
+</script>
+
+
+<body>
+    <div id="contextmenu">
+        <dl>
+            <dd>before page</dd>
+            <dd>after page</dd>
+            <dd>fresh</dd>
+            <dd>item4</dd>
+            <dd>item5</dd>
+            <dd>item6</dd>
+        </dl>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// 如果函数同名，不管参数多少，下边的会覆盖上边的
+		/*function fun(a,b,c) {
+			alert('l啦啦啦');
+		}
+		function fun(a,b) {
+			alert('哈哈');
+		}
+		fun(1,2,3);*/
+
+		// 如果函数有形参，arguments会和形参同步
+		/*function fun(a,b) {
+			alert(arguments[1]);
+			alert(b);
+			alert(arguments[4]);
+			console.log(arguments);
+		}
+		fun(1,2,3,4,5,6);*/
+
+		// 模拟重载
+		function sum(a,b) {
+			switch (arguments.length){
+				case 0:
+					return 1;
+					break;
+				case 1:
+					return ++a;
+					break;
+				case 2:
+					return a + b;
+					break;
+				default:
+					var s = 0;
+					for(var i = 0;i < arguments.length;i++){
+						s += arguments[i];
+					}
+					return s;
+					break;
+			}
+		}
+		alert(sum(10));//11
+		alert(sum(10,10));//20
+		alert(sum());//1
+		alert(sum(1,2,3,4,5));//15
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue filters</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        span{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>filters</h2>
+        <span>{{str|capitalize}}</span>
+        <span>{{str|uppercase}}</span>
+        <span>{{str|lowercase}}</span>
+        {{ number | currency('￥','2') }}
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                number:123456789.01,
+                str:'abc'
+            },
+            filters: {
+                capitalize: function (value) {
+                    if (!value && value !== 0) return '';
+                    value = value.toString();
+                    return value.charAt(0).toUpperCase() + value.slice(1);
+                },
+                uppercase:function(value){
+                    return value.toUpperCase();
+                },
+                lowercase:function(value){
+                    return value.toLowerCase();
+                },
+                currency:function(value, _currency, decimals) {
+                    value = parseFloat(value);
+                    if (!isFinite(value) || !value && value !== 0) return '';
+                    _currency = _currency != null ? _currency : '$';
+                    decimals = decimals != null ? decimals : 2;
+                    var stringified = Math.abs(value).toFixed(decimals);
+                    var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified;
+                    var i = _int.length % 3;
+                    var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : '';
+                    var _float = decimals ? stringified.slice(-1 - decimals) : '';
+                    var sign = value < 0 ? '-' : '';
+                    var digitsRE = /(\d{3})(?=\d)/g;
+                    return sign + _currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

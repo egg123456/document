@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<img src="images/1.jpg" id="tupian" alt="">
+	<div id="box" kmd='28'></div>
+
+	<script>
+		var oimg = document.getElementById('tupian');
+		var oBox = document.getElementById('box');
+
+		oimg.setAttribute('src','images/2.jpg');
+		// ==>  完全等价
+		// oimg.src = 'images/2.jpg';
+
+		// kmd属性不是w3c的属性，不能使用点语法获取
+		console.log(oBox.kmd);//undefined 
+		console.log(oBox.getAttribute('kmd'));//28
+	</script>
+</body>
+</html>

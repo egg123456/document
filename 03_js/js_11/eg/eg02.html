@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a[href] {
+            color: red;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            //单个
+            var oDiv = document.querySelector('.div1');
+            var oDiv1 = document.querySelector('#d1');
+            var oDiv2 = document.querySelector('div');
+            console.log(oDiv);
+            console.log(oDiv1);
+            console.log(oDiv2);
+            //多个
+            var aList = document.querySelectorAll('#d1 a');
+            console.log(aList);
+            //+属性
+            var ahc = document.querySelectorAll('#d1 a[href][class]');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="div1" id="d1">
+        <a href="#">第0个li</a>
+        <ul>
+            <li>第1个li</li>
+            <li>第2个li</li>
+            <li><a href="#" class="a3">第3个li</a></li>
+            <li>第4个li</li>
+            <li><a>第5个li</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

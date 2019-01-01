@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var quickSort = function(arr) {
+　　		if (arr.length < 2 ) { 
+				return arr; 
+		}
+　		 var Index = Math.floor(arr.length / 2);
+　　		var pivot = arr.splice(Index, 1)[0];
+     	
+	    //接着，选择"基准"（pivot），并将其与原数组分离。
+
+　　		var leftArr = [];
+　　		var rightArr = [];
+
+		//遍历数组，
+		
+　　		for (var i = 0; i < arr.length; i++){
+　　　			　if (arr[i] < pivot) {
+　　　　　	　leftArr.push(arr[i]);
+　　		　　} else {
+　　　　　		　rightArr.push(arr[i]);
+　　　　	}
+　		　}
+　			　return quickSort(leftArr).concat([pivot], quickSort(rightArr));
+			};
+
+      var arrr=[1,6,4,8,7,2,3,5,9];
+	  console.log('原始数组是'+arrr+'\n'+'排序后是'+quickSort(arrr));
+	 
+	</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+网页菜单
+
+file --- new ---html  button.html 另存为 站点下
+
+将 <title>无标题文档</title>  改为
+
+<title>Button测试</title>
+
+在 <body> 下加入
+
+<a href="#">连接</a>
+
+
+在 <title>无标题文档</title>    下加入
+
+<style type="text/css">
+	body
+	{
+		text-align:center;
+	}
+</style>
+
+预览   button.html
+
+在 
+
+body
+	{
+		text-align:center;
+	}   
+下加入
+
+a
+	{
+		width:90px;
+		height:30px;
+		
+		background-image:url(images/btn1.jpg);
+	}
+
+将  btn1.jpg  放到images下
+
+预览   button.html
+
+    将  连接    换成   我的连接  按钮随着文字的增多而变大
+                           但明明设置了 width  height 没有显示
+                           即不会根据  设置的以上2个属性到达预想的效果
+
+                如何按照设置的 width  height显示呢？
+
+   在  height:30px; 属性下加入
+
+                                display:block;    表示以块装显示
+
+预览   button.html
+
+   将文字   我的连接  去掉
+
+预览   button.html
+
+在
+
+	a
+	{
+		width:90px;
+		height:30px;
+		display:block;
+		background-image:url(images/btn1.jpg);
+	}
+
+下加入
+
+	a:hover
+	{
+		background-image:url(images/btn2.jpg);
+	}
+
+将  btn2.jpg  放到images下
+
+预览   button.html  
+
+打开 langsin.html  
+
+在    </div><!--活力地带结束-->  下加入
+
+ <div class="left_model"><!--访客-->
+        	<div class="left_model_top"><span>访客</span></div>
+            <div id="caller">
+            	<ul>
+                	<li id="caller_star"><img src="images/star.gif" /></li>
+                    <li id="caller_pic"><a href="#"><img src="images/smallPic.gif" /></a></li>
+                    <li id="caller_name"><a href="#">新浪访客</a></li>
+                    <li id="caller_time">2007-12-11 19:07:46</li>
+                </ul>
+               
+      
+        </div>
+      </div><!--访客结束-->
+
+           将  star.gif   smallPic.gif  放到images 下
+
+预览  langsin.html
+
+打开  style.css  加入
+
+
+#caller ul
+{
+	list-style-type:none;
+	font-size:12px;
+	position:relative;
+	margin:0px;
+}
+
+预览  langsin.html
+
+打开  style.css  加入
+
+#caller li
+{
+	float:left;
+}
+
+预览  langsin.html      IMG的大小会改变
+
+打开  style.css  加入
+
+#caller a
+{
+	text-decoration:none;
+	color:#000000;
+}
+
+
+#caller_pic img
+{
+	width:23px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#000000;
+}
+
+预览  langsin.html
+
+
+打开  style.css  加入
+
+#caller_star
+{
+	position:relative;
+	margin-left:8px;
+	margin-top:20px;
+}
+
+预览  langsin.html
+
+
+打开  style.css  加入
+
+#caller_pic
+{
+	position:relative;
+	margin-left:8px;
+	margin-top:15px;
+}
+
+预览  langsin.html
+
+
+打开  style.css  加入
+
+#caller_name
+{
+	position:relative;
+	margin-left:8px;
+	margin-top:12px;
+}
+
+预览  langsin.html
+
+
+打开  style.css  加入
+
+#caller_time
+{
+	position:relative;
+	margin-left:-46px;
+	margin-top:26px;
+	color:#896d6c;
+}
+
+预览  langsin.html
+
+打开  langsin.html  在
+
+ <li id="caller_time">2007-12-11 19:07:46</li>
+                </ul>                              下加入
+
+ <div class="line"></div>
+
+预览  langsin.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+

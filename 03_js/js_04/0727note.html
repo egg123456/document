@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		p,u{
+			color: red;
+		}
+		p{
+			text-indent: 2em;
+		}
+		p:before{
+			content: url(../../q.png);
+		}
+	</style>
+</head>
+<body style="font-size: 20px;">
+<pre>
+一，循环语句
+	在js中流程控制语句有两种：分支语句，循环语句，依靠这两种语句能完成所有程序
+	循环语句是一系列反复执行直到复合特定条件的命令
+	循环语句能够解决大量类似语句书写的问题
+	1，for循环
+		语法：
+			for( 定义循环变量及初值;设定循环条件;循环变量变化式 )
+			for( var i=0; i&lt;num ; i++ ){
+				sentens;
+			}
+		流程：
+			1）声明循环变量赋值
+			2）检测循环变量，是否满足条件
+			3）如果满足条件，执行循环代码，不满足，跳出循环
+			4）满足条件循环代码执行完毕，执行循环变量自增
+			5）重复2,3,4
+		var i=1;
+		for( alert('hello'); i &lt; 12; i+=3,alert(i),alert('world')){
+			console.log(i);//1 4 7 10
+		}
+	2，穷举思想
+		for循环中一些小关键词，比如break，continue
+		寻找48的所有约数，利用计算机的运算，将所有约数一个一个列举出来
+
+二，for循环深入
+	1，for循环中的break和continue语句<u>(减少for循环的执行次数)</u>
+		break语句：跳出循环--只能跳出当前for循环
+			如果想要让一个break终止外层循环，使用label语法
+			waiceng:for (var i = 0; i <= 10; i++) {
+						for (var j = 0; j <= 10; j++){
+							console.log(i,j);
+							if (j==5) {
+								break waiceng;//关闭内外循环 00 01 02 03 04 05结束
+							}
+						}
+					}
+		continue语句：for循环会终止本次循环后边的语句，直接跳到下一次循环
+			只能终止内部循环，想要终止外循环，加label语法
+	2，do while循环--先做在判断
+			do{
+				
+			}while(条件)
+		如果while()为空，报错unexpected token
+	3，white循环--和for差不多
+		while(false){
+			console.log('lalal');
+		}
+
+
+	<p>Math.random() 	范围[0-1]····切忌使用pareInt(Math.random()*8);
+	因为出现1的概率几乎为零，所以8是不会出现的，只有[0-7]。</p>
+</pre>
+<p>&lt;会将其后的内容看成标签内容,直到遇到&lt;或&gt;</p>
+</body>
+</html>

@@ -1,0 +1,118 @@
+修改 langsin.html
+
+在   第一个</div>  下加入
+
+ <div id="pic"><!--图片-->
+ </div>
+
+
+修改 style.css  加入
+
+#pic
+{
+	background-image:url(images/pic.jpg);
+	background-repeat:no-repeat;
+	width:764px;
+	height:102px;
+	text-align:left;
+}
+
+  预览  langsin.html  如何    去掉 层的黑色边框
+
+打开  style.css  修改
+
+#top  为如下所示
+
+#top
+{
+	background-image:url(images/top.gif);
+	background-repeat:no-repeat;
+	height:40px;
+	position:relative;
+	margin-left:-1px;
+	margin-top:-1px;
+}
+
+预览  langsin.html
+
+
+修改 langsin.html
+
+在     <div id="pic"><!--图片-->   下加入
+
+<div id="pic_blog"><span>浪曦的BLOG</span></div>
+        <div id="pic_href"><a href="#">http://blog.sina.com.cn/langsin 复制> 收藏本页</a></div>
+
+修改 style.css  加入
+
+
+#pic #pic_blog
+{
+	width:125px;
+	height:28px;
+	position:relative;
+	margin-left:100px;
+	background-color:#FFFFFF;
+	border-style:solid;
+	border-width:1px;
+	border-color:#313C42;
+	filter:alpha(opacity=70);
+	top:25px;
+	text-align:center;
+}
+                     opacity=70 值越小透明度越高
+
+预览  langsin.html
+
+
+修改 style.css  加入
+
+#pic span
+{
+	position:relative;
+	top:5px;
+	font-weight:bold;
+}
+
+
+预览  langsin.html
+
+修改 style.css  加入
+
+
+#pic #pic_href
+{
+	width:330px;
+	height:20px;
+	position:relative;
+	margin-left:130px;
+	background-color:#FFFFFF;
+	border-style:solid;
+	border-width:1px;
+	border-color:#313C42;
+	filter:alpha(opacity=70);
+	top:30px;
+	text-align:center;
+	font-size:13px;
+}
+
+#pic a
+{
+	text-decoration:none;
+	color:#313C42;
+	position:relative;
+	top:3px;
+}
+
+
+预览  langsin.html
+
+
+
+
+
+
+
+
+
+

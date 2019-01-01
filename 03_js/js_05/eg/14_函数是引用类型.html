@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// function fun(){}
+		// console.log(typeof fun);
+
+		// var a = 1;
+		// var b = a;//a将自己复制一份给了b
+		// b = 3;
+		// console.log(a);
+
+		var a = function() {
+			alert('我是一个函数，我执行了');
+		}
+		// 将匿名函数的地址也给了b
+		var b = a;
+		// 给b添加一个属性
+		b.haha = 4;
+		// b添加了属性，跟a是否有关系？
+		console.log(a.haha);
+		// 说明改变b同样会改变a，a和b指向同一个内容
+		b.haha++;
+		a.haha++;
+		console.log(b.haha);
+	</script>
+</body>
+</html>

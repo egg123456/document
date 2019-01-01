@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>0725笔记</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        p {
+            display: inline;
+            color: red;
+        }
+    </style>
+</head>
+
+<body style="font-size: 20px;">
+    <pre>
+一，变量的类型
+	1，概述
+		var a；
+		基本<p>数据类型</p>：
+			number：数字类型
+			string：字符串类型
+			Boolean：布尔类型 TRUE FALSE
+			null：空类型 null类型，这个自己就是一种类型
+			undefined：undefined类型，变量未定义的值，这个值自己就是一种类型
+	2，typeof关键字，方法
+		这个关键字用于检测一个变量的类型
+		var a=100；
+		console.log(typeof(a));//number类型
+		js中的所有数字都是number类型，不再细分是整形，浮点型等；
+		一个变量是什么类型，和赋值有关系，和定义没有关系
+	我们说js这个语言叫做<p>动态数据类型</p>，变量的类型是自动检测的，不是人为给的，变量的值不是死的，是可以人为改变的
+	var a=null； 	空值
+	3，加号<p>
+		加号是一个运算符
+			如果加号两边都是数字的时候，这个加号是数学加法，
+			如果两边不都是数字时，那么就是连字符，结果是字符串
+		乘法，减法，除法都会将非数字转化为数字进行数学运算
+		数据类型的隐形转换
+			var a = 2;
+			var b = '3';
+			var c = a * b;
+			console.log(c);//6	其中一个数字，另一个是
+
+			console.log(123+'');//字符串123
+
+			console.log(3*'a');//nan 不是一个数字
+
+			console.log(3*'3');//9  (数字字符串)将转化为数字在运算</p>
+
+二，变量类型的转换
+	1，string-->number
+		弹出输入框
+			prompt(
+			'请输入一个数字：')；
+		这些小功能，就叫做程序给我们提供的API，每一个API 都有不同的语法
+		语法：var a = prompt("提示文本",'默认值');
+		这个方法的返回值是字符串<p>
+		parseInt();将字符串解析成整形，如果内容是小数，不会四舍五入直接把小数部分扔掉，
+		如果这个字符串不是数值，就会取开头的数字，开头不是数字则为nan，此方法也可用于进制解析</p>
+		parseFloat():将字符串解析成浮点型
+			console.log(parseInt('-12.99px'));//-12
+			console.log(parseInt('px-12.99px'));//nan
+
+			console.log(parseInt('15e6',10));//e不是数字，取头，十进制15等于15
+			console.log(parseInt('0xf',16));
+			console.log(parseInt('f',16));
+			console.log(parseInt('f',8));//8进制里没有8以上的，所以为nan
+
+		Number();也可以转换，但Number里面必须是规范的数值，否则为nan
+
+		String();将数字转换为字符串
+三，数学运算符
+	运算符（operator），也叫做操作符，运算符有很多种，一元 二元运算符，数学运算符，逻辑运算符···
+		+
+		-
+		*
+		/
+		%
+		()
+	优先级：括号>乘除取余同级>加减
+	没有中括号和大括号
+	js中没有乘方号^，用数学对象方法math.pow()计算，没有整除号/,
+		console.log(-13%5);//-3
+		console.log(math.pow(4,2));//4的2次方16
+		math.sqrt();//开方
+四，关系运算符
+	>		大于
+	<		小于
+	>=		大于等于
+	<=		小于等于
+	==		等于
+	!=		不等于
+	===		全等
+	!==		不全等
+	1，关系运算符运算数值之间的运算，运算结果 是布尔类型的true或FALSE <p>
+		console.log(3>1);//true
+		//!=或==会帮你做隐式转换
+		console.log(3=='3');//true
+		//===不仅会比较大小，还会比较类型
+		console.log(3==='3');//false</p>
+	2，字符串之间的运算
+		比较的是字符编码的顺序
+		console.log('a'>'A');//ture  A=65 a=97;
+	3，字符串与数字之间运算
+		1）字符串是纯数字会被转为数字比较
+		2）null会被转为0比较
+		//<p>-0.00001<null<0.00001但是却不能和0比(是零非零)</p>
+		console.log(null>0);//false
+		console.log(null<0);//false
+		console.log(null==0);//false
+		console.log(null!=0);//true
+		console.log(null<0.00000000001);//true
+		console.log(null>-0.00000000001);//true
+
+		<p>console.log('abc'!=0);//true	'abc'转为nan</p>
+		<p>3）TRUE会被转化为 1比较,1+true为2</p>
+		4）FALSE会被转化为0比较
+		5）null不能和0比较
+	4，连续关系运算
+		var a=10;
+		5<a<15		//true
+		5<a>2		//false
+五，逻辑运算
+	逻辑运算符有三个
+		&&	与 
+		||	或
+		！	非
+	正统的是布尔与布尔之间的运算，结果也是布尔值
+	<p>运算顺序：非 与 或</p>
+	console.log(false || true  && !true || false);<p>
+	&&特点；
+		var a = 1;
+		var b = 2;
+		var c = ++a && ++b;
+		console.log(a,b,c);//2,3,3    由于++a不等于0，所以执行++b并把值赋给c</p>
+	短路语法：<p>
+		1）如果是一个与运算，比如a&&b，a如果是假，那么就不会管b，结果就是FALSE或者直接输出a
+		2）如果是一个与运算，比如a&&b，a是TRUE，直接把b当做结果输出
+		3）如果是一个或运算，比如a||b，a是FALSE，直接把b输出
+			若a为TRUE，那就不管b，直接把a当做结果输出</p>
+	<p>负性：FALSE null 0 nan 字符串空‘’ undefined</p>
+	正性：除了上边的都是正性的
+六，赋值运算符
+	=	赋值
+	+=	简便赋值
+	-=	简便赋值
+	*=	简便赋值
+	/=	简便赋值
+	%=	简便赋值
+	++	自增    -- 	自减：前后置与c一样
+</pre>
+</body>
+
+</html>

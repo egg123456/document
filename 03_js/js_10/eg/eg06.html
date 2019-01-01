@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1" onclick="fn()" class="add"></div>
+    <script>
+        var div = document.getElementById("div1");
+        // console.log(div.attributes); //类数组对象
+        // console.log(div.attributes.length) //获得属性的长度
+        // console.log(div.attributes[1]); //获取下标1的属性节点对象
+        var attr = div.attributes;
+        for (var i = 0; i < attr.length; i++) {
+            //遍历属性集合，寻找class
+            if (attr[i].nodeName === "class") {
+                attr[i].nodeValue += " aaa";
+                //修改class属性的值
+            }
+        }
+        console.log(attr[2].nodeValue);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// var arr = [];
+		// arr.push(function() {
+		// 	alert('哈哈');
+		// });
+		// arr.push(function() {
+		// 	alert('嘻嘻');
+		// });
+		// arr.push(function() {
+		// 	alert('啦啦');
+		// });
+		// arr.push(function(a,b) {
+		// 	alert(a + b);
+		// });
+		// arr[2]();//调用数组中下标为2的函数
+		// arr[3](1,2);
+
+
+		// var arr = [];
+		// for(var i = 0;i < 10;i++){
+		// 	arr[i] = function() {
+		// 		alert('么么哒');
+		// 	}
+		// }
+		// arr[5]();
+		// arr[9]();
+
+		// 经典问题
+		// var arr = [];
+		// // 使用循环为arr议案家11个函数
+		// for(var i = 0;i <= 10;i++){
+		// 	arr[i] = function() {
+		// 		alert(i);
+		// 	}
+		// }
+		// arr[5]();// 11
+		// arr[9]();//
+		// arr[7]();//
+		// arr[6]();//
+		// arr[2]();//
+
+		var arr = [];
+		// 使用循环为arr议案家11个函数
+		for(var i = 0;i <= 10;i++){
+			(function(m) {
+				arr[m] = function() {
+					alert(m);
+				}
+			})(i);
+		}
+		arr[5]();// 5
+		arr[9]();//	9
+		arr[7]();// 7
+		arr[6]();//	6
+		arr[2]();//	2
+	</script>
+</body>
+</html>

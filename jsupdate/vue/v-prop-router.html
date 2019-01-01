@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<div id="app">
+    <p>{{msg}}</p>
+    <br>
+    <p>{{$route.name}}</p>
+    <p>{{$route.meta}}</p>
+    <p>{{$route.path}}</p>
+    <p>{{$route.hash}}</p>
+    <p>{{$route.query}}</p>
+    <p>{{$route.params}}</p>
+    <p>{{$route.fullPath}}</p>
+    <p>{{$route.matched}}</p>
+    <br>
+    <p>{{$route}}</p>
+    <ul>
+        <li><router-link  :to="{ name: 'home', params: { id: 123 } }">home</router-link></li>
+         <li><router-link :to="{ name: 'foo', params: { id: 456 } }">foo</router-link></li>
+        <li><router-link :to="{ name: 'bar', params: { id: 789 }}">bar</router-link></li> 
+    </ul>
+    <router-view></router-view>
+</div>
+
+<script>
+const Home = {props:['id'], template: '<div>This is Home {{id}}</div>' }
+const Foo = { template: '<div>This is Foo {{ $route.params.id }}</div>' }
+const Bar = { template: '<div>This is Bar {{ $route.params.id }}</div>' }
+
+const router = new VueRouter({
+  routes: [
+    { path: '/', name: 'home', component: Home,props:true },
+    { path: '/foo', name: 'foo', component: Foo },
+    { path: '/bar/:id', name: 'bar', component: Bar }
+  ]
+})
+
+var app = new Vue({
+    el:'#app',
+    data:{
+        msg:'egg'
+    },
+    router:router
+});
+
+</script>
+</body>
+</html>

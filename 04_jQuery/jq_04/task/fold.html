@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../jquery-3.2.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        ol,
+        ul {
+            list-style: none;
+        }
+        
+        ul {
+            display: none;
+        }
+        
+        ul li {
+            background-color: #f4f4f4;
+            border: 1px solid red;
+        }
+        
+        .fold {
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        
+        h2 {
+            width: 100%;
+            border: 1px solid black;
+            background: #aaa url(pro_left.png) no-repeat 260px 8px;
+        }
+        
+        .h2 {
+            background: #aaa url(pro_down.png) no-repeat 260px 8px;
+        }
+    </style>
+    <script>
+        $.fn.extend({
+            fold: function() {
+                $('.fold h2').on('click', function() {
+                    if ($(this).attr('class')) {
+                        $(this).removeAttr('class');
+                    } else {
+                        $(this).addClass('h2');
+                    }
+                    var _that = $(this);
+                    _that.next().slideToggle(1000);
+                });
+            }
+        });
+        $(function() {
+            $('.fold').fold();
+        })
+    </script>
+</head>
+
+<body>
+    <div class="fold">
+
+        <h2>fyx</h2>
+        <ul>
+            <li>f</li>
+            <li>y</li>
+            <li>x</li>
+        </ul>
+
+        <h2>yrx</h2>
+        <ul>
+            <li>y</li>
+            <li>r</li>
+            <li>x</li>
+        </ul>
+
+        <h2>lqx</h2>
+        <ul>
+            <li>l</li>
+            <li>q</li>
+            <li>x</li>
+        </ul>
+
+        <h2>tqy</h2>
+        <ul>
+            <li>t</li>
+            <li>q</li>
+            <li>y</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

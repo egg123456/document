@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		var month = parseInt(prompt('请输入月份：'));
+		switch(month){
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+				alert(month + '月有31天');
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				alert(month + '月有30天');
+				break;
+			case 2:
+				alert(month + '月有的时候是29天，有的时候是28天');
+				break;
+			default:
+				alert('您输入的月份不合法');
+				break;
+		}
+	</script>
+</body>
+</html>

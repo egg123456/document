@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 50px;
+            float: left;
+        }
+        
+        .enter {
+            border-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"><img src="./icon.jpg" width="50" alt=""></div>
+    <div class="box2"></div>
+    <script>
+        (function() {
+            var box = document.querySelectorAll('div');
+            var img = document.querySelectorAll('img');
+            var actObj = null;
+            for (var i = 0; i < box.length; i++) {
+                box[i].addEventListener('dragenter', function() {
+                    this.classList.add('enter');
+                })
+                box[i].addEventListener('dragover', function(ev) {
+                    ev.stopPropagation();
+                    ev.preventDefault();
+                })
+                box[i].addEventListener('dragleave', function() {
+                    this.classList.remove('enter');
+                })
+                box[i].addEventListener('drop', function(ev) {
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                    // console.log(ev)
+                    // console.log(this.parentElement)
+                    this.classList.remove('enter');
+                    var data = ev.dataTransfer.getData('text/uri-list');;
+                    console.log(data);
+                    if (data) {
+                        // var img = document.createElement('img');
+                        // img.src = data;
+                        // img.style = 'width:50px'
+                        this.appendChild(actObj);
+                    } else {
+                        this.innerHTML += ev.dataTransfer.getData('text/plain');
+                    }
+                })
+            }
+            for (var j = 0; j < img.length; j++) {
+                img[j].addEventListener('dragstart', function() {
+                    actObj = this
+                })
+            }
+        })()
+    </script>
+</body>
+
+</html>

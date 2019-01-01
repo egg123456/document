@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         :root {
+            --gray: #ccc;
+            --red: red;
+            background-color: var(--gray);
+            --basewidth: 200;
+            /* -webkit---1: 100px; error */
+        }
+        
+        div {
+            margin: 0 auto;
+            /*5后面需加上px*/
+            width: calc(var(--basewidth)*5px);
+            color: var(--red);
+            text-align: center;
+        }
+        
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex vitae quidem, rerum cupiditate. Porro est repellat culpa sunt molestiae ex praesentium ipsam sequi, voluptatibus fugit, nam eum iste soluta esse?
+    </div>
+    <p>css变量也像样式一样可以继承--- <a href="http://www.cnblogs.com/asds/p/6148680.html">详情请点击here</a><br>css3的calc</p>
+</body>
+
+</html>

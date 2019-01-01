@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script src="./jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            var ls = localStorage;
+            var arr = ['内容1', '内容2', '内容3', '内容4', '内容5'];
+            $('.start').on('click', function() {
+
+                console.log($('.start').html());
+                if ($('.start').html() == 'start') {
+                    $('.start').html(function() {
+                        return 'stop';
+                    })
+                    scroll = setInterval(function() {
+                        //若用var声明ranNum，下面的else报错
+                        ranNum = Math.floor(Math.random() * arr.length);
+                        $('h1').html(function() {
+                            return arr[ranNum];
+                        });
+                    }, 200);
+                } else {
+                    $('.start').html(function() {
+                        return 'start';
+                    })
+                    clearInterval(scroll);
+                    var val = `${$('.inp').val()}-${arr[ranNum]}`;
+                    var key = `key${new Date().getTime()}`;
+                    ls.setItem(key, val);
+                    showList();
+                }
+
+            });
+
+            function showList() {
+                $('.list').empty();
+                for (var i = 0; i < ls.length; i++) {
+                    var arr = ls.getItem(ls.key(i)).split('-');
+                    $('.list').append(`
+                        <li>恭喜用户${arr[0]},抽中${arr[1]}</li>
+                    `);
+                }
+            }
+
+            function rancolor() {
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += Math.floor(Math.random() * 16).toString(16);
+                }
+                return color;
+            }
+            setInterval(function() {
+                var color = rancolor();
+                $('h1').css('background', color)
+            }, 100);
+
+            $('#cl').on('click', function() {
+                ls.clear();
+                $('.list').empty();
+            })
+
+        });
+    </script>
+    <style>
+        h1,
+        h2 {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            letter-spacing: 5px;
+        }
+        
+        h2 {
+            background-color: greenyellow;
+        }
+        
+        li:nth-of-type(odd) {
+            background-color: #ddd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">欢迎使用</h1>
+        <div class="input-group-lg text-center">
+            <input type="text" placeholder="请输入用户名" class="inp">
+            <button type="button" class="btn btn-group-lg btn-success start">start</button>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="text-center">中奖列表</h2>
+        <div class="container-fluid">
+            <ol class="list"></ol>
+        </div>
+    </div>
+    <button type="button" id="cl" style="display:block;width:200px;margin:0 auto;">clearall</button>
+</body>
+
+</html>

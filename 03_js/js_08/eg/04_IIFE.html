@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// +function fun() {
+		// 	console.log('1');
+		// }()
+		// -function fun() {
+		// 	console.log('1');
+		// }()
+
+		// 标准IIFE模式，一般是匿名函数
+		// (function() {
+		// 	alert(1);
+		// })()
+		// fun();//报错
+
+		// function sum(a,b,c) {
+		// 	var max = a > b ? a : b;
+		// 	return max + c;
+		// }
+
+		// IIFE写法
+		function sum(a,b,c) {
+			return (function(a,b) {
+				return a > b ? a : b;
+			})(a,b) + c;
+		}
+
+		console.log(sum(1,2,3));//5
+		console.log(sum(4,2,8));//12
+	</script>
+</body>
+</html>

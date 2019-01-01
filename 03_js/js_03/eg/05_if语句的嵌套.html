@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		var sex = prompt('请输入性别：');
+		var age = parseInt(prompt('请输入年龄:'));
+		// 判断
+		if (sex == '男') {
+			if (age >= 22) {
+				alert('老男人，你可以结婚');
+			}else{
+				alert('小正太，不能结婚');
+			}
+		}else if (sex == '女') {
+			if (age >= 20) {
+				alert('大美女，可以结婚');
+			}else{
+				alert('小萝莉，不能结婚');
+			}
+		}else{
+			alert('请输入正确的性别，男或者女');
+		}
+	</script>
+</body>
+</html>

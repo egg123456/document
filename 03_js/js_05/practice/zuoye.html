@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		function jc(a) {
+			var sum = 1;
+			for ( var i=2; i<=a ; i++)
+				sum *= i;
+			return sum;
+			// body...
+		}
+		var sum = 0;
+		for( var i = 1 ; i <= 10 ; i++)
+			sum += jc(i);
+		alert('10的阶乘和：'+sum);
+		function wj(a) {
+			var w1 = a % 10;
+			var w2 = parseInt(a/10) % 10;
+			var w3 = parseInt(a/100);
+			return jc(w1)+jc(w2)+jc(w3);
+			// body...
+		}
+		for ( i=100; i<1000 ; i++)
+			if (i == wj(i)) 
+				alert('等于每位数的阶乘之和的三位数是：'+i);
+		function rev(a) {
+			for (var i = 1 ; a >= Math.pow(10,i) ; i++){}
+			alert(a+'是一个'+i+'位数');
+			var sum = 0; 
+			for ( var j = 1 ; j <= i ; j++){
+				// alert(parseInt(a/Math.pow(10,(j-1)) % 10));
+				sum += (parseInt(a/Math.pow(10,(j-1)) % 10) * Math.pow(10,i-j));
+			}
+			return sum;
+			
+		}
+		var input = prompt('please input a number:');
+		alert(input+'到位之后为：'+rev(input));
+		function yuehe(a) {
+			var sum = 0;
+			for ( var i = 1 ; i < a ; i++)
+				if (a % i == 0) 
+					sum += i;
+				return sum;			
+			// body...
+		}
+		for ( var i = 1 ; i < 3000 ; i++)
+			if (yuehe(yuehe(i))== i)
+				if( i < yuehe(i))
+				console.log(i+'的亲密数是'+yuehe(i));
+	</script>
+</body>
+</html>

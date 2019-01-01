@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 0 auto;
+            width: 960px;
+        }
+        
+        .inpBox {
+            margin: 0 auto;
+            width: 500px;
+            padding: 20px;
+            line-height: 50px;
+        }
+        
+        .inpBox .inp {
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 20px;
+            line-height: 50px;
+            text-indent: 2rem;
+        }
+        
+        .inpBox span {
+            display: inline-block;
+            border: 1px solid #dddddd;
+            border-radius: 15px;
+            padding: 0 30px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0 auto;
+            border: 2px solid #cccccc;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        h2 {
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+            letter-spacing: 10px;
+        }
+        
+        li {
+            font-size: 20px;
+            line-height: 36px;
+        }
+        
+        li:nth-of-type(odd) {
+            background-color: #eeeeee;
+        }
+        
+        .listBox {
+            border-radius: 20px solid #f3f3f3;
+            height: 350px;
+            overflow: scroll;
+        }
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        function ranColor() {
+            var tempColor = "#";
+            for (var i = 0; i < 6; i++) {
+                tempColor += parseInt(Math.floor(Math.random() * 8 + 8)).toString(16);
+            }
+            return tempColor;
+        }
+        $(function() {
+            $(".start").css("background-color", ranColor());
+            $(".screen").css("background-color", ranColor());
+            $(".clearList").css("background-color", ranColor());
+            var ls = localStorage;
+            var arr = ["蛤蛤", "嘿嘿", "嘻嘻", "吼吼", "啦啦"];
+            $(".start").on("click", function() {
+                $(this).css("background-color", ranColor());
+                if ($(this).hasClass("start")) {
+                    timeout = setInterval(function() {
+                        $(".screen").text(arr[Math.floor(Math.random() * arr.length)]);
+                    }, 30);
+                    $(".screen").css("background-color", ranColor());
+                    timeout1 = setInterval(function() {
+                        $(".screen").css("background-color", ranColor());
+                    }, 1500);
+                    $(this).addClass("stop").removeClass("start").text("点击停止");
+                } else if ($(this).hasClass("stop")) {
+                    clearInterval(timeout);
+                    clearInterval(timeout1);
+                    timeout1;
+                    var ranNum = Math.floor(Math.random() * arr.length);
+                    var val = `恭喜${$(".inp").val()}-${$(".screen").text()}`;
+                    var key = "key" + (new Date().getTime());
+                    ls.setItem(key, val);
+                    showList();
+                    $(this).addClass("start").removeClass("stop").text("开始抽奖");
+                }
+            });
+            $(".clearList").on("click", function() {
+                $(this).css("background-color", ranColor());
+                ls.clear();
+                showList();
+                $(".screen").text("欢迎抽奖");
+            });
+
+            function showList() {
+                $(".list").empty();
+                for (var i = 0; i < ls.length; i++) {
+                    var strArr = ls.getItem(ls.key(i)).split("-");
+                    $(".list").append($("<li>" + strArr[0] + "抽中" + strArr[1] + "</li>"))
+                }
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="screen">欢迎抽奖</h1>
+        <div>
+            <div class="inpBox">
+                <input type="text" placeholder="请输入用户名" class="inp" />
+                <span class="start">开始抽奖</span>
+            </div>
+        </div>
+        <div class="container">
+            <h2>中奖列表</h2>
+            <div class="listBox">
+                <ol class="list"></ol>
+            </div>
+            <h2 class="clearList">清空列表</h2>
+        </div>
+    </div>
+</body>
+
+</html>

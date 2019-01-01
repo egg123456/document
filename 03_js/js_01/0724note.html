@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Page-Enter" content="revealTrans(duration=10.0,transition=12)">
+	<meta http-equiv="Refresh" content="5;url=http://www.w3school.com.cn" />
+	<title>Document</title>
+	<style>
+		u,p{
+			color: red;
+		}
+		p,u{
+			color: red;
+		}
+		p{
+			text-indent: 2em;
+		}
+		p:before,u:before{
+			content: url(../../q.png);
+		}
+	</style>
+</head>
+<body>
+<pre>
+一，JavaScript简介
+	1，JavaScript的用途
+		前段三层：
+			结构层：html 	从语义的角度描述页面的结构
+			样式层：css		从审美的角度装饰页面
+			行为层：JavaScript	从交互的角度提升用户体验
+		js可以干啥：
+			轮播图
+			tab栏
+			表单提交：ajax技术
+			广告
+			···
+	2，js诞生
+		js诞生于1995年netscript（网景公司，首先提出交互概念，首先提出了，用户体验的概念，Brandan Eich是可以和乔布什平起平坐的地位），最初名字叫livescript（活力脚本），后随着Java兴起，改名为javascript，但和Java没有任何关系
+		随着IE3推出与IE3兼容的版本叫jscript，ecma international（欧洲标注化组织），1997年这个组织为JavaScript制定第一版标准ecmascript标准，1999年第三版标注诞生，由于对语言特性产生分歧，导致ecmascript第四版没有诞生就已经夭折，2009年12月ecmascript第五版发布，2015年6月发布第六版
+		ecmascript是JavaScript的标准，我们学习的是es5
+	3，JavaScript的成长历程
+		2003年，牛皮癣的时代，禁用广告，禁用js
+		2004年：谷歌提出ajax技术，联通后台和js的纽带，<u>无刷新更新页面内容</u>，配合js使用（异步请求数据）
+		2007年：iPhone出世，交互体验受到重视，web页面的交互由js写，所以js被推崇到很高的地位
+		2008年：谷歌推出chrome浏览器，v8引擎出现，使得js在web页面中解析速度加快，推动js的发展
+		2009年：<u>jQuery流行，解决了浏览器的兼容问题，jQuery中接近50%代码是做兼容性的，使页面编程变得简单</u>
+		2010年：canvas画布技术得到了广泛的支持，canvas逐渐取代flash，并且可以制作小游戏，flappy bird ，俄罗斯方块，消消乐
+		2011年：node·js得到广泛的运用，三p的后台语言都有自己的语法，但是node使用的就是js，让js运行在后台，<u>单线程非阻塞io</u>，节省了后台的成本，以前4万块的服务器，卡，但是使用node4千块的服务器都很666
+		2012年：html+css3问世，又一次推动js发展
+		2013年：hybird APP 模式，就是手机APP，公司需要三班人分别做Android IOS Windowsphone，后来人们开发了webAPP使用web技术开发手机APP，hybirdAPP混合APP，就是web技术和手机原生开发的混合
+		2015年：ecma6发布，ecma2015，对js进行了重量级的颠覆性增强
+	4，JavaScript非常好学
+		为什么好学：
+			1）js有明显的界面效果，容易记忆，不像c语言，黑体白字丑
+			2）js语言来源于c和Java，所以学过c或Java的会很简单
+			<u>3）弱引用类型，动态类型的语言</u>
+			4）js中不需要考虑内存问题和垃圾回收的问题
+		不好学的点：
+			1）兼容性问题：IE8是个怪胎，很多方法跟别人不一样，需要造轮子，
+			2，花式写法太多：太抽象，从简单入手慢慢品味
+			3，细节太多：语法错误，逻辑错误，认真记笔记，认真做案列
+	5，js学习方法
+		1）品味程序，思考逻辑，读懂每一行代码
+		2）js的机械重复性的劳动几乎为零，基本都是创造性的劳动，html，css都是重复性的劳动
+		3，千万不要背程序，每一个程序都要独立的写出来有自己的看法有自己的逻辑，每天都要有创新。
+二，hello world
+	输出语句
+	1，js的书写位置
+		script标签里
+		<script type="text/javascript">
+			//js代码位置
+
+		</script>
+		这个script标签可以存在html文件中的任何位置，head body里面和html之外都可以
+		在html页面加载的时候，js代码会一起运行，也就是说js代码运行需要宿主环境，我们最常见的宿主环境就是浏览器
+		这个type文件类型，在html4以前是一定要写的，h5可以不写，也可以写，写的话一定不猛写错
+	2，alert（）语句
+	 	我们学习的第一个输出语句
+	 	alert：警告，能够让浏览器弹出警告框
+	 	alert（）这实际上是一个内置函数的调用，函数调用：函数名（）
+	 	alert("hello world");
+	 	这是一条语句，每条语句之间使用分号隔开，这个分号必须是英文状态下的
+	 	js程序是顺序执行的，也就是先执行上边的，再执行下边的
+	 3，控制台
+	 	控制台再chrome中就是检查里边的内容，快捷键是f12，英文名叫做console
+	 	程序中所有被捕获的错误都会在控制台输出，控制台是检查错误的一个利器
+	 	alert('hello')；后边的分号使用中文分号，错误
+	 	syntaxerror：语法错误
+	 	Uncaught SyntaxError: Invalid or unexpected token 无效或意想不到的令牌
+	 	我们也可以主动的在控制台输出内容：
+	 		console.log();打印日志
+	 	console：控制台
+	 	log：日志
+	 	console是一个内置的对象，log是这个对象的方法
+	 	学习语言最重要的是学习方法和属性（函数和对象）
+	 	console.log('nihao');
+	 	要养成打开控制台调试的习惯
+	 4，js行为特性
+	 	<u>js语句和语句之间对换行，空格，缩进不敏感</u>js语句和语句之间对换行，空格，缩进不敏感
+	 	&lt;script>
+	 		alert('hello');alert('world');
+
+
+	 		alert('hello world');
+	 	</script>
+	 	==>
+	 	&lt;script>
+	 		alert('hello');
+	 		alert('world');
+	 		alert('hello world');
+	 	</script>
+	 	<u>每个语句后的分号不是必须写的，前提是代码一行一行书写的，如果两行代码在一行中书写，或者压缩后的代码，每一句代码的分号是重要的，必须写,</u>
+	 5,js注释
+	 	<!-- html注释 -->
+		/*css注释*/
+		//js	单行注释
+		/*js
+		多行注释*/
+		注释不能嵌套
+		注释的语句是不会被编译执行的
+三，字面量
+	<u>字面量literals 或者叫直接量，就是看到是什么打印出来就是什么</u>
+	1，数字的字面量
+		就是这个数字自己，不需要任何符号来界定这个数字
+		在js中数字的字面量可以有三种进制：
+			10进制：就是普通的数字0-9组合
+			8进制：如果以0开头，或者以0o开头，或者以00开头的都是八进制
+			16进制：以0x开头的是十六进制 0-9 a-f表示0-15
+		nan:not a number 不是一个数字，这也是一个数字字面量；
+		infinity：无穷大，也是一个数字字面量；
+		数字字面量：整数字面量（十进制 八进制 十六进制），浮点数字面量，infinity，nan
+	2，字符串字面量
+		字符串是一个术语，人来所说的语句，词
+		字符串的字面量：必须使用双引号或单引号包裹，字符串被限制定在同种引号之间，必须是成对出现的引号
+		console.log('hello');
+		console.log("hello");
+		<u>如果一个数字被引号包裹那他就是一字符串而不是数字了</u>
+		转义字符：
+			\n		回车换行 			
+			\t		tab缩进
+		引号转义：
+			1）正常情况下，使用不同种类的引号
+				console.log("hello'kmd'");(间隔出现)
+			2）使用转义符
+				console.log("hello\"world\"");
+四，变量
+	变量 variable数学中的xyz这些未知数其实就变量的一种形式，是一个蕴含着某一个值的符号和直接面量不同，看见一个a但是这并不是字母a，其中蕴含了一个值
+	1，整体感知
+		变量，使用var关键字定义
+			var a；定义一个变量a
+		这个变量a存放在电脑的内存中，会开辟一个空间，来存储这个变量a，可以给这个变量赋值，js中的变量赋值使用等号，等号右边的值赋给左边的变量
+		var a；定义
+			a=12；
+			console.log(a);
+	2，变量必须先声明，再使用
+		使用一个变量，必须先进行var，这个var的过程就是声明的过程declaration，也可以叫做定义definition
+		变量的名是一个标识符(identifiers)任何标识符都要有统一的命名规范：<p>		在js中，一个标识符可以是由字母，下划线，$,数字组成，不能以数字开头，大小写敏感</p>
+	3，变量的赋值
+		var a;
+		 a=100;
+		 console.log(a);
+		 ==>
+		 声明与赋值写在一起
+		 var a=100;
+		 console.log(a);
+		 如果一个变量只定义了，而没有赋值，输出undefined（没有定义完成）
+		 如果不适用var来定义变量，会怎么样？
+		 	n=100；
+		 	console.log(n);
+		 <u>输出值100，因为没有使用var声明的，将是一个全局变量</u>
+		 当然可以var a，b，c；同时声明abc三变量
+		4，变量声明的提升
+			<u>js中只能提升变量的声明，不能提升变量的值</u>
+			console.log(“b=”，b);//输出undefined
+			var b=200;
+		5，变量的传递
+			使用=赋值号传递变量值
+		6.区分变量和直接量
+			无引号的且不是数字开头的是变量
+
+</pre>
+</body>
+</html>

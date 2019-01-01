@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+            border-radius: 0;
+        }
+    </style>
+    <script src="./jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            $('button:first').on('click', function() {
+                $('div').animate({
+                    'top': '200px',
+                    'left': '+=200px',
+                    'border-radius': '50%',
+                    'width': '300px',
+
+                }, 3000).animate({
+                    'top': '0',
+                }, 3000);
+            });
+            $('button:eq(1)').on('click', function() {
+                $('div').stop();
+            });
+            $('button:eq(2)').on('click', function() {
+                $('div').stop(true);
+            });
+            $('button:eq(3)').on('click', function() {
+                $('div').stop(true, true);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>动画开始</button>
+    <button>停止动画(停止当前动画)</button>
+    <button>停止所有(清空动画队列)</button>
+    <button>结束动画(执行到动画结尾)</button>
+    <div></div>
+</body>
+
+</html>

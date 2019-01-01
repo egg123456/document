@@ -1,0 +1,74 @@
+盒子模型
+
+
+修改  style.css
+
+将 #top ul  改为如下所示
+
+#top ul
+{
+	list-style-type:none;
+	font-size:12px;
+	position:relative;
+	margin-left:10px;
+}
+   表示  margin-left:10px;   距离边框的位置  可以输入 其它的值体验效果
+
+预览   langsin.html
+
+修改  style.css
+
+将 #top #top_left  改为如下所示
+
+#top #top_left
+{
+	border:0px;
+	width:180px;
+	height:33px;
+	margin-top:4px;
+}
+
+预览   langsin.html
+
+
+修改  style.css
+
+将 #top #top_middle   改为如下所示
+
+#top #top_middle 
+{
+	border:0px;
+	margin-top:15px;
+}
+
+预览   langsin.html
+
+修改  style.css  加入
+
+#top #one, #top #two, #top #three, #top #four, #top #five, #top #six, #top #seven
+{
+	float:left;
+	color:#636563;
+	text-decoration:none;
+	margin-top:16px;
+}
+    text-decoration:none; 表示不需要任何修饰  因为连接带下划线
+
+预览   langsin.html
+
+修改  style.css  加入
+
+#top #one
+{
+	margin-left:60px;
+	color:#FF0000;
+	font-weight:bold;
+}
+
+预览   langsin.html   在广告  与 菜单栏间产生 空格
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="./jquery-3.2.1.js"></script> -->
+    <script>
+        window.onload = function() {
+            var url = 'http://open.douyucdn.cn/api/RoomApi/live/lol',
+                iframe = document.createElement('iframe'),
+                script = document.createElement('script');
+            iframe.src = url;
+            script.src = url;
+            document.body.appendChild(iframe);
+            document.body.appendChild(script);
+            ifrWindow = iframe.contentWindow;
+            console.log(iframe);
+            console.log(ifrWindow);
+            console.log(ifrWindow.document.getElementByTagNames('pre'));
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="padding:100px;">
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+		&times;
+	</button> 成功！很好地完成了提交。
+        </div>
+        <div class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+		&times;
+	</button> 信息！请注意这个信息。
+        </div>
+        <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+		&times;
+	</button> 警告！请不要提交。
+        </div>
+        <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+		&times;
+	</button> 错误！请进行一些更改。
+        </div>
+
+    </div>
+    <!--有连接的警告框  -->
+    <div class="alert alert-success">
+        <a href="https://fanyi.baidu.com/translate?aldtype=16047&query=Overview&keyfrom=baidu&smartresult=dict&lang=auto2zh#zh/en/%E7%82%B9%E9%A4%90%0A%E9%A3%9F%E5%93%81%0A%E5%90%88%E8%AE%A1" class="alert-link">成功！很好地完成了提交。</a>
+    </div>
+    <div class="alert alert-info">
+        <a href="#" class="alert-link">信息！请注意这个信息。</a>
+    </div>
+    <div class="alert alert-warning">
+        <a href="#" class="alert-link">警告！请不要提交。</a>
+    </div>
+    <div class="alert alert-danger">
+        <a href="#" class="alert-link">错误！请进行一些更改。</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="container" style="padding: 100px 50px 10px;" >
+	
+	<button type="button" class="btn btn-primary" title="Popover title"  
+			data-container="body" data-toggle="popover" data-placement="top" 
+			data-content="顶部的 Popover 中的一些内容">
+		顶部的 Popover
+    </button>
+    <button type="button" class="btn btn-default" title="Popover title"  
+			data-container="body" data-toggle="popover" data-placement="left" 
+			data-content="左侧的 Popover 中的一些内容">
+		左侧的 Popover
+	</button>
+	<button type="button" class="btn btn-success" title="Popover title"  
+			data-container="body" data-toggle="popover" data-placement="bottom" 
+			data-content="底部的 Popover 中的一些内容">
+		底部的 Popover
+	</button>
+	<button type="button" class="btn btn-warning" title="Popover title"  
+			data-container="body" data-toggle="popover" data-placement="right" 
+			data-content="右侧的 Popover 中的一些内容">
+		右侧的 Popover
+	</button>
+</div>
+<script>
+$(function () { 
+	$("[data-toggle='popover']").popover();
+});
+</script>
+    <script>
+        
+    </script>
+</body>
+</html>

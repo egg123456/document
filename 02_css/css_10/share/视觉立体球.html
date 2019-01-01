@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+		.div1{
+			width: 300px;
+			height: 300px;
+			background-color: #0f0;
+			border-radius: 50%;
+			margin: 0 auto;
+			background: radial-gradient(ellipse at 100px 100px, #f00 40%,#0f0 60%);
+		}
+		.div2{
+			width: 300px;
+			height: 300px;
+			background-color: #0f0;
+			border-radius: 50%;
+			margin: 0 auto;
+			background: radial-gradient(ellipse at 150px 150px, #f00 50%,#0f0 60%);
+			/*at x x 指定渐变起始位置  */
+		}
+		 .radial-gradient {
+			 margin: 0 auto;			 
+			position: relative;
+			width: 262px; height: 262px;
+			border-radius: 50%;
+			background: linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0, linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%, repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+			background-size: 50% 100%, 100% 50%, 100% 100%;
+		} 
+		 .radial-gradient:after {
+			position: absolute;
+			top: 50%; left: 50%;
+			margin: -35px;
+			border: solid 1px #d9a388;
+			width: 68px; height: 68px;
+			border-radius: 50%;
+			box-shadow: 0 0 0 4px #da5b33, inset 0 0 0 27px #da5b33;
+			background: #b5ac9a;
+			content: '';
+		} 
+	</style>
+</head>
+<body>
+	<a href="https://www.zhangxinxu.com/wordpress/2017/11/css3-radial-gradient-syntax-example/">more</a>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="radial-gradient"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function showEvent(event) {
+            for (var i in event) {
+                console.log(i + ":" + event[i]);
+            }
+        }
+        window.onload = function() {
+            var reg = /^\w{6,}$/;
+            var inp = document.getElementById('userName');
+            var s1 = document.getElementById('s1');
+            inp.addEventListener('focus', function() {
+                this.style = "border:2px solid blue;";
+            });
+            inp.addEventListener('keyup', function(event) {
+                // showEvent(event);
+                // if (event.keyCode === 65) {
+                //     inp.value = "aaaaaaaaaaa";
+                // }
+                if (reg.test(this.value)) {
+                    this.style = "border:2px solid green;";
+                    s1.innerHTML = "输入正确";
+                    s1.style = "color:green;";
+                } else {
+                    this.style = "border:2px solid red;";
+                    s1.innerHTML = "用户名不得少于6位,由字母数字下划线组成";
+                    s1.style = "color:red";
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="userName"><span id="s1"></span>
+</body>
+
+</html>

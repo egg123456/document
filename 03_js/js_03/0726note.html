@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0726笔记</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		p,u{
+			text-decoration: none;
+			color: red;
+		}
+	</style>
+</head>
+<body style="font-size: 20px">
+<pre>
+一，条件分支语句
+	1，if语句
+		如果···否则··· 		让程序出现分支，有选择性的执行代码
+		语法：
+			if（条件表达式）{
+				条件为真时，执行这里的语句
+			}esle{
+				条件为假时，执行这里的语句
+			}
+		在语法层面有两个特烈：
+			1）可以省略else部分
+				var a = 10;
+				if( a >= 60){
+					alert('及格')；
+				} <p>
+			2）如果要执行的语句只有1条，可以省略大括号
+				var a = 10;
+				if( a >= 60)
+					alert('及格')；
+					alert('恭喜')；
+				else//报错Uncaught SyntaxError: Unexpected token else	因为if下不只有一条语句，且没有用大括号包住，
+					alert('不及格')；
+					alert('哈哈')；</p>
+	2，多分支语句
+		if···else if···else if···else if···else···
+		注意：结构
+	3，if语句的嵌套
+		用户输入自己的性别，然后输入年龄，判断能否结婚，男的22岁以上能结婚，女的20岁以上可以结婚
+			多层if语句：从外层开始判断
+		楼层中的if和else只能有一个，else if可以有多个
+		bmi指数=体重（kg）/身高^2(m);
+			低于18.5 		过瘦
+			18.5-24.99 		正常
+			25-27.99 		过重
+			28-31.99 		肥胖
+			大于32 			过于肥胖
+二，条件分支语句--switch case
+	<u>switch 进行的是全等比较=== swich(表达式)</u>
+	<u>case后亦可是表达式如case score<80$$score>60 switch(true)</u>
+	<script>
+		var xingzuo = prompt('请输入你的星座：');
+		switch(xingzuo){
+			case '天秤座'：alert('yangergang');break;
+			case '天蝎座'：alert('yangwang');break;
+			case '白羊座'：alert('fengyuxue');break;
+			default ：alert('zhongshengtong');break;
+		}
+	</script>
+	switch存在的意义在于简化了if语句
+	如果要将变量依次与不同的值进行对比的时候，区分情况的时候，使用switch语句
+	如果不写break：除了会执行当前case中的内容，还会无条件的执行后面case中的内容，直到遇到一个break挡住
+三，三元运算符<p>
+	这是js中唯一的一个需要三个元素参加运算的运算符
+	语法;
+			条件？val1:val2;
+		判断条件为true还是FALSE，如果为true，结果是val1，否则是val2
+		var salary =parseInt(prompt('请输入月薪：'));
+		alert('reward:'+(salary>10000? 1.5*salary : 1.2*salary));
+
+		var salary = parseInt(prompt('请输入月薪：'));
+		salary>=10000? alert('reward:'+1.5*salary) : alert('reward'+1.2*salary);</p>
+
+		总结：条件分支语句有三种，但是&& || '短路语法'也是类似条件分支语句
+		1）if……else if……else……（首先被想到，这个人无敌的）
+		2)switch case （某些方面很擅长，提升了代码的清晰符）
+		3)三元运算符（如果是在赋值的时候，根据条件有两个不同的值，要想起来用这个）
+		4）短路语法（经验问题，不熟练没问题）
+
+
+		苹果3 梨子2 橘子1，我想用200元买100水果，列举出所有可能；
+</pre>	
+</body>
+</html>

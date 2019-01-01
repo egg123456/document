@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            background-color: red;
+            border: 3px solid black;
+        }
+    </style>
+    <script src="../../jquery-3.2.1.js"></script>
+
+    <script>
+        $(function() {
+            $('button').on('click', function() {
+                alert(123);
+            });
+
+
+            $('div').on({
+                'mouseover': function() {
+                    $(this).css('background', 'yellow');
+                },
+                'mouseout': function() {
+                    $(this).css('background', 'blue');
+                },
+                'click': function() {
+                    console.log('click');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

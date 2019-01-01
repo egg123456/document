@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="../../../jquery-3.2.1.js"></script>
+    <!-- <script src="calculator.js"></script> -->
+    <script>
+        $(function() {
+            var calc = {};
+            calc.init = function() {
+                calc.val = $('.screen').html('');
+                calc.equation = $('.screen');
+                calc.fn = $('button.fn');
+                calc.eq = $('button.eq');
+                calc.ge = $('button').not(calc.fn);
+
+                calc.ge.on('click', function() {
+                    var newValue = $(this).html();
+                    calc.equation.html(function(index, oldvalue) {
+                        return oldvalue + newValue;
+                    })
+                    $(this).addClass('click');
+                    $(this).siblings().removeClass('click');
+                })
+
+                calc.eq.on('click', function() {
+                    calc.val = eval(calc.equation.html());
+                    calc.equation.html(function(index, oldvalue) {
+                        return oldvalue + "<br>" + calc.val;
+                    })
+                })
+
+                calc.fn.on('click', function(ev) {
+                    var con = $(this).html();
+                    console.log(con);
+                    switch (con) {
+                        case '←':
+                            calc.back();
+                            break;
+                        case '1/x':
+                            calc.dao();
+                            break;
+                    }
+                })
+            }
+            calc.init();
+
+            calc.back = function() {
+                calc.equation.html(function(i, old) {
+                    console.log(this);
+                    return $(this).html().slice(0, -1);
+                })
+            }
+
+            calc.dao = function() {
+
+            }
+
+
+
+            // $(document).on('keyup', function(ev) {
+            //     var code = ev.keyCode;
+            //     console.log(code);
+            //     console.log(ev);
+            //     if (ev.shiftKey) {
+            //         switch (code) {
+            //             case 56:
+            //                 tempstr = "*";
+            //                 break;
+            //             case 187:
+            //                 tempstr = "+";
+            //                 break;
+            //         }
+            //     }else if((code >= 48 && code >=57)||(code >=96&&code>=105)){
+
+            //     }
+            // })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="screen">123456</div>
+        <div class="key">
+            <button class="fn">MC</button><button class="fn">MR</button><button class="fn">MS</button><button class="fn">M+</button><button class="fn">M</button>
+            <button class="fn">&larr;</button><button class="fn">CE</button><button class="fn">C</button><button class="fn">+/_</button><button class="fn">√</button>
+            <button>7</button><button>8</button><button>9</button><button>/</button><button>%</button>
+            <button>4</button><button>5</button><button>6</button><button>*</button><button class="fn">1/x</button>
+            <button>1</button><button>2</button><button>3</button><button>-</button><button class="eq fn">=</button>
+            <button class="zero">0</button><button>.</button><button>+</button>
+        </div>
+    </div>
+</body>
+
+</html>

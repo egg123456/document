@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// var arr = ['B','F','D','A','G','E','C'];
+		// arr.sort();
+		// console.log(arr);
+
+		// 默认按照字符顺序排，不是按照数字的大小
+		// var arr = [32234,244,234,43,43,322,3,23,54,7,2,76,443];
+		// arr.sort();
+		// console.log(arr);
+
+		var arr = [32234,244,234,43,43,322,3,23,54,7,2,76,443];
+		arr.sort(function(a,b) {
+			// 如果a要放在b的前边，返回-1
+			if (a < b) {
+				return -1;
+			}else if (a > b) {
+			// 如果a要放在b的后边，返回1
+				return 1;
+			}else if (a == b) {
+			// 如果a和b不区分大小，返回0
+				return 0;
+			}
+		});
+		console.log(arr);
+
+		// 按照五角星的个数排列
+		// var arr = ['☆☆☆☆☆☆','☆','☆☆☆','☆☆☆☆☆','☆☆☆☆☆☆☆☆☆☆','☆☆☆☆☆','☆☆☆☆☆☆☆☆','☆☆☆☆☆','☆☆☆☆☆☆☆'];
+		// arr.sort(function(a,b) {
+		// 	if (a.length < b.lengh) {
+		// 		return -1;
+		// 	}else if (a.length > b.length) {
+		// 		return 1;
+		// 	}else if (a.length == b.length) {
+		// 		return 0;
+		// 	}
+		// });
+		// console.log(arr);
+
+		var arr = [{"xuehao":34,"name":"xiaoli"},{"xuehao":3},{"xuehao":5},{"xuehao":23},{"xuehao":65}];
+		arr.sort(function(a,b) {
+			if (a.xuehao < b.xuehao) {
+				return -1;
+			}else if (a.xuehao > b.xuehao) {
+				return 1;
+			}else if (a.xuehao == b.xuehao) {
+				return 0;
+			}
+		});
+		console.log(arr);
+
+	</script>
+</body>
+</html>

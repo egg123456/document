@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            position: absolute;
+        }
+    </style>
+    <script src='./jquery-3.2.1.js'></script>
+    <script>
+        $(function() {
+            $('button').on('click', function() {
+                $('div').animate({
+                    width: '500px',
+                    height: '100px'
+                }, 3000).animate({
+                    height: '500px'
+                }, 3000);
+                $(':animated').css('background-color', 'red');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div></div>
+</body>
+
+</html>

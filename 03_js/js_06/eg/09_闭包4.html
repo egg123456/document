@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		function fun1(m,n) {
+			n += m;
+			function fun2(m) {
+				alert(m + n);
+			}
+			return fun2;
+		}
+		var f = fun1(3,4);
+		f();//NaN    m 在fun2的作用域里边是undefined
+		f(6);//13
+	</script>
+</body>
+</html>

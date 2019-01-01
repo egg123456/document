@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		var num = parseInt(prompt('今天是星期2，请输入几天后：'));
+		var xingqiji = (num % 7 + 2) % 7;
+		alert('经计算' + num + '天后是星期' + (xingqiji == 0 && '日' || xingqiji));
+	</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+打开 langsin.html 
+
+在
+
+  <p class="three">要说取消手机牌照对产业的影响，我们没有大量的定量的分析，也没有建立数学模型进行模拟，所以要阐述观点，只能根据以往的经验进行模拟和分析，我想，和手机产业最为接近有可能进行对比的是电话机市场。对于普通大众来说，电话机毕竟也是高科技的产品，它最初主要是由运营商进行销售，而随着技术的演进和市场的变化，最终运营商基本退出这一市场，整个市场也成为一个无品牌、低利润的时代。</p>
+        </div>
+
+下加入
+
+<div class="revert">
+<div id="revert_top"><a href="#"><img src="images/info_head.jpg" />詹鹏</a></div>
+</div>
+
+
+
+预览   langsin.html
+
+修改 style.css  加入
+
+.revert
+{
+	width:538px;
+	height:228px;
+	border-style:solid;
+	border-width:1px;
+	color:#9C9A9C;
+	position:relative;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-size:12px;
+}
+
+预览   langsin.html
+
+
+修改 style.css  加入
+
+#revert_top
+{
+	width:540px;
+	height:30px;
+	background-image:url(images/1iUp.gif);
+	position:relative;
+	margin-left:-1px;
+	margin-top:-1px;
+	margin-right:-1px;
+	vertical-align:middle;
+	text-align:left;
+}
+   将  1iUp.gif  复制到 images下
+
+预览   langsin.html
+
+修改 style.css  加入
+
+#revert_top img
+{
+	border-width:0px;
+	position:relative;
+	margin-right:12px;
+}
+
+预览   langsin.html
+
+修改 style.css  加入
+
+#revert_top a
+{
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+	position:relative;
+	top:5px;
+	left:15px;
+}
+
+预览   langsin.html
+
+修改 style.css  加入
+
+#revert_top a:hover
+{
+	color:#000084;
+}
+
+预览   langsin.html
+
+打开   langsin.html
+
+在  <div id="revert_top"><a href="#"><img src="images/info_head.jpg" />詹鹏</a></div> 
+
+下加入
+
+ <div id="revert_content">
+            	<span class="span5">2007-11-15 12:52:20</span><br /><br />
+            	<span class="span6">“IT评论圈”置顶推荐！<br /><br />
+********************************************<br />
+IT评论圈——咱IT老百姓自己的圈子。目前已有数千位IT老百姓入驻。<br />
+闻道又先后，入圈无迟早。相约吐口水，如是而已。</span><br /><br /><br /><br />
+            	<span class="span7">来自圈子：<a href="#">[IT评论圈]</a></span>            </div>
+
+
+
+
+预览   langsin.html
+
+修改 style.css  加入
+
+#revert_content
+{
+	width:505px;
+	height:172px;
+	position:relative;
+	top:10px;
+	text-align:left;
+}
+
+预览   langsin.html
+
+修改 style.css  加入
+
+
+.span5
+{
+	float:right;
+	color:#000000;
+}
+
+预览   langsin.html
+
+修改 style.css  加入
+
+.span6
+{
+	color:#636563;
+}
+
+预览   langsin.html
+
+修改 style.css  加入
+
+
+
+.span7 a
+{
+	color:#000000;
+}
+
+预览   langsin.html
+
+修改  #revert_content  加入 属性
+
+   border-width:1px;
+   border-style:solid;
+
+
+                  体验内置 div
+
+预览   langsin.html
+
+            将以上的2个属性删除
+
+
+
+
+
+

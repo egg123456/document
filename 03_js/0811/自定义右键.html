@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 120px;
+            color: #666;
+            background-color: #ccc;
+            position: absolute;
+            display: none;
+        }
+        
+        ul {
+            list-style-image: url(../../q.png);
+            padding: 0 0 0 25px;
+        }
+    </style>
+    <script>
+        var num = 0;
+        window.onload = function() {
+            var box = document.querySelector('.box'),
+                ul = document.querySelector('ul');
+            document.oncontextmenu = function(ev) {
+                console.log(ev);
+                var left = ev.pageX,
+                    top = ev.pageY;
+                box.style = 'display:block;top:' + top + 'px;left:' + (left + 10) + 'px';
+                switch (ev.target.innerHTML) {
+                    case 'forward':
+                        history.forward();
+                        break;
+                    case 'back':
+                        history.back();
+                        break;
+                    case 'fresh':
+                        ++num;
+                        alert(num);
+                        location.reload();
+                        break;
+                }
+                ev.preventDefault();
+                // ev.stopPropagation();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>forward</li>
+            <li>back</li>
+            <li>fresh</li>
+            <li>前进</li>
+            <li>前进</li>
+        </ul>
+    </div>
+</body>
+
+</html>

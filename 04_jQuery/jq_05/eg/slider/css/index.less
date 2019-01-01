@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.slider{
+    width: 570px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+
+    overflow: hidden;
+    &>div{
+        position: absolute;
+        width:3000px;
+        img{
+            float:left;
+        }
+    }
+    &>span{
+        position: absolute;
+        font-size: 2em;
+        font-weight: 900;
+        top:180px;
+        z-index: 9;
+    }
+    &>span:last-of-type{
+        right:0;
+    }
+    ul{
+        position: absolute;
+        bottom: 0px;
+        left: 250px;
+        list-style: none;
+        overflow: hidden;
+        li{
+            float: left;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #f00;
+            margin: 8px;
+        }
+    }
+}

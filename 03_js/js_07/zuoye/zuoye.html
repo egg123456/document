@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+	<p class="demo" id="demo">hello icketang</p>
+	<script>
+		// var num = prompt('请输入要一个数：');
+		// console.log('第一题',num,/^[0-9]+\.[0-9]+$|^[0-9]+$/.test(num));
+
+		// var phone = prompt('请输入要一个电话号码：');
+		// console.log('第二题',phone,/^0[0-9]{2,3}-[0-9]{8}$/.test(phone));
+
+		// var website = prompt('请输入要一个网址：');
+		// if(/^w{3}\.[\w]+\.com$/.test(website)){
+		// 	console.log(website,'是网址进入本地网站','www.icketang.com');
+		// }
+
+		// function trim(str) {
+		// 	var arr = str.split('');
+		// 	console.log(arr);
+		// 	for (var i = 0; i < arr.length; i++) {
+		// 		if(arr[0]==' ')
+		// 			console.log(arr.shift());
+		// 		else break;
+		// 	}console.log(arr.join(''));
+		// 	// body...
+		// }
+		// var str1 = '         lkjy';
+		// console.log(str1);
+		// trim(str1);
+
+		// //第五题
+		// var a = document.getElementsByTagName('p');
+		// alert(a[0].innerHTML);
+        //  console.log('第五题：'+a[0].innerHTML);
+
+		//第六题
+		var str = 'div#demo.demo';
+		var arrj = str.indexOf('#');
+		var arrd = str.indexOf('\.');
+		var arr1 = str.split(/[#\.]/g);
+		console.log(arr1,arrj,arrd);
+		if (arrj<arrd)
+			console.log(str+'\n','<'+arr1[0]+' id='+'\"'+arr1[1]+'\"'+' class='+' id='+'\"'+arr1[2]+'\"'+'>'+'<'+arr1[0]+'>');
+		else	
+			console.log(str+'\n','<'+arr1[0]+' class='+' id='+'\"'+arr1[1]+'\"'+' id='+' id='+'\"'+arr1[2]+'\"'+'>'+'<'+arr1[0]+'>');
+
+
+		// //第七题
+		// var reg17 = /[\u4e00-\u9fa5]{2,4}/;
+		// var str17 = prompt('第7题：');
+		// if (reg17.test(str17)) {
+		// 	alert('是2-4汉字');
+		// }else{
+		// 	alert('不是2-4汉字');
+		// }
+
+		// //第八题
+		// var reg11 = /[a-zA-Z0-9\u4e00-\u9fa5]{6,8}/;
+		// var str11 = prompt('第八题：');
+		// if (reg11.test(str11)) {
+		// 	alert('是有汉字字母数字下划线组成');
+		// }else{
+		// 	alert('有非法字符或者不是6-8个字符');
+		// }
+
+	</script>
+</body>
+</html>

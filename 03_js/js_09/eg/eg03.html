@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var oUl = document.getElementById('ul1');
+            // oUl.firstElementChild.style = "color:red;";
+            console.log(oUl.children); //得到的是伪(类)数组对象
+            for (var i = 0; i < oUl.children.length; i++) {
+                if (i % 2 == 0) {
+                    oUl.children[i].style = "color:red;";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>第1个li</li>
+        <li>第2个li</li>
+        <li>第3个li</li>
+        <li>第4个li</li>
+        <li>第5个li</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var table = document.querySelector('table'),
+                btn = document.querySelector('.add'),
+                num = 1,
+                btnlist = [],
+                tr, td;
+            btn.onclick = function() {
+                tr = table.insertRow(num);
+                td0 = tr.insertCell(0);
+                td0.innerHTML = num;
+                td1 = tr.insertCell(1);
+                num++;
+                var a = document.createElement('a');
+                a.innerHTML = 'delete';
+                a.setAttribute('class', 'color-r');
+                td1.appendChild(a);
+                btnlist.push(a);
+                bind();
+            }
+
+            function bind() {
+                for (var i = 0; i < btnlist.length; i++) {
+                    btnlist[i].onclick = function() {
+                        table.deleteRow(this.parentNode.parentNode.rowIndex);
+                        num--;
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .color-r {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="add">+</button>
+    <table width="400">
+        <tr>
+            <td>row-num</td>
+            <td>del</td>
+        </tr>
+    </table>
+</body>
+
+</html>

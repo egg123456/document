@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            var num = 0;
+            $('button:eq(0)').on('click', function() {
+                $('body').append('<span></span>');
+                $('span').attr('class', 'd' + num);
+                num++;
+            })
+            $('button:eq(1)').on('click', function() {
+                $('body').prepend('<div></div>');
+            })
+
+            $('body').prepend('<div></div>');
+            $('body').before('<div></div>');
+            $('body').after('<div></div>');
+        })
+    </script>
+</head>
+
+<body>
+    <button>btn</button>
+    <button>btn</button>
+</body>
+
+</html>

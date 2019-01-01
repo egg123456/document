@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            var i = 1;
+            // $('button').on('click', function() {
+            //     var btn = document.createElement('button');
+            //     btn.innerHTML = "按钮" + i;
+            //     document.body.appendChild(btn);
+            //     i++
+            // });
+            // $('body').delegate('button', 'click', function() {
+            //     var btn = $('<button>按钮</button>');
+            //     $('body').append(btn);
+            // });
+
+            $('body').on('click', '.c1', function() {
+                var btn = $('<button class="c1">按钮</button>');
+                $('body').append(btn);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button class="c1">按钮</button>
+</body>
+
+</html>

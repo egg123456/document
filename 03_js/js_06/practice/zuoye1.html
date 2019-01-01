@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+	// //第一题
+	// 	function repeat(a,b) {
+	// 		var sum = '';
+	// 		for (var i = 1; i <= b ; i++)
+	// 			sum += a;
+	// 		return sum;
+	// 		// body...
+	// 	}
+	// 	var rep = prompt('请输入重复式样：');
+	// 	var num = parseInt(prompt('请输入重复次数：'));
+	// 	alert(repeat(rep,num));
+
+	// //第二题
+	// 	var num1 = parseInt(prompt('请输入层数：'));
+	// 	var sum;
+	// 	for(var i = 1 ; i <= num1 ; i++){
+	// 		sum = repeat(' ',num1-i) + repeat('*',2*i-1);
+	// 		console.log(sum);
+	// 		sum = '';
+	// 	}
+
+	// //第三题
+	// 	function rev(str){
+	// 		var arr=str.split('');//每个字母分别变成数组中的一个数
+	// 		arr.reverse();
+	// 		return arr.join('');
+	// 	}
+	// 	console.log(rev('afdsafdsaf'));
+
+	// //第四题
+	// 	console.log('i come from Beijing'.split(' ').reverse().join(' '));
+
+	// //第五题
+	// 	function rightchange(char,n){
+	// 		var arr=char.split('');//转成数组，把所有的字符一个一个拆开
+	// 		for (var i = 0; i < n; i++) {
+	// 			arr.unshift(arr.pop());
+	// 		}
+	// 		return arr.join('');//转为字符串
+	// 	}
+	// 	console.log(rightchange('abcdefg',2));
+
+	// //第六题
+	// 	//mmmiijjjkkkkksport
+	// 	function maxr(char) {
+	// 		var strArr = [];
+	// 		var num = 1;
+	// 		for(var i = 0;i < char.length;i++){
+	// 			if (i + 1 < char.length) {
+	// 				if (char.charAt(i) == char.charAt(i + 1)) {
+	// 					num++;
+	// 				}else{
+	// 					strArr.push(char.substr(i + 1 - num,num));
+	// 					num = 1;
+	// 				}
+	// 			}else{
+	// 				strArr.push(char.substr(i + 1 - num,num));
+	// 				num = 1;
+	// 			}
+	// 		}
+	// 		console.log(strArr);
+
+	// 		strArr.sort(function(a,b) {
+	// 			if (a.length < b.length) {
+	// 				return 1;
+	// 			}else if (a.length > b.lengt) {
+	// 				return -1;
+	// 			}else{
+	// 				return 0;
+	// 			}
+	// 		});
+	// 		return strArr[0];
+	// 	}
+	// 	var str = 'mmmiijjjkkkkksprt';
+	// 	console.log(maxr(str));
+
+	// //第七题
+	// 	var scoreArr=[45,98,78,99,63,40,58,98,85,67];
+	// 	var sum = 0;
+	// 	for (var i = 0; i < scoreArr.length; i++) {
+	// 		sum += scoreArr[i]/scoreArr.length;
+	// 	}
+	// 	console.log(sum);
+	// 	var num = 0;
+	// 	for (var j = 0; j < scoreArr.length; j++) {
+	// 		if (scoreArr[j] > sum)
+	// 			num++;
+	// 	}console.log('大于人数：'+num);
+
+
+	// //第八题
+	// 	var arr=[45,98,78,99,63,40,58,98,85,67];
+	// 	var big=0;
+	// 	var low=0;
+	// 	for (var i = 0; i < arr.length; i++) {
+	// 		if(arr[i]>arr[big]){
+	// 			big=i;
+	// 		}
+
+	// 		if(arr[i]<arr[low]) {
+	// 			low=i;
+	// 		}
+
+	// 	}
+ // 		console.log('最高分：'+arr[big]+'下标为:'+big+';\n'+'最低分：'+arr[low]+'下标为:'+low+';\n');
+ 	// // 第九题
+ 	// 	var fm = 0 ;
+ 	// 	var fz = 0;
+ 	// 	wai:for(var i = 1; i < 100; i++)
+ 	// 		for(var j= 1; j < 100; j++){
+ 	// 			if(Math.pow(i,2)+j*j > 10000)continue wai;
+ 	// 			else{
+ 	// 				fm++;
+ 	// 				for(var k = 1; k <= 100 ; k++){
+ 	// 					if (Math.sqrt(Math.pow(i,2)+j*j) == k){
+ 	// 						fz++;
+ 	// 						//console.log(Math.sqrt(Math.pow(i,2)+j*j));
+ 	// 					}
+ 	// 				}
+ 				
+ 	// 			}
+ 	// 		}
+ 	// 		console.log(fz/fm);
+
+  	// //第十题
+  	// function maxsame(char1,char2){
+  	// 	var strArr=[];
+  	// 	for (var i = 0; i <char1.length; i++) {
+  	// 		//依次的指向对比的字符串的开头；
+  	// 		for (var j = i+1; j <=char1.length; j++) {
+  	// 			var str=char1.substring(i,j);
+  	// 			//依次由开头往后依次的取得字符串进行对比；
+  	// 			if(char2.indexOf(str)==-1){
+  	// 			//当ab没有相同的，有相同的继续循环
+  	// 				if(j==i+1){
+  	// 					break;
+  	// 				//就一个相同的都没有；结束循环；不输出；
+  	// 				}else{
+  	// 					strArr.push(char1.substring(i,j-1));
+  	// 					break;
+  	// 				  }
+  	// 				//如果不只是ab，就将i-(j-1)的字符串放进strArr；
+  	// 			}else {
+  	// 				if (j ==char1.length) { 
+			// 		strArr.push(char1.substring(i,j));
+			// 			break;
+  	// 					}
+  	// 			    }
+  	// 			}
+  	// 		}
+			// console.log(strArr);
+  	// 	}
+  		
+
+  	// maxsame('abcdefghijklmn','mndefghlm');
+
+
+
+
+
+  	//第十一题
+  		var str='i love javascript cai guai'.split(' ');
+  		//把字符串变成数组；
+  		for (var i = 0; i < str.length; i++) {
+  			str[i]=str[i].charAt(0).toUpperCase()+str[i].substr(1);
+  			//然后把每个数组的内容的字符串的第一个字母拉出来变大写，
+  			//之后再把其他的从以后的字母输出；
+  		}
+  		console.log(str.join(' '));
+  		//将数组变成字符串输出；
+
+
+
+
+	</script>
+</body>
+</html>

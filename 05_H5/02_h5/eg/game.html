@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            var arr = ['c1', 'c2', 'c3', 'c4', 'c5'],
+                ls = localStorage;
+            ls.clear();
+            $('.start').on('click', function() {
+                var ranNum = Math.floor(Math.random() * arr.length);
+                var date = new Date();
+                var key = date.getTime();
+                console.log(key);
+                var val = $('input').val() + arr[ranNum];
+                console.log(val);
+                ls.setItem(key, val);
+                $(this).html(function() {
+                    return 'stop';
+                });
+                // conole.log($('ol').)
+                if ($('ol').length < 1) {
+                    $('ol').css({
+                        display: 'block'
+                    })
+                }
+                $('ol').append($('<li></li>')).html(function() {
+                    return 'congratulation      ' + val;
+                });
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text center">欢饮使用</h1>
+        <div class="input group">
+            <input type="text" placeholder="请输入用户名">
+            <button type="button" class="start">开始</button>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="text-center">中奖列表</h2>
+        <div class="record">
+            <ol></ol>
+        </div>
+    </div>
+</body>
+
+</html>

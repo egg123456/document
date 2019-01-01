@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Computer(cpu, ssd, ram, keyboard, mouse) {
+            //构造函数
+            this.cup = cpu;
+            this.ssd = ssd;
+            this.ram = ram;
+            this.keyboard = keyboard;
+            this.mouse = mouse;
+            this.start = function() {
+                console.log('您的电脑正在开启');
+            }
+
+        }
+        var c1 = new Computer('i5', '250g', '8g', 'shuangfeiyan', 'lingse');
+        console.log(c1.cup);
+        console.log(c1);
+        c1.start();
+    </script>
+    <style>
+        p {
+            letter-spacing: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <D style="letter-spacing:5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptate doloribus dicta vitae cumque mollitia dolor quis qui corporis dolorum officia nostrum laudantium magnam, molestias ex minus numquam! Mollitia, cupiditate!</D>
+</body>
+
+</html>

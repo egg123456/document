@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例</title>
+	<script>
+	window.onload=function(){
+		var creatediv = function(){
+			var div=document.createElement('div');
+			var body=document.body;
+			body.appendChild(div);
+
+			var button_var = document.createElement("button");  
+			button_var.setAttribute('id','btn');
+	
+			div.appendChild(button_var);
+			button_var.innerHTML='按钮';
+			
+		}
+
+        creatediv();
+		var btn = document.getElementsByTagName('button')[0];
+		btn.onclick = function(){
+			creatediv();
+		}
+		
+		
+
+	}
+</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.banner{
+			width: 1280px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.banner .exit{
+			position: absolute;
+			bottom: 10px;
+			right:20px;
+			color: orange;
+		}
+		.exit span{
+			color: white;
+		}
+		.column{
+			border: 1px solid #aaa;
+			height: 40px;
+			background-color: #e5e5e5;
+		}
+		.column li{
+			width: 150px;
+			float: left;
+			font-size: 14px;
+			text-align: center;
+			line-height: 40px;
+			transform: skewX(-30deg);
+			border-right: 1px solid #888;
+		}
+		li .column2,.column3{
+			padding-left: 20px;
+			line-height: 20px;
+			width: 100px;
+		}
+		li p{
+			transform: skewX(30deg);
+		}
+		li.columnfirst{
+			margin-left: 200px;
+		}
+		li.columnlost{
+			border: none;
+		}
+		.contain{
+			width: 980px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.underline{
+			height: 50px;
+			border-bottom: 2px solid #003979;
+		}
+		.news_1{
+			display: inline-block;
+			height: 30px;
+			padding: 0px 10px;
+			transform: skewX(-30deg);
+			background-color: #003979;	
+			margin: 20px 0px 0px 10px;		
+		}
+		.underline p{
+			padding: 0 10px;
+			border: 1px solid #aaa;
+			background-color: #003979;
+			float: right;
+		}
+		.news_1 .bt1{
+			float: left;
+			font-size: 18px;
+			line-height: 30px;
+			margin-left: 10px;
+			transform: skewX(30deg);
+			border: none;	
+		}
+		.date{
+			margin-top: 27px;
+			float: right;
+			width: 200px;
+		}
+		.content{
+			width: 980px;
+			height: 305px;
+			background-color: #ddd;
+			color: red;
+			font-size: 14px;
+			padding: 22px;
+		}
+		.content div{
+			float: left;
+			margin-right: 17px;
+		}
+		.content-top{
+			background-color: #fff;
+			padding: 17px;
+		}
+		.content-top dl{
+			width: 180px;
+			line-height: 28px; 
+			padding-left: 110px;
+		}
+		dl.fj1{
+			background: url(images/wurongrong.png) no-repeat;
+		}
+		dl.fj2,dl.fj3,dl.fj4{
+			background: url(images/杨璐.png) no-repeat;
+		}
+		.content span{
+			color: black;
+		}
+		.content-top p{
+			font-weight: bold;
+		}
+		.content-top-left{
+			display: inline-block;
+		}
+		div.content-top-right{
+			display: inline-block;
+			background-color: #e5e5e5;
+			width: 280px;
+			height: 130px;
+			margin-right: 0px;
+			padding: 10px;
+		}
+		p.duan{
+			color: black;
+			font-weight: 400;
+			text-indent: 2em;
+		}
+		.content-bottom dl{
+			width: 110px;
+			float: left;
+			line-height: 30px;
+			padding-left: 110px;
+			margin: 20px 0px 0px 0px;
+		}
+		dl.j1{
+			background: #fff url(images/fengyunfei.png) no-repeat;
+		}
+		dl.j2{
+			background: #fff url(images/tianhongxia.png) no-repeat;
+		}
+		dl.j3{
+			background: #fff url(images/王芳.png) no-repeat;
+		}
+		dl.j4{
+			background: #fff url(images/严灵.png) no-repeat;
+		}
+		.footer{
+			height: 40px;
+			background-color: #003979;
+			margin-top: 30px;
+		}
+		.news .month{
+			background-color: #fff;
+		}
+		.column3,.column4{
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<img src="images/kv.png" alt="">
+		<p class="exit">abcdefg123 <span>欢迎回来</span> 退出</p>
+	</div>
+	<div class="column">
+		<ul type="none">
+			<li class="columnfirst"><p>电话邀约录音竞赛</p></li>
+			<li><p class="column2">新奇骏原创内容微博分享竞赛</p>
+			</li>
+			<li><p class="column3">网络公关软文
+			分享竞赛</p></li>
+			<li><p class="column4">车主活动竞赛</p></li>
+			<li><p>每月榜单汇总</p></li>
+			<li class="columnlost"><p>大赛精彩回顾</p></li>
+		</ul>
+	</div>
+	<div class="contain">
+		<div class="news">
+			<div class="underline">
+				<div class="news_1">
+					<p class="bt1">
+					电话邀约录音竞赛</p>
+				</div>
+				<div class="date">
+					<p>7月</p>
+					<p>6月</p>
+					<p class="month">5月</p>
+				</div>
+			</div>
+			<div class="content">
+				<div class="content-top">
+					<div class="content-top-left">
+						<dl class="fj1">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+							<dd>专营店：<span>上饶东信</span> </dd>
+						</dl>
+						<p>作品描述:</p>
+						<span>突出奇骏产品卖点 不断挖掘客户信息和邀约进店</span>
+					</div>
+					<div>
+						<img src="images/border.png" height="150px" alt="">
+					</div>
+					<div class="content-top-right">
+						<p>点评：</p>
+						<p class="duan">额wowUI维护费实际上飞机击杀回复很少见啊解决韩师傅讲哈开始 沙河街  沙河金沙江哈法无回复我还覅无回复奥委会按时发生凤飞飞的说法是范德萨发撒的发生啊发顺丰大杀四方法师法犯法孙菲菲</p>
+					</div>
+				</div>
+				<div class="content-bottom">
+					<div class="jianjie">
+						<dl class="j1">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j2">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j3">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j4">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="news">
+			<div class="underline">
+				<div class="news_1">
+					<p class="bt1">
+					原创内容微博分享竞赛</p>
+				</div>
+				<div class="date">
+					<p>10月</p>
+					<p>9月</p>
+					<p class="month">8月</p>	
+				</div>
+			</div>
+			<div class="content">
+				<div class="content-top">
+					<div class="content-top-left">
+						<dl class="fj2">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+							<dd>专营店：<span>上饶东信</span> </dd>
+						</dl>
+						<p>作品描述:</p>
+						<span>突出奇骏产品卖点 不断挖掘客户信息和邀约进店</span>
+					</div>
+					<div>
+						<img src="images/che.png" height="150px" alt="">
+					</div>
+					<div class="content-top-right">
+						<p>点评：</p>
+						<p class="duan">额wowUI维护费实际上飞机击杀回复很少见啊解决韩师傅讲哈开始 沙河街</p>
+					</div>
+				</div>
+				<div class="content-bottom">
+					<div class="jianjie">
+						<dl class="j1">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j2">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j3">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j4">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="news">
+			<div class="underline">
+				<div class="news_1">
+					<p class="bt1">
+					网络公关软文分享竞赛</p>
+				</div>
+				<div class="date">
+					<p>10月</p>
+					<p>9月</p>
+					<p class="month">8月</p>					
+				</div>
+			</div>
+			<div class="content">
+				<div class="content-top">
+					<div class="content-top-left">
+						<dl class="fj3">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+							<dd>专营店：<span>上饶东信</span> </dd>
+						</dl>
+						<p>作品描述:</p>
+						<span>突出奇骏产品卖点 不断挖掘客户信息和邀约进店</span>
+					</div>
+					<div>
+						<img src="images/che.png" height="150px" alt="">
+					</div>
+					<div class="content-top-right">
+						<p>点评：</p>
+						<p class="duan">额wowUI维护费实际上飞机击杀回复很少见啊解决韩师傅讲哈开始 沙河街</p>
+					</div>
+				</div>
+				<div class="content-bottom">
+					<div class="jianjie">
+						<dl class="j1">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j2">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j3">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j4">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="news">
+			<div class="underline">
+				<div class="news_1">
+					<p class="bt1">
+					车主活动竞赛</p>
+				</div>
+				<div class="date">
+					<p>10月</p>
+					<p>9月</p>
+					<p class="month">8月</p>	
+				</div>
+			</div>
+			<div class="content">
+				<div class="content-top">
+					<div class="content-top-left">
+						<dl class="fj4">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+							<dd>专营店：<span>上饶东信</span> </dd>
+						</dl>
+						<p>作品描述:</p>
+						<span>突出奇骏产品卖点 不断挖掘客户信息和邀约进店</span>
+					</div>
+					<div>
+						<img src="images/che.png" height="150px" alt="">
+					</div>
+					<div class="content-top-right">
+						<p>点评：</p>
+						<p class="duan">额wowUI维护费实际上飞机击杀回复很少见啊解决韩师傅讲哈开始 沙河街  </p>
+					</div>
+				</div>
+				<div class="content-bottom">
+					<div class="jianjie">
+						<dl class="j1">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j2">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j3">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+					<div class="jianjie">
+						<dl class="j4">
+							<dd>姓名：<span>吴荣荣</span> </dd>
+							<dd>年龄：<span>22</span> </dd>
+							<dd>岗位：<span>电销售</span> </dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer"></div>
+</body>
+</html>

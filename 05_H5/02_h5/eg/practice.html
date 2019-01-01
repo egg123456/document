@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.2.1.js"></script>
+    <!-- <script>
+        window.onload = function() {
+            var btnList = document.getElementsByTagName('button'),
+                inp = document.getElementsByTagName('textarea')[0],
+                ls = localStorage,
+                ul = document.createElement('ul');
+            btnList[0].onclick = function() {
+                console.log(inp.value);
+                console.log(inp.innerHTML);
+                ls.setItem(function() {
+                    return inp.value.split(',');
+                })
+                clearInp();
+            }
+            btnList[1].onclick = function() {
+                ls.removeItem(function() {
+                    console.log('removeItem' + inp.value);
+                    return inp.value;
+                })
+                clearInp();
+
+            }
+            btnList[2].onclick = function() {
+                ls.setItem(function() {
+                    return inp.value;
+                })
+                clearInp();
+
+            }
+            btnList[3].onclick = function() {
+                for (var key in object) {
+                    console.log(key, ls.getItem(key));
+                }
+                clearInp();
+            }
+
+            function clearInp() {
+                inp.value = '';
+            }
+
+        }
+    </script> -->
+    <script>
+        $(function() {
+            var ls = localStorage;
+            $('button').eq(0).on('click', function() {
+                var key = new Date().getTime();
+                var val = $('textarea').val();
+                console.log(val);
+                ls.setItem(key, val);
+                console.log(ls);
+                if ($('table').length < 2) {
+                    $('tanle').css('display:table');
+                }
+                $('table').append($('<tr><td><td><td>${key}<td><td><td><tr>'));
+            });
+        })
+    </script>
+
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="1"></textarea>
+    <button>add</button>
+    <button>dele</button>
+    <button>modify</button>
+    <button>observ</button>
+    <table style="display:none;width:400px">
+        <tr>
+            <td>allselect</td>
+            <td>key</td>
+            <td>value</td>
+        </tr>
+    </table>
+</body>
+
+</html>

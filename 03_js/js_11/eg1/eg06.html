@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var btn = document.querySelector('.btn'),
+                ul1 = document.querySelector('.ul1'),
+                ul2 = document.querySelector('.ul2');
+
+            btn.onclick = function() {
+                var temp = ul1.removeChild(ul1.querySelector('li'));
+                ul2.appendChild(temp);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button class="btn">anniu</button>
+    <ul class="ul1">
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <li>列表项4</li>
+        <li>列表项5</li>
+        <li>列表项6</li>
+
+    </ul>
+    <ul class="ul2"></ul>
+</body>
+
+</html>

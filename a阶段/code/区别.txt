@@ -1,0 +1,153 @@
+padding-top、margin-top和top的区别
+
+
+padding-top:10px;是指容器内的内容距离容器的顶部有10个像素，是包含在容器内的；
+
+margin-top:10px;是指容器本身的顶部距离其他容器有10个像素，不包含在容器内；
+
+
+top:10px;是指容器本身的顶部距离页面的顶端有10个像素
+
+
+
+
+
+  
+
+举例： 
+
+
+
+
+<table> 
+<tr> 
+<td>11</td> 
+</tr> 
+</table>   
+
+
+<table style="top:100px;"> 
+<tr> 
+<td>22</td> 
+</tr> 
+</table>   
+
+
+那么无论页面上面还有什么，这个table与页面顶端的距离始终是100px。 
+
+<table> 
+<tr> 
+<td>11</td> 
+</tr> 
+</table>   
+
+
+
+<table style="margin-top:100px;"> 
+<tr> 
+<td>22</td> 
+</tr> 
+</table>   
+
+
+那么这个table与他上面的table之间的间距为100px  
+
+
+
+
+
+CSS里面position：relative与position：absolute 区别
+
+
+position：absolute这个是绝对定位
+
+
+是相对于浏览器的定位。
+
+比如：position：absolute；left:20px;top:80px; 这个容器始终位于距离浏览器左20px,距离浏览器上80px的这个位置。
+
+position：relative是相对定位
+
+
+是相对于前面的容器定位的。这个时候不能用top left在定位。应该用margin。
+
+比如：<div class="1"></div><div class="2"></div>
+
+当1固定了位置。1的样式float:left;width:100px; height:800px;
+
+2的样式为float:left; position：relative；margin-left:20px;width:50px;
+
+2的位置在1的右边，距离120px 
+
+
+
+
+
+
+CSS float 属性
+
+
+
+定义和用法
+
+
+
+float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。
+
+如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。
+
+注释：假如在一行之上只有极少的空间可供浮动元素，那么这个元素会跳至下一行，这个过程会持续到某一行拥有足够的空间为止。
+
+
+
+
+
+
+
+
+
+
+
+ 调错技巧
+
+
+ 1.确定错误发生的位置
+
+假如错误影响了整体布局，则可以逐个删除div块，直到删除某个div块后显示恢复正常，即可确定错误发生的位置。
+
+
+ 2.利用border属性确定出错元素的布局特性
+
+使用float属性布局一不小心就会出错。这时为元素添加border属性确定元素边界，错误原因即水落石出。
+
+
+ 3.float元素务必指定width属性
+
+很多浏览器在显示未指定width的float元素时会有bug。所以不管float元素的内容如何，一定要为其指定width属性。
+
+
+
+
+ 4. float元素不能指定margin和padding等属性
+
+IE在显示指定了margin和padding的float元素时有bug。因此不要对float元素指定margin和padding属性（可以在float
+
+元素内部嵌套一个div来设置margin和padding）。
+
+
+5.float元素的宽度之和要小于100%
+
+假如float元素的宽度之和正好是100%，某些古老的浏览器将不能正常显示。因此请保证宽度之和小于99%。
+
+
+
+
+6.开头是不是忘了写下面这行DTD： 　
+
+
+　<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+

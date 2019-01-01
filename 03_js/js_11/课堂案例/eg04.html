@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 封装document.querySelectorAll(selector)；
+        function $(selector) {
+            var elems = document.querySelectorAll(selector);
+            return elems;
+        }
+        // 
+        function each(elems, callback) {
+            for (var i = 0; i < elems.length; i++) {
+                callback(i, elems[i]);
+            }
+        }
+
+        function css(elems, style, val) {
+            each(elems, function(index, elem) {
+                elem.style = style + ":" + val + ";";
+            })
+        }
+        window.onload = function() {
+            var elem = $('.d1');
+            css(elem, 'color', 'red');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="d1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aliquam esse labore molestias recusandae ratione, enim, ut optio et quis vitae illum. Iure corrupti id a perspiciatis nulla delectus facere!</div>
+    <div class="d1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aliquam esse labore molestias recusandae ratione, enim, ut optio et quis vitae illum. Iure corrupti id a perspiciatis nulla delectus facere!</div>
+    <div class="d1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aliquam esse labore molestias recusandae ratione, enim, ut optio et quis vitae illum. Iure corrupti id a perspiciatis nulla delectus facere!</div>
+    <div class="d1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aliquam esse labore molestias recusandae ratione, enim, ut optio et quis vitae illum. Iure corrupti id a perspiciatis nulla delectus facere!</div>
+    <div class="d1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aliquam esse labore molestias recusandae ratione, enim, ut optio et quis vitae illum. Iure corrupti id a perspiciatis nulla delectus facere!</div>
+    <div class="d1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aliquam esse labore molestias recusandae ratione, enim, ut optio et quis vitae illum. Iure corrupti id a perspiciatis nulla delectus facere!</div>
+    <div class="d1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aliquam esse labore molestias recusandae ratione, enim, ut optio et quis vitae illum. Iure corrupti id a perspiciatis nulla delectus facere!</div>
+</body>
+
+</html>

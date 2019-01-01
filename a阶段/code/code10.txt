@@ -1,0 +1,98 @@
+打开 langsin.html 
+
+在
+
+ <a class="right_title_href" href="#"><div id="right_title"><span>未来的手机制造商或者要做大，或者就做小</span></div></a>
+
+下加入
+
+ <div id="right_time">
+        	<span id="span1">2007-11-15 10:24:52</span>
+            <div class="line1"></div>
+            <span id="span2">大 中 小</span>
+            <span id="span3">标签：<a href="#">it/科技</a></span>
+        </div>
+
+预览 langsin.html
+
+
+修改 style.css 加入
+
+#right_time
+{
+	width:500px;
+	height:70px;
+}
+
+预览 langsin.html
+
+修改 style.css 加入
+
+#right_time #span1
+{
+	font-size:14px;
+	float:right;
+	color:#313031;
+	position:relative;
+	margin-top:5px;
+}
+
+预览 langsin.html
+
+修改 style.css 加入
+
+.line1
+{
+	width:100%;
+	border-style:dashed;
+	border-top-width:1px;
+	border-bottom-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-color:#6b696b;
+	position:relative;
+	top:5px;
+}
+
+预览 langsin.html
+
+修改 style.css 加入
+
+#right_time #span2
+{
+	font-size:12px;
+	float:right;
+	color:#313031;
+	position:relative;
+	margin-top:-10px;
+}
+
+预览 langsin.html
+
+修改 style.css 加入
+
+#span3
+{
+	font-size:13px;
+	float:left;
+	color:#737573;
+}
+
+预览 langsin.html
+
+修改 style.css 加入
+
+#span3 a
+{
+	color:#313031;
+}
+
+预览 langsin.html
+
+
+
+
+
+
+
+

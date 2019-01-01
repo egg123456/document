@@ -1,0 +1,90 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-indexp1 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: -81px 0px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp10 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: 0px -162px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp11 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: 0px -81px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp12 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: -81px -81px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp2 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: -162px 0px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp3 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: -162px -81px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp4 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: 0px 0px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp5 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: -81px -162px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp6 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: -162px -162px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp7 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: -243px 0px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp8 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: -243px -81px;
+  width: 81px;
+  height: 81px;
+}
+.icon-indexp9 {
+  background-image: url(../imgs/spritesheet.png);
+  background-position: -243px -162px;
+  width: 81px;
+  height: 81px;
+}

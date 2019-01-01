@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="../bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src ="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <style>
+        .row {
+            background: pink;
+        }
+        
+        .row div {
+            background: #fff;
+            border: 1px solid green;
+            color: red;
+            background-color: #f00;
+        }
+        
+        .row div:nth-child(1) {
+            height: 100px;
+        }
+        
+        .row div:nth-child(2) {
+            background: orange;
+        }
+        
+        .row div:nth-child(3) {
+            /* background: skyblue; */
+        }
+        
+        .row .clearfix {
+            /* background-color: yellow !important;  */
+            background: yellow;
+        }
+        
+        .clearfix:after {
+            display: block;
+            content: "";
+            clear: none;
+        }
+        /* .clearfix::before {
+             clear: both; 
+    }
+    */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+            <!-- Add the extra clearfix for only the required viewport -->
+            <div class="clearfix visible-xs-block"></div>
+
+            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+            <!-- <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div> -->
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+            <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

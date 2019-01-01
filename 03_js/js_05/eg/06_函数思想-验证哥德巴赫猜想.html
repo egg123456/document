@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// 找约数的函数
+		function yueshu(a) {
+			// 计算a的约数的个数
+			var count = 0;
+			for (var i = 0; i <= a; i++) {
+				if (a % i == 0) {
+					count++;
+				}
+			}
+			return count;
+		}
+
+		// 判断是不是质数
+		function isZhishu(m) {
+			if (yueshu(m) == 2) {
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		// 用户输入数字
+		var oushu = parseInt(prompt('请输入一个偶数：'));
+		// 拆分，拆分的思想就是穷举
+		for(var i = 1;i < oushu / 2;i+=2){
+			if (isZhishu(i) && isZhishu(oushu - i)) {
+				console.log(oushu + '可拆分为' + i + '与' + (oushu - i) +'的和');
+			}
+		}
+	</script>
+</body>
+</html>

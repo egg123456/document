@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.slider {
+  width: 570px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.slider.div {
+  position: absolute;
+  width: 3000px;
+}
+.slider.div img {
+  float: left;
+}
+.slider > span {
+  position: absolute;
+  top: 200px;
+}
+.slider > span:last-of-type {
+  right: 0;
+}

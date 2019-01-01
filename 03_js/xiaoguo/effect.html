@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <!-- <script src="effect.js"></script> -->
+    <style>
+        .d1 {
+            width: 200px;
+            height: 500px;
+            margin: 50px auto;
+            color: #888;
+            font: 18px/26px italic;
+            text-decoration-color: #f00;
+            text-indent: 2em;
+            letter-spacing: 5px;
+            writing-mode: tb-rl;
+        }
+        
+        .dn {
+            display: none;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('.d1').css({
+                'padding': '0px',
+                'background': 'yellow',
+                'overflow': 'hidden',
+                'position': 'relative',
+            })
+            console.log($('.d1').width() / 30);
+            for (var i = 0; i < $('.d1').width() / 30; i++) {
+                $('.d1').append("<div></div>");
+            }
+            for (var j = 0; j < $('.d1 div').length; j++) {
+                $('.d1 div').eq(j).css({
+                    'width': '30px',
+                    'height': '500px',
+                    'float': 'left',
+                    'position': 'absolute',
+                    'bottom': 20,
+                    'right': 30 * j,
+                    'background': 'yellow',
+                    'z-index': 1
+                }).animate({
+                    'height': 0
+                }, 1000, function() {
+                    $('.d1').css({
+                        'background': 'url(back.jpg) no-repeat'
+                    })
+                })
+            }
+
+            function dl(num) {
+                for (var t = 0; t < num; t++) {
+                    console.log(t);
+                }
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="d1">北宋·苏轼《念奴娇·赤壁怀古》：“大江东去，浪淘尽，千古风流人物。故垒西边，人道是，三国周郎赤壁。乱石穿空，惊涛拍岸，卷起千堆雪。江山如画，一时多少豪杰。遥想公瑾当年，小乔初嫁了，雄姿英发，羽扇纶巾。谈笑间，樯橹灰飞烟灭。故国神游，多情应笑我，早生华发。人生如梦，一樽还酹江月。</div>
+</body>
+
+</html>

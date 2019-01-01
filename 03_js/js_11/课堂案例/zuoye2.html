@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var str = 'aaaabbbcddeeee';
+            var arr = str.split(''),
+                temp = 1,
+                arr1 = '';
+            for (var i = 0; i < arr.length - 1; i++) {
+                if (arr[i] == arr[i + 1]) {
+                    temp++;
+                } else {
+                    arr1 += temp + arr[i];
+                    temp = 1;
+                }
+            }
+            arr1 += temp + arr[i];
+            alert(str + '化为' + arr1);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

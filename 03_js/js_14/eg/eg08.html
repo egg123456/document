@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            document.addEventListener('keyup', function(ev) {
+                if (ev.keyCode === 187 && ev.shiftKey) {
+                    console.log('您按shift + =的组合键');
+                }
+                console.log('您按了' + ev.key + ',keyCode:' + ev.keyCode);
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

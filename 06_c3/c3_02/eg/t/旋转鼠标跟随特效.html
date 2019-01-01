@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .demo {
+            width: 1030px;
+            margin: 50px auto;
+        }
+        
+        .list {
+            width: 300px;
+            height: 200px;
+            float: left;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .list div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(-100deg);
+            transform-origin: top left;
+            transition: all .8s;
+        }
+        
+        .current div {
+            transform: rotate(0deg);
+        }
+        
+        .list div.top {
+            transform-origin: top left;
+        }
+        
+        .list div.right {
+            transform-origin: top right;
+        }
+        
+        .list div.bottom {
+            transform-origin: bottom right;
+        }
+        
+        .list div.left {
+            transform-origin: bottom left;
+        }
+    </style>
+
+    <script src="../../../../jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            $('.list').on("mouseenter mouseleave", function(ev) {
+                var _that = $(this);
+                var w = $(this).width();
+                var h = $(this).height();
+                var x = (ev.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+                var y = (ev.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+                var direction = Math.round(((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90) + 3) % 4;
+                // var dirName = ['上', '右', '下', '左'];
+                if (ev.type === "mouseenter") {
+                    // console.log(dirName[direction] + "方进入");
+                    switch (direction) {
+                        case 0:
+                            comeOn('top');
+                            break;
+                        case 1:
+                            comeOn('right');
+                            break;
+                        case 2:
+                            comeOn('bottom');
+                            break;
+                        case 3:
+                            comeOn('left');
+                            break;
+                    }
+                } else {
+                    switch (direction) {
+                        case 0:
+                            getOut('top');
+                            break;
+                        case 1:
+                            getOut('right');
+                            break;
+                        case 2:
+                            getOut('bottom');
+                            break;
+                        case 3:
+                            getOut('left');
+                            break;
+                    }
+                }
+
+                function comeOn(str) {
+                    _that.addClass('current');
+                    _that.children('div').removeClass().addClass(str);
+                }
+
+                function getOut(str) {
+                    _that.removeClass('current');
+                    _that.children('div').removeClass().addClass(str);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="demo">
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/1.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/2.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/3.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/4.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/6.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/7.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/8.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/9.jpg" alt="">
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

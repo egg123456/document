@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<h1>0</h1>
+	<h1>1</h1>
+	<button id="add">+</button>
+	<button id="remove">-</button>
+	<script>
+		var h1 = document.getElementsByTagName('h1')[1];//内容为1的h1标签
+		var add = document.getElementById('add');
+		var remove = document.getElementById('remove');
+		var num = 0;
+		function Add(){
+			num++;
+		}
+		function Remove(){
+			num--;
+		}
+		add.onclick = function() {
+			Add();
+			h1.innerHTML = num;
+		}
+		remove.onclick = function() {
+			Remove();
+			h1.innerHTML = num;
+		}
+
+		var num = 0;
+		function fun(){
+			num++;
+			console.log(num);
+		}
+		fun();//1
+		fun();//2
+		fun();//3
+	</script>
+</body>
+</html>

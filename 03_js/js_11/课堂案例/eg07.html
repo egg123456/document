@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var list = document.body.querySelectorAll("*");
+            list[0].onclick = function() {
+                var p = document.createElement('a');
+                p.innerHTML = list[2].innerHTML;
+                var a = list[1].replaceChild(p, list[2]);
+                list[1].appendChild(a);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button>btn</button>
+    <div id="d1">
+        <a href="#" id="a1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione sequi ad autem accusantium, repellendus voluptatibus corporis voluptatum magni commodi quia culpa placeat, sit itaque sunt similique consectetur doloribus fugit aperiam?</a>
+    </div>
+</body>
+
+</html>

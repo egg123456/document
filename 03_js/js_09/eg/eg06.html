@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            float: left;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var btn = document.getElementById("btn");
+            var body = document.body;
+            // var html = document.documentElement;
+            // console.log(body);
+            // console.log(html);
+            btn.onclick = function() {
+                var tempDiv = document.createElement("div");
+                tempDiv.style = "background-color:" + getColor() + ";";
+                tempDiv.onclick = function() {
+                    this.style = "display:none;";
+                }
+                body.appendChild(tempDiv);
+            }
+        }
+
+        function getColor() {
+            var color = "#";
+            var tempNum;
+            for (var i = 0; i < 6; i++) {
+                tempNum = Math.floor(Math.random() * 16).toString(16);
+                color += tempNum;
+            }
+            return color;
+        }
+        // console.log(getColor());
+    </script>
+</head>
+
+<body>
+    <article>
+        <button id="btn">按钮</button>
+    </article>
+</body>
+
+</html>

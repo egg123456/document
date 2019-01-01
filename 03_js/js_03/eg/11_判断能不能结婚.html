@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		var sex = prompt('输入性别：');
+		var age = parseInt(prompt('请输入年龄：'));
+		// 计算年龄下限
+		var lowAge = sex == '男' ? 22 : 20;
+		alert(age >= lowAge ? '能结婚' : '不能结婚');
+	</script>
+</body>
+</html>

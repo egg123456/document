@@ -1,0 +1,165 @@
+打开 dr  新建一个 langsin.html
+
+文件 新建 －－－ CSS   style.css
+
+         在中间的标题  输入  新浪网博客
+
+打开  langsin.html  在
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 下
+
+加入
+
+<!--http://blog.sina.com.cn/s/blog_5854ac9601000ayn.html-->
+ 是模仿该博客页面进行开发
+
+
+将右边的 style.css 拖动到  <title>浪曦网</title>下
+
+打开  style.css 
+
+       加入
+
+      body
+{
+	background-color:#D6D7D6;
+	text-align:center;
+}
+     比如颜色不知道  通过  Eyedropper.exe
+
+打开  Eyedropper.exe   点击小锤子展开   点击 开始
+
+       将鼠标移到  左边的背景上  按 alt+c
+                     点击   预览下的  颜色框 
+
+       在  background-color: 后 粘帖   并加上分号 ;
+
+打开  langsin.html  在body 中加入
+
+<div id="langsin"><!--主要部分-->
+    	<div id="top"><!--顶部-->
+        </div>
+</div>
+
+打开  style.css 
+
+       加入
+
+
+#langsin
+{
+	width:768px;
+	position:absolute;
+	left:128px;
+	top:16px;
+	background-color:#FFFFFF;
+	border-style:solid;
+	border-width:1px;
+	border-color:#949694px;
+}
+
+          position:absolute;  含义是位置是绝对的  不会随着IE的大小而改变
+                        自己尝试 增加删除 该属性  体验效果
+
+预览   langsin.html
+
+
+打开  langsin.html  在
+
+	<div id="top"><!--顶部-->  下加入
+  
+<ul>
+           <li><a href="#"><img id="top_left" src="images/top_left.gif" /></a></li>
+        <li><a href="#"><img id="top_middle" src="images/top_middle.gif"/></a></li>
+                
+                <li><a id="one" href="#">博客首页</a></li>
+                <li><a id="two" href="#">┆播客</a></li>
+                <li><a id="three" href="#">┆圈子</a></li>
+                <li><a id="four" href="#">┆美图</a></li>
+                <li><a id="five" href="#">┆专栏</a></li>
+                <li><a id="six" href="#">┆搜索</a></li>
+                <li><a id="seven" href="#">┆帮助</a></li>
+            </ul>
+
+   将image文件夹 复制到 与langsin.html  在同一个文件夹下
+
+预览   langsin.html    差异 非常大
+
+
+打开  style.css 
+
+       加入
+
+#top ul
+{
+	list-style-type:none;
+	font-size:12px;
+}
+
+    #top ul  表示找  id为 top 的 里面的ul
+    list-style-type:none;  是去掉前面的黑点
+
+预览   langsin.html   如何在同一行显示呢？
+
+打开  style.css 
+
+       加入
+
+#top li
+{
+	float:left;
+}
+
+预览   langsin.html     为top指定一个背景图
+
+打开  style.css 
+
+       加入
+
+
+#top
+{
+	background-image:url(images/top.gif);
+	background-repeat:no-repeat;
+	height:40px;
+}
+             background-repeat:no-repeat;  表示背景图只显示一副
+
+
+预览   langsin.html    如何将图像的边框去掉？
+
+打开  style.css 
+
+       加入
+
+#top #top_left
+{
+	border:0px;
+}
+
+        前边的 #top  可以不写  但如果你的界面中有很多 名字为  #top_left
+        则会应用到全部
+        表示 应用到 id为#top 的 id为#top_left 设置
+
+预览   langsin.html
+
+打开  style.css 
+
+       加入
+
+#top #top_middle
+{
+	border:0px;
+}
+
+ 预览   langsin.html
+
+
+
+
+
+
+
+
+
+
+  

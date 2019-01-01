@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// 找约数的函数
+		function yueshu(a) {
+			// 计算a的约数的个数
+			var count = 0;
+			for (var i = 0; i <= a; i++) {
+				if (a % i == 0) {
+					count++;
+				}
+			}
+			return count;
+		}
+
+		// 判断是不是质数
+		function isZhishu(m) {
+			if (yueshu(m) == 2) {
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		for (var i = 2; i <= 100; i++) {
+			if (isZhishu(i)) {
+				console.log(i);
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>arguments</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		p,u{
+			color: red;
+			font-weight: bold;
+		}
+		p{
+			text-indent: 2em;
+		}
+		p:before{
+			content: url(../../q.png);
+		}
+	</style>
+</head>
+<body>
+<pre>
+一，正则复习
+	1）密码强度
+	2）完整的表单验证
+二，arguments
+	函数内部使用，列出所有函数参数，实参值
+	function name(a,b,c,d){}
+	调用函数，传入实参，多了少了不报错
+	name(1,2,3);//少了一个，不报错
+	name(1,2,3,4,5);//多了也不报错
+	方法的重载，在Java中如果两个函数名称一样，但是形参个数不一样，就是两个不同的函数
+	但是js中，只要函数名称一样，就是一个函数，如果有两个函数名称一样，写在下边的会把上面的覆盖掉
+	js中没哟重载的概念，可以使用arguments模仿重载
+	arguments对象天生存在于函数中，是一个类数组对象，他包含了所有的实参，如果函数有形参，那么和arguments是同步的
+	使用arguments模拟重载，根据参数的个数的不用执行不同的语句
+三，IIFE
+	IIFE就是即时调用函数
+	全称：immediately-invoked function expression
+	eg：function name(){}() 	报错
+	函数降级，降级成为一个表达式，降级的方法：
+		1）+
+			+function name(){}()
+			使用+降级，函数变为表达式
+		2）-
+			-function name(){}()
+		3）()    最常用的方法
+			(function name(){})()
+			其他地方调用是不可行的
+			fun();   //报错
+四，结合数组观察闭包
+	数组中什么都能放
+	var arr = [];
+	for(var i = 0 ; i <= 10 ; i++){
+		(function(m){
+			arr[m] = function(){
+				alert(m);
+			}
+		})(i);
+	}
+	arr[5]();//5
+	arr中的每一元素在赋值的时候，都是在一个IIFE，这个IIFE是一个被隔离的作用域，即使arr中每个小函数都有m，但是是不同闭包环境中的m，m即使改变了，函数察觉不到
+五，DOM
+	从js调到页面元素操作--DOM操作
+	1，DOM（document abject model 文档对象模型），描述了一个层次化的节点数，允许开发人	添加，移除和修改页面的某一部分，使得js可以来操控html元素，操控的不是字符串，操控的是节点
+		DOM的规范是1998年10月制定的，成为DOM1规范，发展出2级规范和3级规范，遭遇1998年的规范成为DOM0规范
+		DOM提供了丰富的API：取得元素，css样式，事件，运动，元素尺寸，节点操作
+	2，得到元素getElementById
+		js中，最基本的获取元素的方法有两个
+		document.getElementById();
+		document.getElementByTagName();
+		js通过document对象表示整个文档，包含很多方法属性，以及许多页面的特性和操作，学习dom就是学习document对象
+		id在一个文档中只能出现一次，区分大小写，但是在IE678中不区分大小写
+		元素的name属性在IE7以下的浏览器也会被当做是ID，所以页面中的name属性最好不要与id相同
+	3，更改html的属性
+		html标签有很多属性：src,href,title……
+		通过js可以改变html的任何属性，有两种方法：
+			1）点语法   box.style
+			2）set
+		注：id这个属性不能更改
+		class属性是可以被更改的 element.className = 'aaa';
+		label 的for element.htmlfor = "";
+		rowspan				.rowspan
+		colspan				.colspan
+		setAttribute() 		设置属性
+		gerAttribute() 		获取属性
+		getAttribute()和点语法的区别;
+			1）getAttribute()可以获取自定义属性，点语法无法获得自定义属性
+			2）所有的行内样式，使用点语法.style得到的是一个样式对象.style.border得到小样式，但是getAttribute()获得的是一字符串
+			3）getAttribute()直接写，获取类名class，但是点语法想要获取class，要使用className点语法效率远高于getAttribute(),setAttribute(),除了获取自定义之外，大部分时间使用点语法
+	4，操作元素样式
+		通过点语法.style能够得到的所有样式都是行内样式，所有写在css内嵌外联的样式都不能得到
+		语法：
+				element.style.css
+				css不能使用-链接,要使用驼峰命名法
+					backgroundColor
+					background-color 错误
+			可以通过element.style.color = 'red';
+			来设置行内样式
+			通过点语法设置获取的都是行内的样式
+	5，事件监听
+		js做交互一定有事件监听，事件就是用户的某个行为，能够触发某个函数的执行
+		今天学习的是dom0级的事件绑定方式
+		事件三要素：
+			1）事件源			触发事件的元素
+			2）事件		 		触发动作
+			3）事件执行程序		函数代码块
+		事件源--事件--事件处理程序
+		事件处理程序是一个函数体，不是函数执行一个函数可以作为事件处理程序，当事件触发，函数执行
+		onclick 		单击
+		ondbclick		双击
+		onmouseover		鼠标进入
+		onmouseout		鼠标移除
+		onfocus			得到焦点
+		onblur			失去焦点
+		onmousedown		鼠标按下
+		onmouseup		鼠标抬起
+		onmousemove		鼠标移动
+		onkeydown		键盘按下
+		onkeyup			键盘放开
+		onload  当加载完成  window.onload 当页面所有标签、文件、图片、资源加载完毕会触发这个事件
+
+		<p>在事件处理程序内部使用this，指的是当前事件的事件源</p>
+
+
+</pre>
+</body>
+</html>

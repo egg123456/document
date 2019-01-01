@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var table = document.querySelector('table');
+            var tr = table.insertRow(0);
+            // console.log(tr);
+            // console.log(table.rows);
+            // table.deleteRow(0);
+            var td = tr.insertCell(0);
+            td.innerHTML = "第一行第一列";
+            var td2 = tr.insertCell(0);
+            td2.innerHTML = 'hello'
+        }
+    </script>
+</head>
+
+<body>
+    <table></table>
+</body>
+
+</html>

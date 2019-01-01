@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            // var d = document.querySelector('.div1');
+            // var a = document.querySelector('.div1 a');
+            var btn = document.querySelector('.btn'),
+                ul1 = document.querySelector('.ul1'),
+                ul2 = document.querySelector('.ul2'),
+                allli = document.querySelectorAll('li');
+            console.log(allli);
+            t = allli.length;
+            f = true;
+            i = 0;
+            console.log(t);
+            btn.onclick = function() {
+                console.log(t);
+                if (f == 1) {
+                    var temp = ul1.removeChild(ul1.querySelector('li'));
+                    ul2.appendChild(temp);
+                } else {
+                    var temp = ul2.removeChild(ul2.querySelector('li'));
+                    ul1.appendChild(temp);
+                }
+                if (i + 1 == t) {
+                    f = !f;
+                    i = -1;
+                }
+                i++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <div class="div1">
+        <a href="#">add</a>
+    </div> -->
+    <button class="btn">btn</button>
+    <ul class="ul1">
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+        <li>列表4</li>
+        <li>列表5</li>
+        <li>列表6</li>
+    </ul>
+    <hr>
+    <ul class="ul2"></ul>
+</body>
+
+</html>

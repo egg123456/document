@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#tabs{
+    width: 500px;
+    height: 400px;
+    margin: 50px auto;
+    position: relative;
+    ul{
+        list-style: none;
+        overflow: hidden;
+        li{
+            float: left;
+            margin: 10px;
+            border:1px solid #000;
+            border-radius: 5px;
+            padding: 8px;
+            cursor: pointer;  /*鼠标手指样式*/
+        }
+    }
+    div{
+        position: absolute;
+        border:1px solid black;
+        margin: 1%;
+        width:98%;
+        height: 300px;
+        display: none;
+        border-radius: 20px;
+        box-shadow: 3px 3px 3px #ccc;
+        padding: 20px;
+    }
+    .show{
+        display: block;
+    }
+    .activ{
+        background-color: greenyellow;
+    }
+}

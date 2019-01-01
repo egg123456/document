@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0705笔记</title>
+	<style>
+		p{
+			color: red;
+		}
+	</style>
+</head>
+<body style="font-size: 20px">
+	<pre>
+一，复习
+	<p>1，img标签  jpg,png,gif,jpeg,bmp  但是psd，fw不能插入
+		&lt;img src="路径" alt="替代文字"></p>
+	2，相对路径：以当前HTML文档为基础，寻找文件
+		绝对路径：以http开头或者以/开头的路径
+	3，a超链接
+		href：链接地址
+		title：鼠标悬浮显示文字
+		target：当前窗口打开还是新建窗口打开（_blank）
+	<p>4，表单
+		input类型（type）：text，password，radio，checkbox，submit，button，reset，hidden
+			属性：disabled（不可用的），checked（被选择的）
+		下拉菜单：select --> option
+		多行文本：textarea
+		<u>label用于绑定 </u>
+			1）for属性绑定id
+			2）表单元素写入label内部绑定</p>
+	5，列表
+		无序列表，有序列表，自定列表
+		ul，ol，dl
+二，表格
+	1，表格的基本使用
+		在ie678中，表格内容必须写在thead和tbody中，否则无法显示
+	3，合并单元格
+		rowspan 跨行合并
+		colspan 跨列合并
+		这两个属性一定要写在td或者th上，tr是没有这个属性的
+三，div标签和span标签
+	1，div标签
+		<p>div：division  分割的意思，在页面上表示容器，可以将一组语义相同的元素放进div
+		div标签是典型的容器级标签，用于包裹元素</p>
+		从语义上说，所有相同的，相关的语义的元素，都需要放进一个div中，div标签在页面中，<u>浏览器没有任何默认样式</u>
+		div+css布局方式
+		table布局方式
+		div可以将页面层次分的很清晰
+		div是网页布局使用最常用的一个标签，div+css布局：div负责描述页面的结构，css负责描述页面的样式
+		在我们学习过程中主要需要学习html，css，js：
+			html：结构层   从语义上描述页面结构
+			css：样式层    从审美的角度装饰页面
+			js：行为层     从交互的角度增加运动效果
+	2,span标签
+		<p>span表示跨度标签，就是一个文本级的div</p>
+		span就是把一些语义相近，功能相同的文本标签，都包裹在一起，注意：从直觉上看span感觉比a大，比p小
+		span没有任何默认样式，span单独使用没有什么意义，都是配合样式表使用的
+		&lt;p>
+			今天是个好天气，我们需要&lt;span>好好学习&lt;/span>，按时吃饭睡觉，&lt;span>不要&lt;/span>喝酒，打架！
+		&lt;/p>
+四，html杂项
+	1，注释
+		任何语言都是有注释的，注释是不会当做代码被执行的，是给程序员自己看的
+		HTML中的注释&lt;!-- 这里是注释内容 -->
+		&lt;!-- hello
+			我是注释
+			我换行是合法的
+		 -->
+		注释对代码的清晰度和可读性会有很大的帮助
+		sublime中注释快捷键是 Ctrl+/ 
+		方便调试代码
+	2,字符实体
+		字符实体也叫转义字符
+		&nbsp;
+		&lt;p>
+			今天很高兴，我们学会了&lt;h1&gt;标签
+		&lt;/p>
+		&字母;
+		&lt;  &lt;  less than 小于
+		&gh;  >  greater than 大于
+		&copy; ©   版权号
+		&nbsp;  空格
+			空格	&nbsp;	&#160;
+
+		&lt;	小于号	&lt;	&#60;
+
+		>	大于号	&gt;	&#62;
+
+		&	和号	&amp;	&#38;
+
+		"	引号	&quot;	&#34;
+
+		'	撇号 	&apos; (IE不支持)	&#39;
+
+		￠	分（cent）	&cent;	&#162;
+
+		£	镑（pound）	&pound;	&#163;
+
+		¥	元（yen）	&yen;	&#165;
+
+		€	欧元（euro）	&euro;	&#8364;
+
+		§	小节	&sect;	&#167;
+
+			版权（copyright）	&copy;	&#169;
+
+			注册商标	&reg;	&#174;
+
+			商标	&trade;	&#8482;
+
+		×	乘号	&times;	&#215;
+
+		÷	除号	&divide;	&#247;
+<p>五，废弃标签介绍
+	html把标签负责语义和结构，不管样式，2008年以前，html也是负责样式的，有一些标签不是负责语义的，而是负责样式的，08年以后 
+	<u>决定废弃这个负责样式的标签，使用css替代</u>
+	&lt;b>&lt;/b>  加粗
+	&lt;u>&lt;/u>	 下划线
+	&lt;i>&lt;/i>	 斜体
+	&lt;del>&lt;/del>  删除线
+	虽然被废弃，但是还是有一定用处，配合css使用
+	当前在html中负责语义和结构的标签，常用的一些标签有：
+		容器：div,ul(li),ol,dl,table
+		放文字：h，p,span,a
+		文本流：img,input
+		css钩子：b,u,i
+	注意：在页面布局过程中，使用什么标签，不是看样子的，而是根据语义选择标签
+六，css整体感知
+	1，前端开发3层：
+		html：结构层
+		css：样式层
+		js：行为层</p>
+		css负责页面整体样式，cascading style sheet  层叠样式表，级联样式表，简称样式表
+		css标准维护者也是w3c，最新版本css3，但是浏览器的兼容性并不是那么好，目前学习内容是css2.1
+	2，整体感知
+		在一个html文件中，样式表都是写在style标签中的，style标签是写在head中，每一个样式表固定个是：
+			<p>选择器{
+				k(样式):v(值)
+				k(样式):v(值)
+				k(样式):v(值)
+			}</p>
+		css逻辑比较简单，没有运算，没有逻辑，没有加减乘除，没有函数，没有循环，只有一条一条列举下来
+	3，style标签--css样式表的舞台
+		所有的css样式表都要写在style标签中，style标签写在head里边
+		语法：
+		&lt;style type="text/css">
+			/*样式表*/
+		&lt;/style>
+		style：样式，这里边写样式表
+		type：类型
+		text/css：表示纯文本的css
+		&lt;sty + tab = &lt;style type="text/css">&lt;/style>
+	<p>
+	4,css对换行缩进不敏感
+		h1{color:red;background-color:blue;font-size:20px;}
+		每一个样式都必须要有分号，没有分号是错误的(出最后一个)</p>
+	5，分号
+		css样式中最后一个属性可以没有分号，但是其他的都必须要有
+		h1{
+			color:red;
+			width:100px;	（必须有分号）
+			height:100px  (可以没有分号)
+		}
+	<p>6,几个基本样式属性
+		1）文字颜色：color:red;
+			color:#ff0;
+			color:rgb(255,0,0);
+			c + tab
+		2)背景颜色：background-color:red;
+			bgc +tab
+		3)字号：font-size:30px;
+			font:字体  size：尺寸   px：pixel像素
+		4）边框：border:1px solid green;
+			1px:边框宽度
+			solid：实线边框 dashed虚线
+			green：颜色 
+			这三个部分使用空格隔开，顺序可以变化</p>
+七，基本选择器
+	选择器就是选择一个元素的方法
+	1，标签选择器
+		标签选择器是最简单的选择器，就是选择页面上所有相同的标签，使用标签名称进行选择
+		注意：选择的是页面上所用相同的标签，而不是其中的某一个
+		不管元素层次多深，都能找到
+		但是标签选择器实用性不高，因为选择的是所有相同标签，适合设置默认样式
+		所有的样式在chrome中控制台的elements右边都是有显示的
+	2，id选择器
+		针对某一个元素，进行特别的样式设置，需要给定这个元素一个特殊的别名，然后通过这个别名选择
+		使用id属性为元素添加唯一标志，在css样式表中利用id选择该元素
+		&lt;p id="pp">我是段落&lt;/p>
+		选择：(必须使用#选择)
+		#pp{
+			color:red;
+		}
+		任何元素都可以设置id属性，合法的id属性：英文字母开头（大小写敏感，A和a是两个不同的id），可以有数字，下划线_，短横-
+		在同一个页面中，id绝对不能相同，，就算是不同的元素，id也是不能相同，在一个页面上，必须保证id唯一，在js中是必须会出错的
+		我们可以综合利用标签选择器和id选择器一起做效果，也就是说同一个标签可以被多个选择器选择，<u>这就是层叠样式表的第一层含义</u>
+	3，类选择器
+		与id选择器不一样的是，类选择器可以重复
+		id选择器是唯一，如果页面上有多个元素想设置相同的样式，id选择器就显得很无力，这是使用类选择器，就是给某一类元素设置相同的类名，通过这个类名给给这一类元素添加样式
+		设置类：
+			&lt;p class="pp1">&lt;/p>
+		选择：（使用.选择）
+			.pp1{
+				color:red;
+			} <p>
+		类的命名：英文字母开头（区分大小写），数字，下划线，短横
+		注意：<u>类名和元素是多对多的关系，就是说一个元素可以拥有多个类名，</u>一个类名可以被多个元素使用,一个元素使用多个类名，类名之间使用空格隔开
+		原子类：一些简单的属性组成的一个类，然后元素自行选择是否使用这个类
+		<u>定义类名的时候尽量有语义，比如说：warning，inportant，ad，main</u>
+		<u>在页面中使用id还是class？在css中尽可能使用class，在js获取标签尽量使用id</u>
+		<u>class注重样式，id注重行为</u>
+		<u>css样式中尽可能多的使用原子选择器，一个元素尽可能多的继承类名，每一个类名尽可能少的写内容</u></p>
+		下级>
+		同级+
+		内容{}
+<p>
+		div.leiming					<div class="mian"></div>
+		p.leiming					<p class="ci"></p>
+		ul>.leiming					<ul>
+										<li class="m"></li>
+									</ul>
+		h{我是标题}>p{段落}         <h>我是标题
+										<p>段落</p>
+									</h>
+									Ctrl+p 搜索
+									ctrl+d 选择附近相同的进行修改
+									</p>
+	</pre>
+</body>
+</html>

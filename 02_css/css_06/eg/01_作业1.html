@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.tab{
+			width: 310px;
+			margin: 0 auto;
+			/*border-top: 2px solid #206f96;*/
+			margin-top: 100px;
+			padding: 10px;
+			background-color: #fff;
+		}
+		.tab .th{
+			overflow: hidden;
+		}
+		.tab .th span{
+			float: left;
+			width: 102px;
+			line-height: 29px;
+			border-top: 2px solid #888;
+			border-left: 1px solid #cfcfcf;
+			border-bottom:  1px solid #cfcfcf;
+			background-color: #efefef;
+			text-align: center;
+			font-size: 14px;
+			font-family: 'SimSun';
+		}
+		.tab .th span.last{
+			border-right: 1px solid #cfcfcf;
+		}
+		.tab .th span.current{
+			background-color: #fff;
+			border-bottom-color: white;
+			font-weight: bold;
+		}
+		.tab .th span a{
+			color: #252525;
+			text-decoration: none;
+		}
+		.tab .th span a:hover{
+			color: #a00;
+			text-decoration: underline;
+		}
+		
+		.tab .tb{
+			margin-top: 15px;
+			padding-left: 8px;
+		}
+		.tab .tb ul{
+			list-style: none;
+		}
+		.tab .tb ul li{
+			font: 14px/27px 'SimSun';
+		}
+		.tab .tb ul li a{
+			text-decoration: none;
+			color: #252525;
+		}
+		.tab .tb ul li.headline a{
+			font-weight: bold;
+		}
+		.tab .tb ul li a:hover{
+			text-decoration: underline;
+			color: #a00;
+		}
+		#tb1,#tb2 , #tb3{
+			background-color: red;
+			width: 310px;
+			height: 300px;
+			display: none;
+		}
+		#tb3{
+			background-color: blue;
+		}
+		#tb1{
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body style="background-color: #eee;">
+	<div class="tab">
+		<div class="th" id="th">
+			<span class="current">
+				<a href="#">新闻</a>
+			</span>
+			<span>
+				<a href="#">图片</a>
+			</span>
+			<span class="last">
+				<a href="#">军事</a>
+				<a href="#">航空</a>
+			</span>
+		</div>
+		<div class="tb">
+			<ul id="tb1">
+				<li>
+					<a href="#">习大大……………………</a>
+				</li>
+				<li class="headline">
+					<a href="#">习大大访问坦克 两战机护航</a>
+					<a href="#">习大大</a>
+					<a href="#">习大大</a>
+				</li>
+				<li>
+					<a href="#">李克强:亚洲国家较含蓄</a>
+					<a href="#"> 更需开放交流</a>
+					<a href="#">在博鳌</a>
+				</li>
+			</ul>
+			<div id="tb2">2</div>
+			<div id="tb3">3</div>
+		</div>
+	</div>
+
+	<script>
+		// 获取元素
+		var th = document.getElementById('th');
+		var spans = th.getElementsByTagName('span');
+		var tb1 = document.getElementById('tb1');
+		var tb2 = document.getElementById('tb2');
+		var tb3 = document.getElementById('tb3');
+		var tbArr = [tb1,tb2,tb3];
+		// 写动作
+		for (var i = 0; i < spans.length; i++) {
+			spans[i].index = i;
+			spans[i].onmouseover = function() {
+				for (var j = 0; j < spans.length; j++) {
+					spans[j].className = '';
+					tbArr[j].style.display = 'none';
+					if (j == 2) {
+						spans[j].className = 'last';
+					}
+				}
+				if (this.index == 2) {
+					this.className = 'last current';
+				}else{
+					this.className = 'current';
+				}
+				tbArr[this.index].style.display = 'block';
+			}
+		}
+	</script>
+</body>
+</html>

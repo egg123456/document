@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// 1
+		// for(var i = 15;i > 2;i-= 3){
+		// 	console.log(i);//15 12 9 6 3
+		// }
+
+		// 2   死循环
+		// for(var i = 15;i < 20;i-= 3){
+		// 	console.log(i);//15 12 9 6 3
+		// }
+
+		// 3
+		// var i = 8;
+		// for(;i < 12;i++){
+		// 	console.log(i);
+		// }
+
+		// 4
+		// for(var m = 1,n = 2;m + n < 12;m++){
+		// 	n++;
+		// 	console.log(m);//1 2 3 4 5
+		// }
+
+		// 5
+		// var i = 1;
+		// for(alert('你好');i < 5;i++){
+		// 	console.log(i);
+		// }
+
+		// 6
+		// for(var i = 1;i < 5;alert('你好')){
+		// 	i++;
+		// 	console.log(i);//2  3  4  5 
+		// }
+
+		// 7
+		// for(var i = 0;true;
+		// 	alert('我的第' + i + '次循环')){
+		// 	i++;
+		// }
+
+		// 8  循环嵌套
+		// for(var i = 1;i < 10;i++){
+		// 	for(var j = 1;j < 10;j++){
+		// 		console.log(i + '乘' + j + '等于' + i * j);
+		// 	}
+		// 	console.log('\n');
+		// }
+
+		// 9
+		// for(var i = 1;i <= 48;i++){
+		// 	if (48 % i == 0) {
+		// 		console.log(i);//48的所有约数
+		// 	}
+		// }
+
+		// 10乘法表
+		var str = '';
+		for(var i = 1;i < 10;i++){
+			for(var j = 1;j <= i;j++){
+				str += i + '*' + j + '=' + (j * i) + '; ';
+			}
+			str += '\n';
+		}
+		console.log(str);
+	</script>
+</body>
+</html>

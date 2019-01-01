@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// //push
+		// var arr = ['东','西','南','北'];
+		// console.log(arr.push('中','发','白'));
+		// console.log(arr);
+
+		// // pop方法，删除最后一个，并返回最后一个
+		// console.log(arr.pop());
+		// console.log(arr);
+
+		// // shift方法，删除数组开头元素
+		// console.log(arr.shift());
+		// console.log(arr);
+
+		// // unshift方法，开头添加，返回新长度
+		// console.log(arr.unshift('一万','一条','一饼'));
+		// console.log(arr);
+
+		// var arr = ['东','西','南','北'];
+		// arr.unshift(arr.pop());
+		// console.log(arr);//['北','东','西','南']
+
+		// arr.unshift(arr.pop());
+		// console.log(arr);//['南','北','东','西']
+
+		var arr = ['东','西','南','北'];
+		arr.push(arr.shift());
+		console.log(arr);// ['西','南','北','东']
+		arr.push(arr.shift());
+		console.log(arr);// ['南','北','东','西']
+	</script>
+</body>
+</html>

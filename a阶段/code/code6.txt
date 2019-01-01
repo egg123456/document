@@ -1,0 +1,185 @@
+在一个页面中可以设置一个 class样式在多个地方被调用
+
+在一些平台上出现同一个 id  会报错的
+
+如 以下
+
+	<div id="left_model"><!--左区域模板-->
+        	<div id="left_model_top"><span>个人信息</span></div>
+            <br />新浪在线
+            <br />http://www.sina.com
+        </div><!--左区域模板结束-->
+		<div id="left_model"><!--活力地带-->
+        	<div id="left_model_top"><span>活力地带</span></div>
+            <br />新浪在线
+            <br />http://www.sina.com
+        </div><!--活力地带结束-->
+
+   以上的代码就是错误的
+
+  id  在每一个HTML页面只能出现一次
+
+打开 langsin.html
+
+  将以上程序的四个 id  全部改为 class
+
+
+打开 style.css   将  #left_model 改为  .left_model
+                     #left_model_top    改为   .left_model_top
+
+
+预览 langsin.html  效果还是一样的 
+
+
+打开 langsin.html
+
+在  <div class="left_model_top"><span>个人信息</span></div>  下加入
+
+ <div id="family"></div>
+
+修改 stylt.css  加入
+
+#left #family
+{
+	width:178px;
+	height:118px;
+	background-image:url(images/family.jpg);
+	background-repeat:no-repeat;
+	position:relative;
+	top:7px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#000000;
+	margin-bottom:20px;
+}
+
+  在	image下加入 family.jpg
+
+预览 langsin.html
+
+
+打开 langsin.html
+
+在   <div id="family"></div>  下加入
+
+           <div id="info_head">
+            	<a href="#"><img src="images/info_head.jpg" /></a>
+                <a href="#">新浪</a>
+            </div>
+将底下的 
+
+            <br />新浪在线
+            <br />http://www.sina.com             删除
+
+
+   在	image下加入  info_head.jpg
+
+预览 langsin.html
+
+
+修改 stylt.css  加入
+
+#left img
+{
+	border-width:0px;
+}
+
+预览 langsin.html
+
+修改 stylt.css  加入
+
+#info_head a
+{
+	text-decoration:none;
+	color:#313031;
+	font-size:12px;
+	vertical-align:middle;
+}
+
+预览 langsin.html
+
+
+打开 langsin.html
+
+在   
+            <div id="info_head">
+            	<a href="#"><img src="images/info_head.jpg" /></a>
+                <a href="#">新浪</a>
+            </div>
+下加入
+
+  <div class="line"></div>
+
+修改 stylt.css  加入
+
+.line
+{
+	width:192px;
+	border-style:dashed;
+	border-top-width:1px;
+	border-bottom-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-color:#6b696b;
+	position:relative;
+	top:5px;
+}
+
+      可以 只使用前2个属性测试  体验dashed
+
+预览 langsin.html
+
+
+打开 langsin.html
+
+在  <div class="line"></div>       下加入
+
+            <div id="add"><input type="button" /></div>
+            <div id="send"><input type="button" /></div>
+
+预览 langsin.html
+
+修改 stylt.css  加入
+
+
+#left input
+{
+	background-color:#CCCCCC;
+	margin:0px;
+	border-width:0px;
+	cursor:pointer;
+}
+
+
+#left #add input
+{
+	width:61px;
+	height:25px;
+	background-image:url(images/add.jpg);
+	position:relative;
+	float:left;
+	left:40px;
+	margin-top:-8px;
+	margin-bottom:10px;
+}
+
+#left #send input
+{
+	width:52px;
+	height:25px;
+	background-image:url(images/send.jpg);
+	margin-top:-8px;
+	margin-bottom:10px;
+}
+
+预览 langsin.html
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <blog-post v-bind：is=" currentcomponent"  v-on:enlarge-text="postFontSize += 0.1" v-for="post in posts" v-bind:key="post.id" v-bind:post="post">yeg</blog-post>
+    </div>
+    <script>
+        Vue.component('blog-post', {
+                props: ['post'],
+                template: `
+                    <div class="blog-post">
+                    <h3>{{ post.title }}</h3>
+                    <button v-on:click="$emit('enlarge-text')">
+                        Enlarge text
+                    </button>
+                    <div v-html="post.content"></div>
+                    <slot><slot>
+                    </div>
+                `
+            })
+        var vm = new Vue({
+                el: '#demo',
+                data: {
+                    currentcomponent:'blog-post',
+                    posts: [
+                        { id: 1, title: 'My journey with Vue',content:'egg' },
+                        { id: 2, title: 'Blogging with Vue',content:'egg' },
+                        { id: 3, title: 'Why Vue is so fun',content:'egg' },
+                    ]
+                }
+            });
+        
+    </script>
+</body>
+</html>

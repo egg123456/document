@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		var year = prompt('请输入工作期限：');
+		var salary = prompt('请输入您的月薪资：');
+		var reward;
+		if (year>=2)
+			if (salary>12000)
+				reward=salary*3.2;
+			else
+				reward=salary*3;
+		else if (year>=1) 
+			if (salary>10000)
+				reward=salary*1.7;
+			else
+				reward=salary*1.5;
+		else
+			if (salary>8000)
+				reward=salary*1.2;
+			else
+				reward=salary;
+			alert('工作期限'+year+'月薪资'+salary+'奖金为：'+reward);
+			
+	</script>
+</body>
+</html>

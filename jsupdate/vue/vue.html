@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue source</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    123
+  </div>
+  <script>
+var obj = {},
+    value=5,
+    bind=[];
+Object.defineProperty(obj,'s',{
+    set:function(val){
+        bind['s']=val;
+    },
+    get:function(){
+        return bind['s'];
+    }
+});
+obj['s']=value;//触发set方法，间接修改了bind
+</script>
+</body>
+</html>

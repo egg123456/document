@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../jquery-3.2.1.js"></script>
+    <script src="tooltip.js"></script>
+    <style>
+        .textArea {
+            width: 400px;
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        .textArea div {
+            position: absolute;
+            padding: 0px 20px 0px 20px;
+            border-radius: 10px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            box-shadow: 0px -5px 5px #aaa;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('.textArea').tooltip();
+        })
+    </script>
+</head>
+
+<body>
+    <div class="textArea">
+        <span title="输入提示">输入:</span>
+        <input type="text" title="文本内容区域">
+    </div>
+</body>
+
+</html>

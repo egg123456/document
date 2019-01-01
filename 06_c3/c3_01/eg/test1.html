@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li {
+            width: 100px;
+            height: 20px;
+        }
+        
+        li:not(.l4) {
+            background-color: #eee;
+        }
+        
+        li[class='l4'] {
+            background-color: red;
+        }
+        
+        li:first-child {
+            background-color: orange;
+        }
+        
+        div:only-child {
+            background-color: yellow;
+        }
+        
+        li:first-of-type {
+            background-color: green;
+        }
+        
+         :root {
+            color: #ccc;
+        }
+        
+        li:empty {
+            background-color: blue;
+        }
+        
+        li:nth-child(5) {
+            background-color: purple;
+        }
+        
+         :read-only {
+            color: skyblue;
+        }
+        
+         :read-write {
+            color: yellowgreen;
+        }
+        
+         ::selection {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- <h1><span>zhong</span></h1> -->
+        <ul>
+            <li>l1</li>
+            <li>l2</li>
+            <li>l3</li>
+            <li class="l4">l4</li>
+            <li>l5</li>
+            <li>l6</li>
+            <li>l7</li>
+            <li>l8</li>
+            <li>l9</li>
+            <li></li>
+        </ul>
+    </div>
+    <form action="#">
+        <textarea name="" id="" cols="30" rows="10" readonly>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo facere non dolore commodi. Eius mollitia voluptate illum, quibusdam magni eveniet harum ex non esse similique ab, omnis, doloremque minus.
+        </textarea>
+        <textarea name="" id="" cols="30" rows="10" read-write>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae illo facere non dolore commodi. Eius mollitia voluptate illum, quibusdam magni eveniet harum ex non esse similique ab, omnis, doloremque minus.
+        </textarea>
+    </form>
+</body>
+
+</html>

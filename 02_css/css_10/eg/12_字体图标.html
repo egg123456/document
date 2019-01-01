@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+		/*css允许定义外部字体，也就是说网页不仅可以使用微软雅黑，宋体还可以自定义字体*/
+		/*必须将字体文件上传服务器，让用户可以下载的到*/
+		/*定义新字体：*/
+		@font-face{
+			font-family: 'lkjy';
+			src:url('fonts/icomoon.eot?izpax1#iefix') format('embedded-opentype'),
+			url('fonts/icomoon.ttf?izpax1') format('truetype'),url('fonts/icomoon.woff?izpax1') format('woff'),url('fonts/icomoon.svg?izpax1#icomoon') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		p{
+			font-family: 'lkjy';
+			font-size: 60px;
+			color: red;
+		}
+		p::before{
+			content: '\e90e';
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<p>lalallalalal</p>
+</body>
+</html>

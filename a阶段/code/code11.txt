@@ -1,0 +1,54 @@
+打开 langsin.html 
+
+在
+
+ <span id="span3">标签：<a href="#">it/科技</a></span>        
+			</div>
+
+下加入
+
+ <div class="word">
+        	<p class="one">未来的手机制造商或者要做大，或者就做小</p>
+            <p class="two">11月15日，“取消手机牌照对产业各主要领域利弊讨论会”上我会有一个发言，题目是《电话机市场看手机市场未来局变》，理一下自己的观点。</p>
+            <p class="three">要说取消手机牌照对产业的影响，我们没有大量的定量的分析，也没有建立数学模型进行模拟，所以要阐述观点，只能根据以往的经验进行模拟和分析，我想，和手机产业最为接近有可能进行对比的是电话机市场。对于普通大众来说，电话机毕竟也是高科技的产品，它最初主要是由运营商进行销售，而随着技术的演进和市场的变化，最终运营商基本退出这一市场，整个市场也成为一个无品牌、低利润的时代。</p>
+        </div>
+
+预览 langsin.html
+
+修改 style.css  加入
+
+.word
+{
+	width:500px;
+}
+p
+{
+	margin:0px;
+}
+p.one
+{
+	color:#212021;
+	font-weight:bold;
+	padding-bottom:20px;
+}
+
+预览 langsin.html
+
+修改 style.css  加入
+
+p.two,p.three
+{
+	text-indent:2em;
+	color:#212021;
+	font-size:15px;
+	text-align:left;
+	line-height:1.3em;
+	padding-bottom:0px;
+	padding-top:3px;
+}
+
+预览 langsin.html
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="tabs.css">
+    <script>
+        window.onload = function() {
+            var allBtn = document.getElementsByTagName('li');
+            var tabsDiv = document.getElementById('tabs');
+            var tabs = [];
+            for (var i = 0; i < tabsDiv.childNodes.length; i++) {
+                if (tabsDiv.childNodes[i].nodeName === "DIV") {
+                    tabs.push(tabsDiv.childNodes[i]);
+                }
+            }
+            for (var j = 0; j < allBtn.length; j++) {
+                allBtn[j]._index = j; //记录按钮的编号
+                allBtn[j].onclick = function() {
+                    for (var i = 0; i < allBtn.length; i++) {
+                        allBtn[i].setAttribute('class', '');
+                    }
+                    this.setAttribute('class', 'activ');
+                    for (var j = 0; j < tabs.length; j++) {
+                        tabs[j].setAttribute('class', '');
+                    }
+                    tabs[this._index].setAttribute('class', 'show');
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="tabs">
+        <ul>
+            <li class="activ">选项1</li>
+            <li>选项2</li>
+            <li>选项3</li>
+        </ul>
+        <div class="show">选项卡1</div>
+        <div>选项卡2</div>
+        <div>选项卡3</div>
+    </div>
+</body>
+
+</html>

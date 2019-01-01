@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function type(o) {
+            return Object.prototype.toString.call(o).slice(8, -1);
+        }
+
+        function deeplyCopy(obj) {
+            var result, oClass = type(obj);
+            if (oClass === "Object") {
+                result = {};
+            } else if (oClass === "Array") {
+                result = [];
+            } else {
+                return obj;
+            }
+            for (var prop in obj) {
+                var copy = obj[prop];
+                if (typeof copy === 'object' && copy != null) {
+                    result[prop] = arguments.callee(copy);
+                } else {
+                    result[prop] = obj[prop];
+                }
+            }
+            return result;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

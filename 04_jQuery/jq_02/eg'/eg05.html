@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            // console.log($('div').text());
+            // console.log($('div').html());
+            $('span').text(function(i, old) {
+                return '<b>' + old + '</b>';
+            });
+            $('span').html(function(index, oldValue) {
+                return '<b>' + oldValue + '</b>';
+            });
+
+            $('.uname').on('blur', function() {
+                console.log($(this).val(function(i, oldVal) {
+                    console.log(i)
+                    return oldVal + "aaa";
+                }));
+            });
+
+            console.log($('.uname').attr('type', 'password'));
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" class="uname">
+    <div>
+        <span>atom Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore id, hic error harum eaque pariatur porro, dolorem obcaecati, vitae recusandae ipsum. Obcaecati, expedita sed! Perferendis cumque totam ut, animi quidem.</span>
+    </div>
+</body>
+
+</html>

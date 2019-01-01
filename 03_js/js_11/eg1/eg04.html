@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function $(selector) {
+            var elems = document.querySelectorAll(selector);
+            return elems;
+        }
+
+        function each(elems, callback) {
+            for (var i = 0; i < elems.length; i++) {
+                callback(i, elems[i]);
+            }
+        }
+
+        function css(elems, style, val) {
+            each(elems, function(index, elem) {
+                elem.style = style + ":" + val + ";";
+            });
+        }
+        window.onload = function() {
+            // var elem = $('.d1');
+            // css(elem, 'color', 'red');
+            var a = document.createElement('a');
+            a.innerHTML = "这是一个a元素";
+            a.setAttribute('href', '#');
+            var d = document.querySelector('.d2');
+            document.body.insertBefore(a, d);
+        }
+    </script>
+</head>
+
+<body>
+    <p class="d1">ppppppppppppppppppp</p>
+    <div class="d1"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus voluptates, nam accusantium dignissimos nulla nihil repellat tempore doloribus maxime ut dolorem maiores. Incidunt quae expedita architecto maiores. Quas, asperiores possimus.</div>
+    <div class="d1"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus voluptates, nam accusantium dignissimos nulla nihil repellat tempore doloribus maxime ut dolorem maiores. Incidunt quae expedita architecto maiores. Quas, asperiores possimus.</div>
+    <div class="d1"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus voluptates, nam accusantium dignissimos nulla nihil repellat tempore doloribus maxime ut dolorem maiores. Incidunt quae expedita architecto maiores. Quas, asperiores possimus.</div>
+    <div class="d1"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus voluptates, nam accusantium dignissimos nulla nihil repellat tempore doloribus maxime ut dolorem maiores. Incidunt quae expedita architecto maiores. Quas, asperiores possimus.</div>
+
+    <div class="d1 d2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus voluptates, nam accusantium dignissimos nulla nihil repellat tempore doloribus maxime ut dolorem maiores. Incidunt quae expedita architecto maiores. Quas, asperiores possimus.</div>
+    <div class="d1"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus voluptates, nam accusantium dignissimos nulla nihil repellat tempore doloribus maxime ut dolorem maiores. Incidunt quae expedita architecto maiores. Quas, asperiores possimus.</div>
+</body>
+
+</html>

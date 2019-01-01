@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function M1() {
+            this.hello = 'hello';
+        }
+
+        function M2() {
+            this.world = 'world';
+        }
+
+        function S() {
+            M1.call(this);
+            M2.call(this);
+        }
+        M1.prototype.fn = function() {
+            console.log('fn');
+        }
+        M2.prototype.fn2 = function() {
+            console.log('fn2');
+        }
+        S.prototype = Object.create(M1.prototype);
+        Object.assign(S.prototype, M2.prototype);
+        S.prototype.constructor = S;
+        var s = new S();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

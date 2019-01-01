@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>0705笔记</title>
+    <style>
+        u,
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+0705笔记
+一，复习<p>
+	容器级标签有哪些？在HTML4.01基础上，容器及标签有div，li,dl,dd,dt,td,其他的标签基本都是文本级标签</p>
+二，图片
+	1，基本使用
+		语法：&lt;img src='……' alt='图片显示错误' title='图片'>
+		img：image 图片
+		src：source 资源
+		alt：提示
+		title：标题
+		img标签是一个自封闭标签，单标签&lt;img />
+		img可插入的图片格式：jpg，jpeg,png,gif,bmp,不能插入psd格式
+	2，图片的宽高
+		&lt;img src='' width='100' height='200'>
+		属性width：宽度
+		height：高度<p>
+		如果只给其中一个值，另一个值会按比例自动变化</p>
+	3，图片img标签是文本级标签，可以认为是‘文本’
+		文本及标签一般会并排排列，除了p标签，并排的过程中元素与元素之间会有默认的间隙，如何消除间隙？
+		&lt;img src=''>
+		&lt;img src=''>
+		&lt;img src=''>
+		消除间隔：
+		&lt;img src=''>&lt;img src=''>&lt;img src=''>
+	4,绝对路径和相对路径
+		1）绝对路径
+			所有一http://开头的或者以/开头的路径都是绝对路径
+			eg：&lt;img src='https://www.baidu.com/img/bd_logo1.png'>
+			上边路径是可以使用
+			&lt;img src='/Users/maindek/Desktop/最新课件/最新课件/01 HTML/03 html课件(iqd)/html新版/HTML第2天/案例笔记/images/shanghai.jpg'>
+			这种路径不建议使用，可移植性太低
+		2）相对路径
+			以当前HTML文件为基础，前往寻找图片的位置的这个路径叫做相对路径，相对的是当前的HTML文件
+			eg:&lt;img src='images/longlong.jpg'>
+			&lt;img src='images/aa/bb/1.jpg'>
+			&lt;img src='../../HTML第2天/images/1.png'>
+			../只能出现在开头
+			优点：可移植性很高，将整个文件夹移植到任何地方，这个相对路径是不会变得
+			推荐使用<p>
+三，超链接a标签
+	1，基本使用
+		语法：&lt;a href='temp.html'>我是超链接&lt;/a>
+		站内链接，相对路径
+		&lt;a href='http://www.sina.com.cn' title=''>……&lt;/a>
+		绝对路径
+		&lt;a href='temp.html' target='_blank'>target&lt;/a>
+		在新的窗口打开链接
+		&lt;a href='temp.html' target='_blank'>&lt;img src='images/longlong.jpg' width='200'>&lt;/a>
+	2，页内锚点
+		语法：&lt;a name='maodian' href='temp.html'>temp&lt;/a>
+			跳转到这个锚点:&lt;a href='#maodian'>&lt;a>
+			设置锚点时：在a标签中可以使用name和id设置，不是a标签必须使用id设置
+	3，不同页面锚点跳转
+		跳转方法：&lt;a href='temp.html#maodian'>跳转到temp页面中的maodian位置&lt;/a>
+		在temp.html中设置锚点：
+			&lt;a name='maodian' id='maodian'>a标签的锚点&lt;/a>
+			&lt;h1 id='maodian'>h1锚点&lt;/h1></p>
+四，列表
+	1，无序列表
+		语法：
+			&lt;ul>
+				&lt;li>百度&lt;/li>
+				&lt;li>谷歌&lt;/li>
+				&lt;li>网易&lt;/li>
+				&lt;li>腾讯&lt;/li>
+			&lt;/ul>
+		ul:unordered list   无需列表
+		li:list item        列表项目
+		每一项前边是一个小圆点表示
+		作业：小圆点如何设置成空心圆和实心的方块？
+		注：li是的儿子，在ul中只能是li不能写别的标签
+		li是一个容器及标签，在ul中可以有无数个li，在li中可以有任何标签存在
+		&lt;ul>
+			&lt;li>
+				&lt;h2>&lt;/h2>
+				&lt;ul>
+					&lt;li>&lt;/li>
+				&lt;/ul>
+			&lt;/li>
+			&lt;li>&lt;/li>
+		&lt;/ul>
+	2,有序列表
+		语法：ol
+			&lt;ol>
+				&lt;li>&lt;/li>
+				&lt;li>&lt;/li>
+				&lt;li>&lt;/li>
+			&lt;/ol>
+	3,自定列表
+		语法：dl
+			&lt;dl>
+				&lt;dt>标题1&lt;/dt>
+				&lt;dd>内容1&lt;/dd>
+				&lt;dd>内容2&lt;/dd>
+				&lt;dd>内容3&lt;/dd>
+
+				&lt;dt>标题2&lt;/dt>
+				&lt;dd>内容4&lt;/dd>
+				&lt;dd>内容5&lt;/dd>
+				&lt;dd>内容6&lt;/dd>
+			&lt;/dl>
+			dl:definition list  自定义列表
+			dt:definition title 列表标题
+			dd:definition description 列表描述
+<u>五，表单</u>
+	表单中的所有元素都要放在form标签中
+	语法：&lt;form>
+		//表单元素
+	&lt;/form>
+	form就是英语表格的意思。这个标签是一个功能型的标签，不是一个结构型的标签。form标签是后台哥哥来进行配置的。Ajax课程的第一天，我们讲解PHP语言，将介绍更多的表单提交的原理。那时候你就知道了form表单的两个属性method、action，现在先不说。
+	1，单行输入框
+		&lt;input type='text' value='main'>
+	2,密码输入
+		&lt;input type='password'>
+	3，单选框
+		&lt;input type='radio' id='sex'>
+		&lt;input type='radio' checked='checked'>默认选中
+		label:文本绑定标签
+		&lt;label for='sex'>男&lt;/label>
+		&lt;label>
+			&lt;input type='radio'>女
+		&lt;/label>
+	4,复选框
+		&lt;input type='checkbox'>
+		&lt;input type='checkbox' checked='checked'>默认选中
+		也可以使用label绑定
+	5，三种按钮
+		普通按钮
+			&lt;input type="button" value="按钮">
+		提交按钮（必须写在form表单中有效）
+			&lt;input type="submit" value="提交啦啦啦">
+		重置按钮（必须写在form表单中有效）
+			&lt;input type="reset" value="重置啦啦啦">
+	6,下拉列表
+		&lt;select name="" id="">
+			&lt;option value="1990">1990&lt;/option>
+			&lt;option value="1991">1991&lt;/option>
+			&lt;option value="1992">1992&lt;/option>
+			&lt;option value="1993">1993&lt;/option>
+			&lt;option value="1994">1994&lt;/option>
+			&lt;option value="1995">1995&lt;/option>
+			&lt;option>1996&lt;/option>
+		&lt;/select>
+		select：选择
+		option：选项
+	7，文本域
+		&lt;textarea name="" id="" cols="30" rows="10">请输入内容……&lt;/textarea>
+		text：文本
+		area：区域
+		cols：列宽，多少列
+		rows：行高，多少行
+六，表格
+	1,基本表格
+		table：表格，桌子
+		tr：table row 行
+		td：table dock 小格
+		每一个tr就是一行，每一个td就是一个小方格
+		&lt;table border="1">
+			&lt;tr>
+				&lt;td>hello&lt;/td>
+				&lt;td>hello&lt;/td>
+				&lt;td>word&lt;/td>
+			&lt;/tr>
+		&lt;/table>
+		border:边框
+		&lt;caption>名单&lt;/caption>写在表格内部的第一行，表格的标题
+		th:table header 表头  自动文本居中，加粗
+	2，细线表格
+		&lt;style>
+			table{
+				/*合并边框*/
+				border-collapse: collapse;
+			}
+		&lt;/style>
+		cellspacing：边框之间的距离
+		cellpadding：边框与文字之间的距离
+	3，合并单元格
+		rowspan:行跨度合并   竖着合并
+		colspan:列跨度合并   横着合并
+		这两个属性都是td的属性
+		&lt;table>
+			&lt;caption>&lt;/caption>
+			&lt;thead>
+				&lt;tr>
+					&lt;th>&lt;/th>
+				&lt;/tr>
+			&lt;/thead>
+			&lt;tbody>
+				&lt;tr>
+					&lt;td>&lt;/td>
+				&lt;/tr>
+			&lt;/tbody>
+		&lt;/table>
+		在td，th中可以有div，span，注释，转义字符等内容
+		br，hr这些在css中再说
+		<p>
+		表格border只不为零时，会有2px的单元格间距，可用cellspacing属性设置为零或用style中border-collapse：collapse；消除</p>
+		
+		REPL read exe 
+
+		html 元素事件 noclick=“”；
+
+		is代码错误，不影响后续代码块执行（即是下一个script中的代码，当然代码错误块作废，其定义的变量无效）
+
+		标识符，字母数字下划线$
+
+		构造函数用大驼峰命名法
+
+		ECMA定义了一组不能作为标识符(变量名,方法名)的关键字和保留字
+
+		标准关键字
+				break  case  catch  continue  default  delete  do  else  false  finally
+			or  function  if  in  instanceof  new  null  return  switch  this  throw  
+			true  try  typeof  var  with  undefined
+		保留字
+				abstract   enum   int   short   boolean   export   interface   static
+				byte   extends   long   super   char   final   native   synchronized
+				class   float   package   throws   const   goto   private   transient
+				debugger   implements   protected   volatile   double   import
+				public
+
+
+		typeof null  ==== object
+
+		null == unde  	==== true
+		
+		NaN 表示将要返回一个数值而返回非数值	eg 3*‘a’
+
+		isNaN()   是否是一个非数字
+
+		boolean
+			true false      是默认变量，可直接写
+
+		===  	全等仅比较不转换
+
+		“NaN” == NaN ====false不可比
+
+
+		隐式转换：不同类型间计算时，先转换
+
+
+
+
+		全局函数
+		encoded(url) 	将中文的路劲编码
+		decoded（encoded）；	解码回中文
+		
+		写在script的代码全是字符串
+		eval（）		将字符串执行
+
+
+
+
+		string
+			str.charCodeAt(0);  	返回对应字符的unicode编码 如： a=97；
+			Strig.fromCharCode(97) 		将数字转换为对应字符	注;Strig是内置字符串对象
+
+		Math不可new
+
+		直接new date 可以获得当前时间
+		UTC 协调世界时，又称世界标准时间或世界协调时间，简称UTC（英文“Coordinated Universal Time”／法文“Temps 
+		Universel Coordonné”），是最主要的世界时间标准，其以原子时秒长为基础，在时刻上尽量接近于格林尼治标准时间。
+		中华民国采用CNS 7648的《资料元及交换格式–资讯交换–日期及时间的表示法》（与ISO 8601类似）称之为世界协调时间。
+		中华人民共和国采用ISO 8601:2000的国家标准GB/T 7408-2005《数据元和交换格式 信息交换 日期和时间表示法》
+		中亦称之为协调世界时。
+ </pre>
+
+</body>
+
+</html>

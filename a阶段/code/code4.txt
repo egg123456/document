@@ -1,0 +1,132 @@
+打开  langsin.html
+
+在
+
+<div id="pic"><!--图片-->
+      	<div id="pic_blog"><span>浪曦的BLOG</span></div>
+        <div id="pic_href"><a href="#">http://blog.sina.com.cn/langsin 复制  > 收藏本页</a></div>
+      </div><!--图片结束-->  下加入
+
+
+       <div id="menu"><!--菜单-->
+      	<div class="first_href">
+        	<a href="#">博客首页</a>
+        </div>
+
+修改 style.css  加入
+
+#menu
+{
+	width:764px;
+	height:30px;
+	background-color:#7b716b;
+	margin-top:2px;
+}
+
+           margin-top:2px;  与顶端图片的距离
+
+预览   langsin.html
+
+修改 style.css  加入
+
+.first_href
+{
+	width:75px;
+	height:30px;
+	background-color:#4a4942;
+	float:left;
+}
+
+预览   langsin.html
+
+修改 style.css  加入
+
+.first_href a
+{
+	font-size:12px;
+	color:#FFFFFF;
+	text-decoration:none;
+	position:relative;
+	top:5px;
+}
+
+预览   langsin.html
+
+打开  langsin.html  <a href="#">浪曦首页</a>		
+		</div>                       下加入
+
+<div id="menu_main"><!--主菜单-->
+        	<ul>
+            	<li><a href="#">个人首页</a></li>
+                <li>┆</li>
+                <li><a href="#">管理博客</a></li>
+                <li>┆</li>
+                <li><a href="#">我的文章</a></li>
+                <li>┆</li>
+                <li><a href="#">我的相册</a></li>
+                <li>┆</li>
+                <li><a href="#">我的圈子</a></li>
+                <li>┆</li>
+                <li><a href="#">我的播客</a></li>
+                <li>┆</li>
+                <li><a href="#">我的好友</a></li>
+                <li>┆</li>
+                <li><a href="#">给我留言</a></li>
+            </ul>
+        </div><!--主菜单结束-->
+
+
+修改 style.css  加入
+
+
+#menu ul
+{
+	list-style-type:none;
+	position:relative;
+	left:215px;
+}
+
+#menu li
+{
+	float:left;
+	font-size:12px;
+	color:#FFFFFF;
+	position:relative;
+	top:8px;
+}
+
+预览   langsin.html
+
+
+修改 style.css  加入
+
+#menu li a
+{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+
+预览   langsin.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function Super(type) {
+            this.type = type;
+        }
+
+        function Sub(name) {
+            Super.call(this, 'dog');
+            this.name = name;
+        }
+        Super.prototype.sayHi = function() {
+            console.log('hi');
+        }
+        Sub.prototype = Object.create(Super.prototype);
+        Sub.prototype.sayHello = function() {
+            console.log('hello');
+        }
+        Sub.prototype.constructor = Sub;
+        var s = new Sub('小白');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

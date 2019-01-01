@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function StringBuilder() {
+            var buffer = [];
+            this.add = function(str) {
+                buffer.push(str);
+            };
+            this.toString = function() {
+                return buffer.join('');
+            }
+        }
+        var sb = new StringBuilder();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

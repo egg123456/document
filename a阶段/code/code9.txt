@@ -1,0 +1,158 @@
+打开 langsin.html 
+
+在 </div><!--左边区域结束--> 下加入
+
+  <!--第九课-->
+      <div id="right">
+      </div>
+
+修改  style.css  加入
+
+#right
+{
+	width:555px;
+        background-color:#FF0000;
+}
+
+  
+
+预览  langsin.html 
+
+   将  width:555px;   改为   width:655px;  距离超过会显示到下方
+
+预览  langsin.html 
+
+    删除 属性     background-color:#FF0000;
+
+预览  langsin.html 
+
+打开 langsin.html 
+   
+在  <div id="right"> 下加入
+
+<div id="right_top">
+        	<ul>
+            	<li class="right_ad"><a href="#">写博客，参与“我的2008--我记录活动”，赢现金大奖！</a></li>
+                <li class="right_reg"><a href="#">注册</a></li>
+                <li>┆</li>
+                <li><a href="#">登录</a></li>
+                <li>┆</li>
+                <li><a href="#">发表文章</a></li>
+            </ul>
+        </div>
+        
+修改  style.css  加入
+
+
+#right ul
+{
+	list-style-type:none;
+}
+
+预览  langsin.html 
+
+修改  style.css  加入
+
+#right li
+{
+	float:left;
+}
+
+预览  langsin.html 
+
+修改  style.css  加入
+
+#right_top
+{
+	font-size:12px;
+	position:relative;
+	margin-top:13px;
+	color:#313031;
+}
+
+预览  langsin.html 
+
+修改  style.css  加入
+
+#right_top a
+{
+	color:#313031;
+	text-decoration:none;
+}
+
+预览  langsin.html 
+
+修改  style.css  加入
+
+.right_ad
+{
+	position:relative;
+	margin-left:20px;
+}
+
+预览  langsin.html 
+
+修改  style.css  加入
+
+.right_reg
+{
+	position:relative;
+	margin-left:40px;
+	margin-bottom:10px;
+}
+
+预览  langsin.html 
+
+打开 langsin.html 
+
+在 
+
+  <li><a href="#">发表文章</a></li>
+            </ul>
+        </div>
+
+下加入
+
+ <a class="right_title_href" href="#"><div id="right_title"><span>未来的手机制造商或者要做大，或者就做小</span></div></a>
+
+修改  style.css  加入
+
+#right_title
+{
+	background-image:url(images/1Up.gif);
+	width:550px;
+	height:28px;
+}
+
+       将 1Up.gif 复制到 images下
+
+预览  langsin.html 
+
+修改  style.css  加入
+
+.right_title_href
+{
+	text-decoration:none;
+	color:#000000;
+	font-weight:bold;
+	font-size:14px;
+}
+
+预览  langsin.html
+
+修改  style.css  加入
+
+#right_title span
+{
+	position:relative;
+	left:-100px;
+	top:7px;
+}
+
+预览  langsin.html
+
+
+
+
+
+

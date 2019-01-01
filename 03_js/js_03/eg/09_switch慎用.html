@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		var score = parseInt(prompt('请输入分数：'));
+		// switch(true){
+		// 	case score < 60:
+		// 		alert('差');
+		// 		break;
+		// 	case score < 80:
+		// 		alert('中');
+		// 		break;
+		// 	case score < 90:
+		// 		alert('良');
+		// 		break;
+		// 	default:
+		// 		alert('优');
+		// 		break;
+		// }
+
+		// 错误的写法
+		// switch(score){
+		// 	case 0 < score && score < 60:
+		// 		alert('差');
+		// 		break;
+		// }
+
+		var s = parseInt(score / 10);
+		switch(s){
+			case 0://0-9
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5://50 - 59
+				alert('差');
+				break;
+			case 6:
+			case 7:
+				alert('中');
+				break;
+			case 8:
+				alert('良');
+				break;
+			case 9:
+			case 10:
+				alert('优');
+				break;
+			default:
+				alert('请输入0-100之间的分数');
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script src="./jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            var ls = localStorage;
+            $('.add').on('click', function() {
+                var key = new Date().getTime();
+                key = "key" + key;
+                var val = $('textarea').val();
+                ls.setItem(key, val);
+                select();
+            });
+
+            $('.select').on('click', select);
+
+            function select() {
+                $('.dataList').show();
+                $('table tr:not(:first)').remove();
+                for (var i = 0; i < ls.length; i++) {
+                    $('table').append($(`
+                    <tr>
+                        <td><input type='checkbox' id=${ls.key(i)}></td>
+                        <td>${ls.key(i)}</td>
+                        <td>${ls.getItem(ls.key(i))}</td>
+                    </tr>
+                    `));
+                }
+            }
+
+            $('.del').on('click', function() {
+                $('input[type="checkbox"]:checked:not(".allCheck")').each(function(index, elem) {
+                    ls.removeItem($(elem).attr('id'));
+                    select();
+                });
+            });
+
+            $('.update').on('click', function() {
+                $('input[type="checkbox"]:checked:not(".allCheck")').each(function(index, elem) {
+                    ls.setItem($(elem).attr('id'), $('textarea').val());
+                    select();
+                });
+            });
+
+            $('.allCheck').on('click', function() {
+                this.checked ?
+                    $('input[type="checkbox"]:not(".allCheck")').each(function(index, elem) {
+                        elem.checked = true;
+                    }) : $('input[type="checkbox"]:not(".allCheck")').each(function(index, elem) {
+                        elem.checked = false;
+                    });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container text-center">
+        <textarea class="center-block" style="width:600px;height:200px;margin: 10px auto;"></textarea>
+        <div class="btn-group" style="margin: 20px auto; ">
+            <button type="button" class="btn btn-success add">添加</button>
+            <button type="button" class="btn btn-danger del">删除</button>
+            <button type="button" class="btn btn-info update">修改</button>
+            <button type="button" class="btn btn-primary select">查询</button>
+        </div>
+    </div>
+    <div class="container dataList" style="display: none;">
+        <table class="table table-bordered text-center">
+            <tr>
+                <td>
+                    <input type="checkbox" class="allCheck">
+                </td>
+                <td>
+                    key
+                </td>
+                <td>
+                    value
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .first {
+            float: left;
+            height: 100px;
+            width: 100%;
+            background: yellow;
+        }
+        
+        .second {
+            background: #f00;
+            height: 20px;
+            /* clear: both; */
+            /* display: none; */
+        }
+        
+        .second::before,
+        .second::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+        
+        p:before {
+            content: url(../q.png);
+        }
+        
+        .wu {
+            border: 1px solid #f00;
+        }
+        
+        .wu::after {
+            display: table;
+            content: " ";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="wu"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit libero eligendi debitis ea et esse quia excepturi, rem doloremque numquam, maxime saepe officiis quae quisquam molestias pariatur dolores quos corporis.</p>
+
+</body>
+
+</html>

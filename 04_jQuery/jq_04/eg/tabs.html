@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./tabs.css">
+    <script src="../../jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            var tabsBtn = $('#tabs').children('ul').children('li');
+            var tabsDiv = $('#tabs').children('div');
+            tabsBtn.eq(0).addClass('active');
+            tabsDiv.eq(0).addClass('show');
+            tabsBtn.on('click', function() {
+                var _index = tabsBtn.index($(this));
+                $(this).addClass('active').siblings().removeClass('active');
+                tabsDiv.eq(_index)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="tabs">
+        <ul>
+            <li>选项1</li>
+            <li>选项2</li>
+            <li>选项3</li>
+        </ul>
+        <div>第1个选项卡Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis illo hic cum molestiae maxime placeat impedit dolore dolorum, labore temporibus provident ipsum, laborum quisquam animi tempora itaque minima. Totam, ut!</div>
+        <div>第2个选项卡Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis illo hic cum molestiae maxime placeat impedit dolore dolorum, labore temporibus provident ipsum, laborum quisquam animi tempora itaque minima. Totam, ut!</div>
+        <div>第3个选项卡Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis illo hic cum molestiae maxime placeat impedit dolore dolorum, labore temporibus provident ipsum, laborum quisquam animi tempora itaque minima. Totam, ut!</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>方块移动</title>
+	<style>
+		body{
+			background-color: black;
+		}
+		#c1{
+			background-color: white;
+		}
+		span{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="c1" width="400" height="400">
+		<span>不支持canvas的浏览器</span>
+	</canvas>
+	<script>
+	
+		
+		var canvas = document.getElementById("c1");		//获取canvas元素		
+		var ctx = canvas.getContext("2d");				//绘制环境
+		
+		var num = 0;
+		
+		ctx.fillStyle="#F00";
+		ctx.strokeStyle="#F0F";
+		ctx.lineWidth = 5;
+		ctx.strokeRect(0.5,0.5,100,100);
+		ctx.fillRect(0,0,100,100);
+		
+		setInterval(function()							//setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+			{
+				num ++;
+				
+				ctx.clearRect(0,0,400,400);
+				
+				ctx.strokeRect(num + 0.5,num + 0.5,100,100);
+				
+				ctx.fillRect(num,num,100,100);
+			},50)
+	</script>
+</body>
+</html>

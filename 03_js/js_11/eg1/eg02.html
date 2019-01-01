@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a[href] {
+            color: red;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // var oDiv = document.querySelector('.div1');
+            // var oDiv1 = document.querySelector('#d1');
+            // var oDiv2 = document.querySelector('div');
+            // console.log(oDiv);
+            // console.log(oDiv1);
+            // console.log(oDiv2);
+            // var oUl = document.querySelector('#d11 ul');
+            // console.log(oUl);
+            var aList = document.querySelectorAll('#d1 ul li a[href][class]');
+            console.log(aList);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="div1" id="d1">
+        <a href="#">a1</a>
+        <ul>
+            <li><a href="#" class="a1">第1个li</a></li>
+            <li>第2个li</li>
+            <li><a>第3个li</a></li>
+            <li>第4个li</li>
+            <li>第5个li</li>
+        </ul>
+    </div>
+    <div class="div1" id="d11">
+        <ul>
+            <li><a href="#">第1个li</a></li>
+            <li>第2个li</li>
+            <li> <a href="#">第3个li</a></li>
+            <li>第4个li</li>
+            <li>第5个li</li>
+        </ul>
+    </div>
+</body>
+
+</html>

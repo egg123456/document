@@ -1,0 +1,102 @@
+课堂笔记：
+一，复习
+	1，浮动的性质
+		1）浮动脱标，不受限制
+		2）浮动贴边
+		3）margin塌陷消失
+		4）浮动让出了标准流
+		5）文字环绕
+	2，浮动清除
+		1）clear:both;
+		2）外墙法   clear:both;
+		3）内墙法   clear:both;
+		4）overflow:hidden;
+		有高度的盒子可以管住自己的浮动的儿子，父类不能被浮动的儿子撑出高度
+		overflow:hidden;隐藏溢出部分
+				 scroll;显示下拉条
+				 none;可以隐藏下拉条
+二，作业讲解
+	1，选项卡
+三，超链接的美化
+	1，伪类
+		a标签拥有自己的独特的样式，有四种状态
+		超链接根据用户的点选情况，四中样式：
+			a:link   没有访问的超链接
+			a:visited已经访问过后的超链接
+			a:hover  鼠标悬浮在标签上
+			a:active 鼠标按下的超链接
+		.在css中叫做类，这是工程师加的，明确告诉读者这是什么类
+		但是:link  :hover  ,用户指定的状态，在页面编辑的时候，我们只能定义，但是不知道属于什么类，所以叫做‘伪类’
+	2,爱恨准则
+		css有规定，这四个伪类的顺序必须是：link,visited,hover,active   lovehate
+		如果顺序不一样，就有可能出现样式混乱
+		可以省略visited 剩下的顺序就是：link,hover,active
+	3,超链接常见写法
+		通常，我们会将a标签的link和viseted一起设置
+		如果，需要将a转成块，设置宽高，我们一般习惯将盒模型的属性写在a标签选择器了里边，把相关文字的属性，写在伪类里边，特别的text-decoration一定要写在伪类里边或者a标签里边，绝对不可以从父类继承，因为从父类继承的text-decoration:none;是不能干掉a标签默认的下滑线
+		伪类的权重跟类一样大
+四，background系列
+	1，background-color
+		背景颜色
+			background-color:#a00;
+		padding区域也是会显示背景颜色的，也就是说border以内都是背景区域
+	2，background-image
+		背景图片
+		background-image:url(images/1.jpg);
+		url:uniform resource locator 统一资源定位符，通俗来说就是‘网站’
+		url() 内部不要引号，可以使相对路径，也可以是绝对路径
+		插如图片：
+			<img src='' />
+	3,background-repeat
+		repeat 就是重复的意思
+		background-repeat:no-repeat;不重复
+		background-repeat:repeat-x;水平重复
+		background-repeat:repeat-y;垂直重复
+		background-repeat:repeat;默认重复
+	4,background-position
+		图片位置属性
+		background-position:100px 200px;
+			意思是：背景图片在盒子中向右移动100px，向下移动200px
+			如果想要向左向上移动，写负值
+		常用在css的精灵图中，或者叫雪碧技术，这个技术就是将一对杂碎的小图片合成一张图片，然后使用background-position来显示不同的区域来显示不同的图片
+		优点：明显降低http请求次数，如果将10张小图片合成一张，现在就只需要请求一次
+		background-position还可以使用单词定位：
+			在左右层面：left，center，right表示左中右
+			在上下层面：top，center，bottom表示上中下
+		还可以使用百分比定位
+			background-position:50% 0;
+			==>
+			background-position:center top;
+		假设：盒子宽600，图片宽度122
+			background-position:center top;
+			==>
+			background-position:50% 0;
+			==>
+			background-position:239px 0;
+			(600 - 122) / 2 = 239;
+		banner的尺寸往往都是非常大的，为了照顾有钱人，能达到1920的屏幕宽度，多以这个banner的宽一般是1920，如果屏幕比较小，就显示中间就可以了
+		background-position：center top;
+	5,background-attachment
+		背景附属属性，attachment就是附属的意思，一个比较有用的属性值fixed：<u>（页面滚动时背景不动，即是fixed固定住）</u>			background-attachment:fixed;
+	6,综合属性
+		background-color:red;
+		background-image:url(images/0.jpg);
+		background-position:center top;
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		==>
+		background:red url(images/0.jpg) no-repeat 100px 200px fixed;
+五，背景图应用
+	1，图换文字
+		插入图片logo
+			<h1>
+				<img src="images/logo/png" alt="">
+			</h1>
+		这种插入图片方式，对搜索引擎是不友好的，我们希望H1里边是文字，搜索引擎可以搜索到，但是图片是不能被搜索引擎是别的
+		最好的做法是h1中使用文字，图片在背景显示
+		<h1>蓝科教育</h1>
+		通过某种手段将文字隐藏
+	2,先导图片放进padding
+		用案例说明
+	3,精灵图摆放
+		所有要成为先导图的图标要放在精灵图的最右边

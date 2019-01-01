@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		u p{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<pre>
+0711课堂笔记
+一，复习
+	1，使用谷歌浏览器审查元素
+二，盒模型
+	<p>五个属性的盒子模型：width，height,padding,border,margin</p>
+	注：width和盒子的真实宽度的关系
+	1，通过浏览器控制台看懂盒子模型
+		auto自动
+		padding和border能增加盒子的真实宽高，所以他们都是外扩的
+	2，padding 内边距
+		padding 指的是边框内侧到内容的距离
+		padding的设置方法有多种：
+			padding：50px;
+			或：
+			padding：10px 20px 30px 40px;
+			或：
+			padding-top:10px;
+			padding-right:20px;
+			padding-bottom:30px;
+			padding-left:40px;
+			或：
+			padding:10px 20px;
+			或：
+			padding:10px 20px 30px;
+		注意：有些元素默认带有padding，比如ul
+		清除默认padding和margin
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	3，border边框
+		三要素：宽度  细线  颜色
+		<p>语法：border:1px solid black;
+		1px 就是宽度1像素
+		solid  边框线型为实线
+		black  边框颜色为黑色
+		线型：
+			none:无边框
+			solid：实线边框
+			dotted：点状线
+			dashed：虚线
+			double：双实线  宽度等同于outline-width的值
+			groove：3D凹槽线  效果取决有outline-color的值
+			ridge：3D凸槽线  效果取决有outline-color的值
+			inset：3D凹边线 效果取决有outline-color的值
+			outset：3D凸边线
+			效果取决有outline-color的值
+			inherit：从父类继承
+		工作只允许使用solid和dashed，其他的线型都是有兼容性问题的，如果想用其他的线型，必须切图
+		border:10px solid red;
+		==></p>
+		<p>border-width:10px;
+		border-color:red;
+		border-style:solid;</p>
+		border叫复合属性
+		一个复合属性可以拆成12个小属性：
+		border-top-width:10px;
+		border-top-color:red;
+		border-top-style:solid;
+		border-right-width:5px;
+		border-right-color:blue;
+		border-right-style:double;
+		border-bottom-width:15px;
+		border-bottom-color:green;
+		border-bottom-style:dashed;
+		border-left-width:20px;
+		border-left-color:yellow;
+		border-left-style:dotted;
+	4,margin属性
+		盒子外边距，盒子的边框外侧到其他盒子之间的距离
+		margin有四个方向，分别是：margin-top,margin-right,margin-bottom,margin-left
+		margin塌陷现象：
+			如果有两个盒子，在相邻的方向上都有margin，并且不相等，两者之间的距离以较大的margin为准，较小的margin会被覆盖
+		父子盒子，子盒子margin踢父亲，会把父亲踢飞，所以儿子是不允许踢父亲的，想要设置距离，使用父亲的padding踢儿子 
+		ul消除小圆点点：
+			ul{
+				list-style:none;
+			}
+三，居中策略
+	1，文本水平居中
+		想让文字居中，就给文本所在盒子设置如下属性：text-align:center;
+		其他情况：
+			text-align:left;居左
+			text-align:right;居右
+		这个方法仅限于文本流使用（文字，图片，表单元素），这个属性是给盒子设置的，不能设置给这些文字，图片或者表单元素
+	2,盒子水平居中
+		设置盒子：margin:10px auto 0;
+		注意：想要使用margin:0 auto;使盒子居中，这个盒子必须具有width属性，切不为0
+	3，单行文本垂直居中
+		line-height:父盒子高度;
+		行高=盒子高度
+		注意：这个方法只适合单行文本，多行文本不可以用
+四，标准文档流
+	1，什么是标准文档流
+		比如在word文档中，必须跟随光标打字，不能随便写字，这是一个标准流；
+		在网页中，标准是从左向右，从上向下，拥有一个‘光标’的概念，在标准的文档流中，内置了很多性质
+	2，标准文档流的性质
+		1）空白折叠性质
+			标签内部不管有多少空格，换行，tab，都会被缩减为一个空格
+		2）高低不齐时，底部对齐
+			在文本中，如果出现高低不齐现象，默认底部对齐
+		3)标准流中最重要的性质，在标准流中，把元素分为‘块级元素’和‘行内元素’两大类，这两大类有不同的性质
+	3，块级元素和行内元素
+		HTML把标签分为两大类：
+			1）块级元素：div，h系列，p,ul,li,ol,dl,dt,dd
+			2)行内元素：span,a,img,b,u,i,em,strong
+		块级元素特点：
+			1）能够设置宽高
+			2）不能并排
+			3）不设置宽度默认与父类宽度一样
+		行内元素特点：
+			1）不能设置宽高
+			2）可以并排
+	4，行内和块级元素相互转换
+		转换需要一个重要的属性：
+			display
+		块级元素转行内元素：
+			display:inline;
+			这个元素就具有了行内元素的所有性质
+		行内元素转块级元素：
+			display:block;
+			这个元素就会拥有块级元素的所有性质
+		有什么用？
+			答：块->行内   没有用
+				行内->块   非常有用
+		人妖：display:inline-block;
+		在标准流中，做网页是非常繁琐，因
+		为标准流中不能并排，能并排的不嫩该设置宽高，所以我们需要脱离标准流变成，脱离标准流有三种方法：浮动，绝对定位，固定定位
+五，浮动
+	1，浮动--左并排用的
+		float  英文‘浮’的意思
+		两种浮动方式
+		left左浮动：float:left;
+		right右浮动：float:right;
+		浮动的元素都要去贴父类的边，但是如果有兄弟元素已经贴边，就会被挡在后边，就会贴到哥哥的边上
+		如果想要保证所有元素并排，父盒子必须有足够的宽度
+		注意：浮动的子类不能为父类撑出高度
+</pre>
+</body>
+</html>

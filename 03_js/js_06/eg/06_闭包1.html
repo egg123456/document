@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// function outer(){
+		// 	var a = 333;
+		// 	function inner(){
+		// 		console.log(a);
+		// 	}
+		// 	return inner;
+		// }
+		// var inn = outer();
+		// inn();//这里就是调用了inner函数
+
+		function outer() {
+			var a = 888;
+			function inner() {
+				console.log(a);
+			}
+		}
+		inner();
+	</script>
+</body>
+</html>

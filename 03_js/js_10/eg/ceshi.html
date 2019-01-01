@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            console.log(document);
+            console.log(document.childNodes);
+            var html = document.documentElement.childNodes;
+            console.log(html);
+            console.log(html.lang);
+            console.log(html[0]);
+            var body = document.body;
+            var nd = body.childNodes;
+            console.log(nd);
+            var pnode = document.getElementById('p').childNodes;
+            console.log(pnode);
+            
+        }
+    </script>
+</head>
+<body>
+    <!--zhushi  -->
+    <div class="d1">
+        <div class="d2" id="d2">
+            <div class="d3">
+                <p id="p">zhongguo<a href="">lianjie</a>china</p>
+            </div>
+        </div><div class="d2" id="d2">
+            <div class="d3">
+                <p>zhongguo<a href="">lianjie</a>china</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

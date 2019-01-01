@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			border-top:10px solid yellow;
+		}
+		.inner{
+			height: 190px;
+			border: 10px solid  blue;
+			border-top: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner">
+			原理：两个盒子负责描述边框，外层盒子border-top:内层盒子其余三边
+		</div>
+	</div>
+</body>
+</html>

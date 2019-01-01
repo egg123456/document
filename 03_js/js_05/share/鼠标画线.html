@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>canvas</title>
+	<style>
+		body{
+			background-color: black;
+		}
+		#c1{
+			background-color: white;
+		}
+		span{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="c1" width="400" height="400">
+		<span>不支持canvas的浏览器</span>
+	</canvas>
+	<script>
+	
+		
+		var canvas = document.getElementById("c1");		//获取canvas元素		
+		var ctx = canvas.getContext("2d");				//绘制环境
+		
+		
+		//鼠标画线
+		canvas.onmousedown = function(ev)
+		{
+			var ev = ev || windows.event;
+			ctx.moveTo(ev.clientX - canvas.offsetLeft, ev.clientY - canvas.offsetTop);
+			
+			document.onmousemove = function(ev)
+			{
+				var ev = ev || windows.event;
+				ctx.lineTo(ev.clientX - canvas.offsetLeft, ev.clientY - canvas.offsetTop);
+				
+				ctx.stroke();
+			}
+			document.onmouseup = function()
+			{
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		//绘制方块
+		//fillRect(left值,top值,w宽,h高);	填充方块
+		//strokeRect();						带边框的方块
+		
+		//ctx.fillStyle='#FF0000';		//填充颜色
+		//ctx.strokeStyle='#0000FF';		//边框颜色
+		//ctx.lineWidth = 10;				//线宽
+		//ctx.lineJoin = "round";			//圆角边框
+		//ctx.lineJoin = "bevel";			//斜角边框
+		
+		//ctx.fillRect(50,50,100,100);
+		
+		//ctx.strokeRect(50,50,100,100);
+		//ctx.fillRect(50,50,100,100);		//边框与填充的先后顺序
+		
+		
+		//绘制路径
+		//beginPath			//开始绘制路径
+		//closePath			//结束绘制路径
+		//moveTo			//移动到绘制的新目标点
+		//lineTo			//新的目标点
+		
+		//ctx.beginPath();
+		
+		//ctx.moveTo(100,100);
+		
+		//ctx.lineTo(200,200);
+		
+		//ctx.lineTo(300,200);
+		
+		//ctx.lineTo(100,100);
+		//ctx.closePath();
+		
+		
+		//ctx.rect(100,100,100,100);
+		//ctx.stroke();
+		
+		//fill();
+		//ctx.clearRect(0,0,400,400);	//清空
+		
+	</script>
+</body>
+</html>

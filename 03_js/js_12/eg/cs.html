@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var image = document.createElement('img');
+            image.src = 'new.jpg';
+            console.log(image);
+            var img = new Image();
+            img.src = '1.jpg';
+            var body = document.getElementById('body');
+            console.log(body);
+            body.appendChild(image);
+            body.appendChild(img);
+            console.log(img);
+
+            var a = 10;
+            var trees = new Array("redwood", "bay", "cedar", "oak", "maple");
+            delete trees[3];
+            delete a;
+            console.log(a);
+            console.log(trees);
+        }
+    </script>
+</head>
+
+<body id="body">
+    <table rules="all">
+        <tr>
+            <td>1111</td>
+            <td>222</td>
+            <td>333</td>
+            <td>444</td>
+            <td>555</td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function getXhr() {
+            var xhr = null;
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else {
+                xhr = new ActiveXObject('microsoft.xmlhttp');
+            }
+            return xhr;
+        }
+        var inp = document.getElementById('uname');
+        inp.onbulr = function() {
+            var xhr = getXhr();
+            xhr.open('get', 'php/eg02.php?userNmae' + this.value, true);
+            xhr.send();
+            xhr.onreadystatechangs = function() {
+                if (xhr.readystate == 4 && xhr.status == 200) {
+                    s.innnerHTML = xhr.responseText;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    dfghjk
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		var myCar = new Object();
+		myCar.make = "Ford";
+		myCar.model = "Mustang";
+		myCar.year = 1969;
+		// var person={firstname:"Bill", lastname:"Gates", id:5566};
+		function showProps(obj, objName) {
+		  var result = "";
+		  for (var i in obj) {
+		    if (obj.hasOwnProperty(i)) {
+		        result += objName + "." + i + " = " + obj[i] + "\n";
+		    }
+		  }
+		  return result;
+		}
+		console.log(showProps(myCar, "myCar"));
+	</script>
+	<script>
+		var txt = "Hello";
+		var l = txt.length;
+		console.log(showProps(txt, "txt"));	
+		console.log(l);	
+	</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+在桌面新建文件夹 京东网页 依次在 京东网页 文件夹下面新建css、js、images 文件夹
+
+打开 WebStorm   菜单 文件 — 打开 …  找到站点文件夹 京东网页
+
+右键 京东网页 — 新建  html文件  name:index
+                            Kind:HTML 5 file
+
+在文件右上角 可以选择浏览器 进行预览
+
+
+写完代码无需保存  
+
+
+ <link rel="shortcut icon" href="favicon.ico" /> 选项卡上的图标
+
+
+

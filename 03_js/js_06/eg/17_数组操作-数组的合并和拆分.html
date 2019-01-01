@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// concat
+		// var arr1 = ['东','西','南','北'];
+		// var arr2 = ['一条','二条'];
+		// arr1 = arr1.concat(arr2,['一同','二筒'],'幺鸡');
+		// console.log(arr1);//
+
+		// slice
+		var arr1 = ['东','西','南','北','一条','二条','三条'];
+		var arr2 = arr1.slice(1,4);//从下标为1的素开始取，到下标为4的停止，包括1不包括4也就是取下标为1,2,3的三个元素
+		console.log(arr2);
+
+		var arr3 = arr1.slice(2,5);
+		console.log(arr3);//'南','北','一条'
+
+		var arr4 = arr1.slice(3);//下标为3的后边的所有元素，包括3
+		console.log(arr4);//'北','一条','二条','三条'
+
+		var arr5 = arr1.slice(-4,-2);//倒数第四个取到倒数第2个，不包括倒数第二个
+		console.log(arr5);//'北','一条'
+
+		var arr6 = arr1.slice(-4);//倒数第四个取到结尾
+		console.log(arr6);//'北','一条','二条','三条'
+
+		var arr7 = arr1.slice(3,1);//顺序错误
+		console.log(arr7);//空数组
+
+		var arr8 = arr1.slice(3,3);//顺序错误
+		console.log(arr8);//空数组
+	</script>
+</body>
+</html>

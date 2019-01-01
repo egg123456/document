@@ -1,0 +1,394 @@
+ul{
+	overflow: hidden;
+}
+.shortcut-bar{
+	background-color: #f1f1f1;
+}
+.shortcut-bar ul{
+	width: 1210px;
+	margin: 0 auto;
+	padding: 5px 0;
+}
+.shortcut-bar li{
+	position: relative;
+	float: left;
+	padding:0 20px 0 10px;
+	border-right: 1px solid #c9c9c9;
+	font-size: 12px;
+	overflow: hidden;
+	
+}
+.shortcut-bar a{
+	text-decoration: none;
+	color: black;
+}
+.shortcut-bar .shortcut1{
+	margin-right: 290px;
+}
+.shortcut-bar .shortcut1 a{
+	font-size: 14px;
+}
+.shell{
+	position: absolute;
+	top: 8px;
+	right: 5px;
+	width: 9px;
+	height: 15px;
+	padding-left: 5px;
+	overflow: hidden;
+}
+.inner{
+	position: absolute;
+	top: -7px;
+	font:400 15px/15px consolas;
+    color: #6A6A6A;
+}
+.shortcut8 .tel-icon{
+	float: left;
+	width: 15px;
+	height: 20px;
+	padding-right: 5px;
+	background: url(../images/jd2015img.png) 0 0 no-repeat;
+}
+.topbanner{
+	height: 80px;
+	background-color: #8a25c6;
+}
+.topbanner-inner{
+	width: 1210px;
+	margin: 0 auto;
+}
+.close-icon{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: url(../images/close.png) no-repeat;
+	top: 30px;
+	right: 80px;
+}
+.header{
+	width: 1210px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.header div{
+	float: left;
+}
+.header .logo-img{
+	float: left;
+	width: 170px;
+	height: 70px;
+	margin-top: 20px;
+	background: url(../images/logo-201305.png) no-repeat;
+}
+.header .search{
+	padding-top: 25px;
+	margin: 0 20px;
+}
+.header .search-lan{
+	width: 450px;
+	height: 32px;
+	border: 2px solid #b61d1d;
+}
+.header .search-btn{
+	line-height: 36px;
+	background-color: #b61d1d;
+	color: white;
+	padding: 0 25px;
+	position: relative;
+	left: -6px;
+	border: none;
+}
+.header .hotwords{
+	overflow: hidden;
+}
+.hotwords li{
+	float: left;
+	padding: 8px 10px 10px 0;
+}
+.header a{
+	color: black;
+	font-size: 12px;
+	text-decoration: none;
+}
+.header .car{
+	float: right;
+	position: relative;
+	margin: 25px 75px 0 0;
+	width: 140px;
+	line-height: 34px;
+	text-align: center;
+	background-color: #f9f9f9;
+	border: 1px solid #dfdfdf;
+}
+.car .icon1{
+	position: absolute;
+	top: 12px;
+	left: 14px;
+	width: 18px;
+	height: 20px;
+	background: url(../images/jd2015img.png) no-repeat -1px -60px;
+}
+.car .icon2{
+	position: absolute;
+	top: 0px;
+	left: 115px;
+}
+.car .icon3{
+	position: absolute;
+	top: -5px;
+	left: 100px;
+	height: 16px;
+	width: 16px;
+	line-height: 14px;
+	font-size: 12px;
+	color: white;
+	background-color: #b61d1d;
+	border-radius: 7px 7px 7px 0;
+}
+.nav{
+	position: relative;
+	width: 1210px;
+	padding: 0 0 0 280px;
+	height: 40px;
+	border-bottom: 2px solid #B1191A;
+}
+.nav-column dl{
+	float: left;
+	overflow: hidden;
+}
+.nav-column dd{
+	float: left;
+	line-height: 40px;
+	text-align: center;
+	padding: 0 20px;
+}
+.nav dl a{
+	text-decoration: none;
+	color: #666;
+}
+.nav .nav-column4{
+	position: relative;
+}
+.nav .nav-column4 .zhounianqing{
+	width: 37px;
+	height: 16px;
+	line-height: 14px;
+	font-size: 12px;
+	background: url(../images/znq.jpeg) top right no-repeat;
+	position: absolute;
+	top: -2px;
+	border-radius: 0 0 0 -5px;
+} 
+.nav .nav-ad{
+	float: left;
+	margin-left: 200px;
+	color: red;
+	line-height: 40px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.banner{
+	position: relative;
+	width: 100%;
+	height: 460px;
+	background: url(../images/banner.jpg)  top center no-repeat;
+}
+.banner .slider{
+	margin: 15px 0 0 285px;
+	width: 730px;
+	height: 454px;
+	background: url(../images/slider.jpg) top center no-repeat;
+}
+.slider ul{
+	position: absolute;
+	top: 430px;
+	left: 600px;
+}
+.slider li{
+	float: left;
+	width: 18px;
+	height: 18px;
+	font-size: 12px;
+	line-height: 18px;
+	text-align: center;
+	border-radius: 9px;
+	background-color: #3e3e3e;
+	margin: 0 2px;
+	color: white;
+}
+.slider a{
+	text-decoration: none;
+	color: white;
+	position: absolute;
+	top: 50%;
+	font-size: 40px;
+	width: 28px;
+	height: 62px;
+	background-color: rgba(0,0,0,.2 );
+}
+.slider .right-arrow{
+	left: 990px;
+}
+.banner .banner-right{
+	position: absolute;
+	top: 0px;
+	right: 70px;
+	width: 240px;
+}
+.banner .news{
+	padding: 0px 0 0 10px;
+	border: 1px solid #ccc;
+}
+.banner-right dt{
+    font: 400 16px/32px "microsoft yahei";
+    color: #666;
+}
+dt .more{
+	float: right;
+	font: 400 12px/32px "microsoft yahei"
+}
+.banner-right dd{
+	padding-top: 7px;
+    font: 400 12px/24px "microsoft yahei";
+    color: #666;
+}
+.banner .life-serv{
+	width: 244px;
+	height: 200px;
+	border-left: 1px solid #e8e8e8;
+}
+.banner-right .life-serv li{
+	float: left;
+	position: relative;
+	width: 59px;
+	height: 65px;
+	border: 1px solid #e8e8e8;
+	border-width: 0 1px 1px 0;
+}
+.life-serv a{
+	text-decoration: none;
+	color: black;
+	width: 59px;
+	height: 30px;
+	padding-top: 40px;
+	text-align: center;
+	position: absolute;
+}
+a i{
+	position: absolute;
+	width: 25px;
+	height: 26px;
+	top: 10px;
+	left: 18px;
+ 	background: url(../images/life-serv.png) 0 0 no-repeat;
+}
+.banner-right .pic{
+	margin-top: 4px;
+}
+.categroies{
+	position: absolute;
+	top: 210px;
+	left: 60px;
+	line-height: 40px;
+	color: white;
+}
+.categroies dt,.categroies dd{
+	width: 190px;
+	padding: 0 10px;
+}
+.categroies dt{
+	background-color: #B1191A;
+}
+.categroies dd{
+	background-color: #C81623;
+	font-size: 14px;
+	line-height: 30px;
+}
+.categroies .dayu{
+	float: right;
+}
+.middle dt,.middle dd{
+	float: left;
+}
+.top,.middle{
+	overflow: hidden;
+	padding: 20px 50px 0 60px;
+}
+.footer .top li{ 
+	padding-top: 15px;
+	padding-right: 80px; 
+	float: left;
+}
+.top .slogen{
+	margin-bottom: 30px;
+}
+.slogen{
+	height: 94px;
+	background-color: #f5f5f5;
+}
+.footer .info{
+	overflow: hidden;
+	color: #666;
+}
+.footer .top .info dl{
+	margin-right: 118px;
+	float: left;
+}
+.info dt{
+	font: 400 16px/24px "microsoft yahei";
+	margin-bottom: 10px;
+}
+.info dd{
+	font: 400 12px/20px arial;
+}
+.info .coverage{
+	float: left;
+	width: 185px;
+	height: 150px;
+	padding: 0px 0px 20px 20px ;
+	margin-right: 0px !important;
+	background: url(../images/china.png) no-repeat 0 -140px;
+}
+.coverage span{
+	float: right;
+}
+.top{
+	border-bottom: 1px solid #ccc;
+}
+.footer .bottom{
+	font-size: 12px;
+}
+.footer .bottom .links{
+	width: 850px;
+	margin: 20px auto 0;
+}
+.footer .bottom .links a{
+	padding: 0 10px;
+	text-decoration: none;
+	color: #666;
+}
+.footer .bottom .copyright{
+	width: 850px;
+	margin: 20px auto;
+	text-align: center;
+}
+.footer .bottom .auth{
+	width: 740px;
+	margin: 30px auto 10px;
+}
+.auth a{
+	padding: 0 5px;
+}
+.more:hover,li:hover,dd:hover,a:hover,.current{
+	color: red !important;
+}
+.circle li:hover,.circle-current{
+	background-color: #f00 !important;
+}
+.img{
+	height: 170px;
+	width: 300px;
+	background: url(../images/china.png) no-repeat 0 -120px;
+}
+

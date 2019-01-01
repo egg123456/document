@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.2.1.js"></script>
+    <style>
+        div {
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid greenyellow;
+        }
+        
+        dl {
+            overflow: hidden;
+        }
+        
+        dd {
+            float: left;
+            width: 120px;
+            text-align: center;
+            margin: 10px;
+            background-color: skyblue;
+        }
+        
+        button {
+            width: 100px;
+        }
+        
+        button:first-of-type {
+            margin-left: 500px;
+        }
+    </style>
+    <script>
+        $(function() {
+            var dv = $('<div><dl class="list"></dl></div>'),
+                start = $('<button type="button" class="start">start</button>'),
+                clear = $('<button type="button" class="clear">clear</button>'),
+                arr = ['占志杰', '黄志华', '王俊熙', '陆  超', '苏赞霞', '何丹阳', '杨二钢', '朱鑫亮', '黄雄霞', '董励强', '包清和'];
+
+            function init() {
+                $('body').append(dv).append(start).append(clear);
+                for (var i = 0; i < arr.length; i++) {
+                    for (var j = 0; j < localStorage.length; j++) {
+                        if (arr[i] == localStorage.getItem(localStorage.key(j))) break;
+                    }
+
+                    if (j == localStorage.length) $('.list').append($(`<dd class="alter">${arr[i]}</dd>`));
+                    else $('.list').append($(`<dd>${arr[i]}</dd>`));
+                }
+            }
+            start.on('click', function() {
+                if (start.html() == 'start') {
+                    start.removeClass('start').addClass('stop').css('background', 'red').html('stop');
+                    timeout = setInterval(function() {
+                        randNum = Math.floor(Math.random() * arr.length);
+                        $('.list').children('.alter').eq(randNum).css('background', randcolor()).siblings().css('background', 'skyblue');
+                    }, 20);
+                } else {
+                    start.removeClass('stop').addClass('start').css('background', '').html('start');
+                    clearInterval(timeout);
+                    localStorage.setItem(randNum, arr[randNum]);
+                    $('.list').children('.alter').eq(randNum).removeClass('alter');
+                }
+                if ($('alter').length == 1) {
+                    $('.list .alter').css('background', randcolor()).siblings().css('background', 'skyblue');
+                    cle();
+                }
+            })
+            clear.on('click', function() {
+                cle();
+            })
+
+            function cle() {
+                localStorage.clear();
+                $('.list').empty();
+                init();
+            }
+            init();
+
+            function randcolor() {
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += (Math.floor(Math.random() * 16)).toString(16);
+                }
+                return color;
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

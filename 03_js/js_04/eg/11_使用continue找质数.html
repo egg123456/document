@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		var c = 0;
+		waiceng : for(var i = 3;i <= 100;i+=2){
+			for(var j = 2;j <= Math.sqrt(i);j++){
+				if (i % j == 0) {
+					continue waiceng;
+				}
+			}
+			c++;
+			console.log(c,i);
+		}
+		console.log('100以内有' + c + '个质数');
+	</script>
+</body>
+</html>

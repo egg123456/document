@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>进度条</title>
+<script>
+		//定义一个变量数组
+	var arr=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0];
+	//filter过滤
+	function pxFilter(str){
+		//indexOf获取字符在字符串里的位置，从左向右找
+		var index=str.indexOf("px");
+		if(index>0){
+			//slice截取字符串
+			return parseInt(str.slice(0,index));
+		}
+		return str;
+	}
+	//onload当加载完成时
+	window.onload=function(){
+		var container=document.getElementById("container");
+		var stick=document.getElementById("stick");
+		var i=0;
+		//设置时间间隔
+		var inter=window.setInterval(function(){
+			if(i==arr.length){
+
+				//解除计时器
+				clearInterval(inter);
+				return;
+			}
+
+			//parseFloat  分析浮点
+			//进度设置，属性设置
+			stick.style.width=(pxFilter(container.style.width)*parseFloat(arr[i])-2)+"px";
+			i++;
+		},1000);
+	};
+</script>
+</head>
+<body>
+	<div id="container" style="width:600px;height:30px;border:2px solid gray;padding:none;">
+		<div id="stick" style="background-color:blue;height:29px;width:0px;line-height:20px"></div>
+	</div>
+</body>
+</html>

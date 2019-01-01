@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<p id="demo">单击按钮显示修改后的年月日。</p>
+	<button onclick="myFunction()">点我</button>
+	<script>
+		function myFunction(){
+			var d = new Date();
+			d.setFullYear(2017,7,3);//年，月，日，记住 JavaScript 月数是从0至11。10是11月。
+			var x = document.getElementById("demo");
+			x.innerHTML=d;
+		}
+	</script>
+</body>
+</html>

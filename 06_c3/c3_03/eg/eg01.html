@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #ddd;
+            padding: 15px;
+        }
+        
+        h1 {
+            border: 1px solid black;
+            background-color: red;
+        }
+        
+        li {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            line-height: 200px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            /*默认row，水平方向，从左至右*/
+            flex-wrap: wrap;
+            /*默认nowrap不换行*/
+            justify-content: space-around;
+            /*默认flex-start*/
+        }
+        
+        ul li:nth-child(3) {
+            order: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>flex</h1>
+    <ul class="flex">
+        <li>l1</li>
+        <li>l2</li>
+        <li>l3</li>
+        <li>l4</li>
+        <li>l5</li>
+        <li>l6</li>
+        <li>l7</li>
+        <li>l8</li>
+        <li>l9</li>
+        <li>l10</li>
+        <li>l11</li>
+        <li>l12</li>
+        <li>l13</li>
+        <li>l14</li>
+        <li>l15</li>
+        <li>l16</li>
+    </ul>
+</body>
+
+</html>

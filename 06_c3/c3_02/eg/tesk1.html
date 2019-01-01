@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         :root {
+            background-color: #000;
+        }
+        
+        div {
+            border: 1px solid red;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transition: width 2s, height 2s;
+        }
+        
+        img {
+            width: 200px;
+            position: absolute;
+            left: 0;
+            transition: left 2s, transform 2s, width 2s;
+            transform-origin: center;
+        }
+        
+        div:hover {
+            width: 1100px;
+            height: 1100px;
+        }
+        
+        div:hover img {
+            width: 600px;
+            left: 500px;
+            transform: rotateZ(1080deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./bg.jpg" alt="">
+    </div>
+</body>
+
+</html>

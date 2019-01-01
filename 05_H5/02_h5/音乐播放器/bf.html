@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>HTML5播放器</title>
+<style type="text/css">
+ body
+     { font-size:13px;
+       font-family:宋体;
+     }
+     #ul_musicList
+     {
+       width:300px;
+       list-style-type:none;   
+       margin:5px 0 3px 0;
+       padding:0px;    
+     }  
+      #ul_musicList li
+      {
+           padding:5px;
+           border:solid 1px #EEEEEE;
+      }   
+ 
+</style>
+<script type="text/javascript" src="jquery-1.3.2.js"></script>
+<script type="text/javascript" src="MusicBox.js"></script>
+<script type="text/javascript">
+var mb=null;
+     $().ready(function(){
+     mb=new MusicBox();
+     mb.init();
+     });
+
+</script>
+</head>
+<body>
+<div>
+<!-- 显示音乐播放器，controls：显示播放器在页面-->
+<div><audio id="musicBox"  controls="true" onended="mb.nextMusic();"
+></audio></div>
+<div><input id="btnNext" type="button" value="下一首"  onclick="mb.nextMusic();"/><span id="sn_status"></span></div>
+<div style=" margin-top:5px">歌曲列表：</div>
+     <ul id="ul_musicList"  >
+   </ul>
+<div style="width:300px; text-align:right">
+        播放模式:<select id="slt_playMode">
+             <option value="1">全部循环</option>
+             <option value="2">单曲循环</option>
+         </select>
+         </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #inp{
+            width: 400px;
+            height: 30px;
+            margin: 10px 40px 0;
+        }
+        ul{
+            width: 400px;
+        }
+        ul li {
+            list-style-type: none;
+        }
+    </style>
+    <script>
+        function myCallback(data) {
+            var ul = document.getElementById('ul1');
+            ul.innerHTML = "";
+            Li = [];
+            for (var i = 0; i < data.s.length; i++) {
+                var li = document.createElement('li');
+                li.innerHTML = data.s[i];
+                li.setAttribute('id', i);
+                Li.push(li);
+                li.addEventListener('click', function() {
+                    window.open('https://www.baidu.com/s?ie=utf-8&wd=' + this.innerHTML);
+                });
+                ul.appendChild(li);
+
+            }
+            var k = 0;
+            inp.addEventListener('keyup', function(ev) {
+                if (k >= Li.length) {
+                    k = 0;
+                } else if (k < 0) {
+                    k = Li.length - 1;
+                }
+                for (var i = 0; i < Li.length; i++) {
+                    Li[i].style = "background:white;";
+                }
+                if (ev.keyCode === 40) {
+                    Li[k].style = "background:skyblue;color:white";
+                    k++;
+                } else if (ev.keyCode === 38) {
+                    Li[k].style = "background:skyblue;color:white";
+                    k--;
+                } else if (ev.keyCode === 13) {
+                    k--;
+                    if (k < 0) {
+                        k = 0;
+                    }
+                    window.open('https://www.baidu.com/s?ie=utf-8&wd=' + Li[k].innerHTML);
+                    k = 0;
+                }
+            });
+        }
+
+
+
+        window.onload = function() {
+            //该案例涉及到了数据交互，以下代码是jsonp技术的原理代码
+            //jsonp 是用来获取非同源数据
+            //同源 指的是，协议，域名，端口全部一致。
+            //jsonp的原理是通过动态的创建script元素
+            //将数据接口写入src属性，让服务器返回的字符串调用本地的callback
+
+            //获取百度搜索接口
+
+            var inp = document.getElementById('inp');
+            var wd = "";
+            inp.addEventListener('keyup', function(e) {
+                // 38 上 40下     13 enter
+                if (e.keyCode == 38 || e.keyCode == 40 || e.keyCode == 13) {
+                    return;
+                }
+                wd = this.value;
+                var url = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + wd + "&json=1&p=3&cb=myCallback";
+                var sc = document.createElement('script');
+                sc.src = url;
+                document.body.appendChild(sc);
+                document.body.removeChild(sc);
+            });
+
+        }
+</script>
+</head>
+
+<body>
+    <input type="search" id="inp">
+    <ul id="ul1"></ul>
+
+</body>
+
+</html>

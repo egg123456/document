@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var name = 'egg';
+        var d = new Date();
+        d.name = 'fyx';
+        // console.log(d.getTime());
+        var print = d.getTime.bind(d);
+        console.log(print == d.getTime);
+
+        function a() {
+            console.log(this.name);
+        }
+        var p = {
+            name: 'yeg'
+        }
+        p.fn = a.bind(d);
+        // var p = a;
+        p.fn(); //fyx
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

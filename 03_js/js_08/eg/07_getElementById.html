@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" style=""></div>
+
+	<script>
+		//通过id得到页面中的元素，保存到oBox中，
+		var oBox = document.getElementById('box');
+		//使用js让这个盒子变成蓝色
+		oBox.style.backgroundColor = 'blue';
+	</script>
+
+	<div id="container">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+	</div>
+		<p>5</p>
+	<script>
+		// 直接获取页面所有的p标签
+		var allP = document.getElementsByTagName('p');
+		console.log(allP);
+		var allp = document.getElementById('container').getElementsByTagName('p');
+		console.log(allp);
+		for(var i = 0;i < allp.length;i++){
+			allp[i].style.color = 'blue';
+		}
+	</script>
+</body>
+</html>

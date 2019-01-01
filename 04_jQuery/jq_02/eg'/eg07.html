@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            // $('div').remove('.div');
+            $('#d1').detach('.div')
+            $('#d2').css({
+                'background': 'red',
+                'height': '200',
+                'width': '200',
+                'font-size': '50',
+                'display': 'table-cell',
+                'vertical-align': 'middle',
+                'text-align': 'center'
+            })
+        })
+    </script>
+    <!-- <style>
+        div {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style> -->
+</head>
+
+<body>
+    <div id="d1" class="div">1</div>
+    <div id="d2">2</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci numquam modi, ex incidunt id. Nihil minima neque quisquam velit quia eius laudantium repudiandae. Odit libero fugit, qui reprehenderit harum iure.</p>
+</body>
+
+</html>

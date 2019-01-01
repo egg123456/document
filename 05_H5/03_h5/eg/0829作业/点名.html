@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.2.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+        
+        .btnBox {
+            margin: 0 auto;
+            padding: 30px;
+            width: 960px;
+        }
+        
+        .container {
+            overflow: hidden;
+            margin: 0 auto;
+            width: 250px;
+        }
+        
+        .start,
+        .stop,
+        .reset {
+            display: inline-block;
+            border-radius: 20px;
+            padding: 10px;
+            width: 100px;
+            text-align: center;
+        }
+        
+        .listBox {
+            overflow: hidden;
+            margin: 0 auto;
+            border: 1px solid #cccccc;
+            padding: 30px 50px;
+            width: 960px;
+            list-style: none;
+        }
+        
+        li {
+            float: left;
+            margin: 10px 7%;
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+            padding: 5px;
+            width: 18%;
+            text-align: center;
+        }
+        
+        .alternative {
+            background-color: #f3f3f3;
+        }
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        function ranColor() {
+            var tempColor = "#";
+            for (var i = 0; i < 6; i++) {
+                tempColor += parseInt(Math.floor(Math.random() * 8 + 8)).toString(16);
+            }
+            return tempColor;
+        }
+        var listArr = ["包清和", "杨二刚", "朱鑫亮", "董励强", "陆超", "黄雄霞", "苏赞霞", "何丹阳", "黄志华", "占志杰", "王俊熙"];
+        $(function() {
+            $(".start").css("background-color", ranColor());
+            $(".reset").css("background-color", ranColor());
+            var ls = localStorage;
+            for (var i = 0; i < listArr.length; i++) {
+                var k = 1;
+                for (var j = 0; j < ls.length; j++) {
+                    if (listArr[i] == ls.getItem(ls.key(j))) {
+                        k = 0;
+                        break;
+                    }
+                }
+                var tempLi = $("<li>" + listArr[i] + "</li>");
+                k == 1 && tempLi.addClass("alternative")
+                $(".listBox").append(tempLi);
+            }
+            $(".start").on("click", function() {
+                $(this).css("background-color", ranColor());
+                if ($(this).hasClass("start")) {
+                    timeout = setInterval(function() {
+                        $(".listBox").children(".alternative").eq(Math.floor(Math.random() * listArr.length)).addClass("selected").css("background-color", ranColor()).siblings().removeClass("selected").css("background-color", "");
+                    }, 1);
+                    if ($(".listBox").children(".alternative").length === 1) {
+
+                        setTimeout(function() {
+                            ls.clear();
+                            $(".listBox").children($(".alternative")).css("background-color", ranColor()).siblings().css("background-color", "");
+                            clearInterval(timeout);
+                            for (var i = 0; i < listArr.length; i++) {
+                                $(".listBox").children().eq(i).addClass("alternative");
+                            }
+                            $(this).addClass("start").removeClass("stop").text("开始");
+                            for (var i = 0; i < listArr.length; i++) {
+                                $(".listBox").children().eq(i).addClass("alternative").css("background-color", "");
+                            }
+                        }, 5000);
+                    } else {
+
+                        $(this).addClass("stop").removeClass("start").text("停止");
+                        // timeout = setInterval(function() {
+                        //     $(".listBox").children(".alternative").eq(Math.floor(Math.random() * listArr.length)).addClass("selected").css("background-color", ranColor()).siblings().removeClass("selected").css("background-color", "");
+                        // }, 20);
+                    }
+                } else if ($(this).hasClass("stop")) {
+                    $(this).addClass("start").removeClass("stop").text("开始");
+                    clearInterval(timeout);
+                    ls.setItem("key" + new Date().getTime(), $(".selected").removeClass("alternative").text());
+                }
+            });
+            $(".reset").on("click", function() {
+                $(this).css("background-color", ranColor());
+                ls.clear();
+                clearInterval(timeout);
+                for (var i = 0; i < listArr.length; i++) {
+                    $(".listBox").children().eq(i).addClass("alternative").css("background-color", "");
+                }
+                $(".stop").addClass("start").removeClass("start").text("开始");
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="btnBox">
+        <div class="container">
+            <span class="start">开始</span>
+            <span class="reset">重置</span>
+        </div>
+    </div>
+    <ul class="listBox"></ul>
+</body>
+
+</html>

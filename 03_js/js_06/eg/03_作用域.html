@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// for(var i = 0;i < 5;i++){
+		// 	var sum = i;
+		// } 
+		// console.log(sum);
+
+		// function fun() {
+		// 	var a = 1;
+		// 	console.log('这句话是在函数内部输出的，认识a吗？' + a);//1
+		// }
+		// fun();
+		// console.log('这句话是在函数外边输出的，认识a吗？' + a);// 报错，a没有被定义
+
+		// var a = 1;
+		// function fun() {
+		// 	console.log('这句话是在函数内部输出的，认识a吗？' + a);//
+		// }
+		// fun();
+
+		// 作用域连
+		// function outer() {
+		// 	var a = 1;
+		// 	inner();
+		// 	function inner() {
+		// 		var b =2;
+		// 		console.log(a);//1
+		// 		console.log(b);//2
+		// 	}
+		// }
+		// var a = 3;
+		// outer();
+		// console.log(b);//报错
+
+		// var a = 1;
+		// function fun() {
+		// 	var a = 5;
+		// 	console.log(a);//5
+		// }
+		// fun();
+		// console.log(a);//1
+
+		// var a = 1;
+		// var b = 2;
+		// function outer() {
+		// 	var a = 3;
+		// 	function inner() {
+		// 		var b = 4;
+		// 		console.log(a);//3
+		// 		console.log(b);//4
+		// 	}
+		// 	inner();
+		// 	console.log(a);//3
+		// 	console.log(b);//2
+		// }
+		// outer();
+		// console.log(a);//1
+		// console.log(b);//2
+
+
+		function fun() {
+			a = 1;
+		}
+		fun();
+		console.log(a);//1
+	</script>
+</body>
+</html>

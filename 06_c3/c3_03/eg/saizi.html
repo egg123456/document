@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        body {
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(30deg);
+            /* perspective: 600px; */
+            padding: 100px 300px;
+            transition: transform 1s;
+        }
+        
+        div {
+            width: 420px;
+            height: 420px;
+            background-color: #ccc;
+            border-radius: 30px;
+            /* margin: 100px auto; */
+            margin: 10px;
+            position: absolute;
+            border: 1px solid #f00;
+        }
+        
+        span {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: black;
+            border-radius: 50%;
+            margin: 20px;
+            /* padding: 20px; */
+        }
+        
+        .box1 {
+            transform: translateZ(210px);
+            display: flex;
+            justify-content: center;
+            /* justify-content: flex-end; */
+            align-items: center;
+        }
+        
+        .box2 {
+            transform: rotateY(90deg) translateZ(210px);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .box2 span:nth-child(2) {
+            align-self: flex-end;
+        }
+        
+        .box3 {
+            transform: rotateX(90deg) translateZ(210px);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .box3 span:nth-child(2) {
+            align-self: center;
+        }
+        
+        .box3 span:nth-child(3) {
+            align-self: flex-end;
+        }
+        
+        .box4 {
+            transform: rotateX(-90deg) translateZ(210px);
+            display: flex;
+            /* flex-wrap: wrap; */
+            flex-direction: column;
+            /* justify-content: space-between; */
+        }
+        
+        .box4 p:nth-child(1) {
+            flex-basis: 100%;
+            display: flex;
+            /* flex-direction: wrap; */
+            justify-content: space-between;
+            /* align-content: space-between; */
+            /* align-self: flex-end; */
+            align-items: flex-start;
+        }
+        
+        .box4 p:nth-child(2) {
+            flex-basis: 100%;
+            display: flex;
+            /* flex-direction: wrap; */
+            justify-content: space-between;
+            /* align-content: space-between; */
+            /* align-self: flex-end; */
+            align-items: flex-end;
+        }
+        
+        .box5 {
+            transform: rotateY(-90deg) translateZ(210px);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .box5 p {
+            flex-basis: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .box5 .row2 {
+            justify-content: center;
+        }
+        
+        .box6 {
+            transform: rotateX(180deg) translateZ(210px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <span class="item"></span>
+    </div>
+    <div class="box2">
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box3">
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box4">
+        <p class="row1">
+            <span class="item"></span>
+            <span class="item"></span>
+        </p>
+        <p class="row2">
+            <span class="item"></span>
+            <span class="item"></span>
+        </p>
+    </div>
+    <div class="box5">
+        <p class="row1">
+            <span class="item"></span>
+            <span class="item"></span>
+        </p>
+        <p class="row2">
+            <span class="item"></span>
+        </p>
+        <p class="row3">
+            <span class="item"></span>
+            <span class="item"></span>
+        </p>
+    </div>
+    <div class="box4 box6">
+        <p class="row1">
+            <span class="item"></span>
+            <span class="item"></span>
+            <span class="item"></span>
+        </p>
+        <p class="row2">
+            <span class="item"></span>
+            <span class="item"></span>
+            <span class="item"></span>
+        </p>
+    </div>
+    <script>
+        var body = document.body,
+            timeout = setInterval(function() {
+                var degx = parseInt(Math.random() * 10) * 18;
+                var degy = parseInt(Math.random() * 10) * 18;
+                body.style.transform = 'rotateX(' + degx + 'deg) rotateY(' + degy + 'deg)';
+            }, 1100)
+    </script>
+</body>
+
+</html>

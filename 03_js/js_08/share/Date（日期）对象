@@ -1,0 +1,12 @@
+Date 对象用于处理日期和时间。 
+可以通过 new 关键词来定义 Date 对象。
+var myDate = new Date();//Date 对象自动使用当前的日期和时间作为其初始值。
+1.使用 Date() 方法来返回今天的日期和时间
+2.使用 getTime() 计算从1970年到今天有多少毫秒
+3.使用 setFullYear() 设置具体的日期
+4.使用 getFullYear() 获取年份。
+5.使用 toUTCString() 把当日的日期（根据 UTC）转换为字符串
+6.使用 getDay() 来显示星期，而不仅仅是数字
+
+页面自动刷新的方法：
+<meta http-equiv="refresh" content="5">

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>案例</title>
+    <script>
+        function myCallback(data) {
+            console.log(data);
+            console.log(data.result);
+            var ul = document.getElementById('ul1');
+            ul.innerHTML = "";
+            for (var i = 0; i < data.result.length; i++) {
+                var li = document.createElement('li');
+                li.innerHTML = data.result[i].word;
+                li.addEventListener('click', function() {
+                    window.open('https://www.so.com/s?ie=utf-8&fr=none&src=360sou_newhome&q=' + this.innerHTML);
+                })
+                ul.appendChild(li);
+            }
+
+        }
+
+        window.onload = function() {
+            var inp = document.getElementById('inp');
+            var wd = "";
+            inp.addEventListener('keyup', function() {
+                wd = this.value;
+                var url = "https://sug.so.360.cn/suggest?callback=myCallback&encodein=utf-8&encodeout=utf-8&format=json&fields=word&word=" + wd;
+                var sc = document.createElement('script');
+                sc.src = url;
+                document.body.appendChild(sc);
+                document.body.removeChild(sc);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <input type="search" id="inp">
+    <ul id="ul1"></ul>
+    https://www.so.com/s?ie=utf-8&fr=none&src=360sou_newhome&q=%E4%BA%AC%E4%B8%9C
+    https://sug.so.360.cn/suggest?callback=myCallback&encodein=utf-8&encodeout=utf-8&format=json&fields=word&word=" 
+    
+</body>
+
+</html>

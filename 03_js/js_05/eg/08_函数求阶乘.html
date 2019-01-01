@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// 求阶乘的函数
+		function jiecheng(a) {
+			// 累乘器
+			var s = 1;
+			for(var i = 1;i <= a;i++){
+				s *= i;
+			}
+			// 返回
+			return s;
+		}
+
+		var sum = 0;
+		for(var i = 1;i <= 10;i++){
+			sum += jiecheng(i);
+		}
+		console.log(sum);
+
+	</script>
+</body>
+</html>

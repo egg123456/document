@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action=""method="get">
+		<p>
+			<!-- 单行文本输入 -->
+			用户名：<input type="text"value="main">
+		</p>
+		<p>
+			<!-- 密码输入值 -->
+			密码：<input type="password">
+		</p>
+		<p>
+			<!-- 单选框 -->
+			性别;<label for="nan"><input type="radio"checked="checked"name="sex"id="nan">男</label>
+			<label>
+				<input type="radio"name="sex">女
+			</label>
+			<label>
+				<input type="radio"name="sex">保密
+			</label>
+		</p>
+		<p>
+			<!-- 复选框 -->
+			爱好：
+			<label for="">
+				<input type="CheckBox">足球
+			</label>
+			<label for="">
+			<!-- 当for=""存在时点击后面文字将不能选中 -->
+				<input type="CheckBox">篮球
+			</label>
+			<label>
+				<input type="CheckBox">乒乓球
+			</label>
+			<label>
+				<input type="CheckBox">排球
+			</label>
+		</p>
+		<p>
+			<!-- 下拉菜单 -->
+			年龄：<select name="" id="">
+				<option value="1990">1990</option>
+				<option value="1991">1991</option>
+				<option value="1992">1992</option>
+				<option value="1993">1993</option>
+				<option value="1994">1994</option>
+				<option value="1995">1995</option>
+				<option value="1996">1996</option>
+			</select>
+		</p>
+		<p>
+			<textarea name="" id="" cols="30" rows="10">个人简历</textarea>
+		</p>
+		<p>
+			<!-- 普通按钮 -->
+			<input type="button"value="按钮">
+			<!-- 提交按钮 -->
+			<input type="submit"value="提交">
+			<!-- 重置按钮 -->
+			<input type="reset"value="重置">
+		</p>
+	</form>
+</body>
+</html>

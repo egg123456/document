@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		function outer() {
+			var count = 0;
+			function inner() {
+				count++;
+				console.log(count);
+			}
+			return inner;
+		}
+		var inn1 = outer();//是一个完整的inner函数
+		var inn2 = outer();//是一个完整的inner函数
+
+		inn1();// 1
+		inn2();//1
+		inn1();// 2
+		inn1();// 3
+		inn1();// 4
+		inn2();//2
+		inn2();//3
+		inn2();//4
+		inn2();//5
+		inn1();// 5
+
+		var c = 0;
+		function i() {
+			c++;
+			cosnole.log(c);
+		}
+		i();
+		i();
+		i();
+	</script>
+</body>
+</html>

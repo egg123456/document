@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script>
+        window.onload = function() {
+            var xhr = new XMLHttpRequest();
+            var tab = document.getElementById('tab');
+            xhr.open('get', 'php/eg03.php', true);
+            xhr.send();
+            xhr.onreadystatechange = function() {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    var data = xhr.responseText;
+                    data = JSON.parse(data);
+                    for (var i = 0; i < data.length; i++) {
+                        var tempRow = tab.insertRow(tab.rows.length);
+                        tempRow.insertCell(tempRow.cells.length).innerHTML = data[i].id;
+                        tempRow.insertCell(tempRow.cells.length).innerHTML = data[i].bookname;
+                        tempRow.insertCell(tempRow.cells.length).innerHTML = data[i].price;
+                        tempRow.insertCell(tempRow.cells.length).innerHTML = data[i].tips;
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-bordered table-hover text-center" id="tab">
+            <tr>
+                <td>编号</td>
+                <td>书名</td>
+                <td>价格</td>
+                <td>描述</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

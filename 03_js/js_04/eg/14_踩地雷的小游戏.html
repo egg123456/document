@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// 生成随机的地雷数
+		var dilei = parseInt(Math.random() * 100);
+		// 设置上限和下限
+		var lowLine = 1;
+		var hLine = 100;
+
+		// 让用户输入数字
+		while(true){
+			var a = parseInt(prompt('请输入数字,范围：' + lowLine + '到' + hLine));
+			// 验证正确性
+			if (a >= lowLine && a <= hLine) {
+				// 根据用户输入的值改变上下限
+				if (a > dilei) {
+					hLine = a;
+				}else if (a < dilei) {
+					lowLine = a;
+				}else{
+					alert('恭喜你猜到地雷了');
+					break;
+				}
+			}else{
+				alert('输入数字不合法');
+			}
+
+		}
+	</script>
+</body>
+</html>

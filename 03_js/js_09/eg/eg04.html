@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function each(obj, callback) {
+            if ('length' in obj) {
+                for (var i = 0; i < obj.length; i++) {
+                    callback(i, obj[i]);
+                }
+            } else {
+                for (var item in obj) {
+                    callback(item, obj[item]);
+                }
+            }
+        }
+
+        var arr = ['dsad', 564, true, null];
+        each(arr, function(index, elem) {
+            console.log(index, elem);
+        });
+
+        var obj = {
+            a: 31,
+            b: 55,
+            c: "abc"
+        }
+        each(obj, function(key, value) {
+            console.log(key + ":" + value);
+        });
+
+        window.onload = function() {
+            var allLi = document.getElementById('ul1').children;
+            each(allLi, function(index, elem) {
+                //将函数作为参数使用，这种形式叫做回调函数
+                if (index % 2 == 0) {
+                    elem.style = "color:red";
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>第1个li</li>
+        <li>第2个li</li>
+        <li>第3个li</li>
+        <li>第4个li</li>
+        <li>第5个li</li>
+    </ul>
+</body>
+
+</html>

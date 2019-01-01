@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		// 寻找1-10000之间的完美数
+		for (var i = 1; i <= 10000; i++) {
+			// 每一个i都拥有自己全新的sum，约数之和
+			var sum = 0;
+			// 测试这个i是不是完美数
+			// 对比i的约数之和与i是不是相等
+			// 找到所有i的约数，并求和
+			for(var j = 1;j <= i / 2;j++){
+				if (i % j == 0) {
+					// 说明j是i的约数
+					sum += j;
+				}
+			}
+			// 对比判断是不是完美数
+			if (sum == i) {
+				console.log(i);
+			}
+		}
+	</script>
+</body>
+</html>

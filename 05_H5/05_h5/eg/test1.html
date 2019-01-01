@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="400" height="400" id="myCanvas" style="border: 1px solid #000"></canvas>
+    <script>
+        (function(window) {
+            var c1 = document.getElementById('myCanvas'),
+                ctx = c1.getContext('2d'),
+                size = 8,
+                x = 0,
+                y = 0,
+                l = 10,
+                speed = 100,
+                direction = 3,
+                map = [],
+                foodList = [],
+                restart = false,
+                interval;
+            foodList.push({
+                'x': -1,
+                'y': -1
+            });
+
+            function set_game() {
+                switch (direction) {
+                    case 0:
+                        x -= size;
+                        break;
+                    case 1:
+                        y -= size;
+                        break;
+                    case 2:
+                        x += size;
+                        break;
+                    case 3:
+                        y += size;
+                        break;
+                }
+                //判断是否触碰边界
+                if (x > c1.width || y > c1.height || x < 0 || y < 0) {
+                    restart = confirm('你挂了，确认是否重新开始');
+                    if (restart) {
+                        window.location.reload();
+                    }
+                }
+                //画蛇
+                function drawSnake() {
+                    ctx.fillStyle = "red";
+                    ctx.fillRect(x, y, size, size);
+                }
+                drawSnake();
+
+                //记录蛇的路径
+                map.push({
+                    'x': x,
+                    'y': y
+                });
+
+                //清除尾巴
+                if (map.length > l) {
+                    var cl = map.shift();
+                    ctx.clearRect(cl.x, cl.y, size, size);
+                }
+
+                //food
+                function food() {
+                    console.log(foodList.length)
+                        // if (foodList.length < 3) {
+                        //     do {
+                        //         var randx = Math.floor(Math.random() * 50);
+                        //         var randy = Math.floor(Math.random() * 50);
+                        //         for (var i = 0; i < foodList.length; i++) {
+                        //             if (randx * 8 == foodList[i].x && randy * 8 == foodList[i].y) break;
+                        //         }
+                        //         console.log(i);
+                        //     } while (i == foodList.length)
+                        //     ctx.fillStyle = 'yellow';
+                        //     ctx.fillRect(x * 8, y * 8, size, size);
+                        //     foodList.push({
+                        //         'x': randx * 8,
+                        //         'y': randy * 8
+                        //     })
+                        // }
+                }
+                food();
+
+                function eat() {
+                    for (var i = 0; i < foodList.length; i++) {
+                        for (var j = 0; j < map.length; j++) {
+                            if (foodlist[i].x == map[j].x && foodList[i].y == map[j].y) l++;
+                        }
+                    }
+                }
+                eat();
+            }
+
+            document.addEventListener('keydown', function(ev) {
+                direction = ev.keyCode - 37;
+            })
+
+            interval = setInterval(set_game, speed);
+        })(window)
+    </script>
+
+</body>
+
+</html>

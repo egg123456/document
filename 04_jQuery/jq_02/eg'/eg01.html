@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script src="./jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            $('button').on('click', function() {
+                // $('div').hide(3000);
+                // $('div').hide(3000);
+                // $('div').hide(3000, function() {
+                //     $('div').css('background-color', 'yellow');
+                // }).show(3000).hide(3000);
+                $('div').toggle(2000, function() {
+                    alert('ok');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>anniu</button>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis beatae numquam, labore error blanditiis, debitis voluptate repudiandae maiores optio, iure velit veniam inventore nemo dolorum nobis dignissimos perspiciatis? Harum, repellat!
+    </div>
+</body>
+
+</html>

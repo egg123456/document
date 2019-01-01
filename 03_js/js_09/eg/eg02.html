@@ -1,0 +1,40 @@
+<!DOCTYPE html>                                 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var oDiv = document.getElementById('div1');
+            console.log(oDiv.parentNode); //获取父节点
+            console.log(oDiv.childNodes); //获取子节点集合
+            //类数组对象的特征 首先是object
+            //以下标作为属性，从0开始
+            //拥有length属性
+
+            // console.log(oDiv.firstChild);
+            // console.log(oDiv.lastChild);
+
+            // console.log(oDiv.firstElementChild);
+            // console.log(oDiv.lastElementChild);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <ul>
+            <li>第1个li</li>
+            <li>第2个li</li>
+            <li>第3个li</li>
+        </ul>
+        <!-- 下面有一个a元素 -->
+        <a href="#">a元素</a>
+        <!-- 注释内容 -->
+    </div>
+</body>
+
+</html>

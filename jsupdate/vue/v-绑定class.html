@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            color: greenyellow;
+        }
+        .text-danger{
+            color: red;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <my-component v-bind:class="{ active: isActive,'text-danger': hasError }"></my-component>
+        <my-component v-bind:class="classobj"></my-component>
+        <my-component v-bind:class="[classobj]"></my-component>
+    </div>
+    <script>
+        Vue.component('my-component', {
+            template: '<p class="foo bar">Hello World!</p>'
+        })
+         var vm = new Vue({
+            el: '#demo',
+            data: {
+                isActive:true,
+                hasError:false
+            },
+            computed:{
+                classobj:{
+                    get:function(){
+                        return {
+                             active: !this.isActive,
+                            'text-danger': !this.hasError
+                        }
+                    }
+                }
+            }
+        });
+        
+</script>
+
+</body>
+</html>

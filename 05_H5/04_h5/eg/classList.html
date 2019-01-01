@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var d = document.querySelector('.d1');
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                d.classList.add('show');
+                d.classList.remove('d1');
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="d1 d2 d3"></div>
+    <button>anniu</button>
+</body>
+
+</html>

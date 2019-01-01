@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        
+        li {
+            height: 30px;
+            padding: 20px;
+            border: 5px dashed red;
+            margin: 10px;
+        }
+    </style>
+    <script src="../../jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            console.log($('li').eq(2)[0]);
+            console.log($('li').first()[0]);
+            console.log($('li').last()[0]);
+            console.log($('li').hasClass('c1')); //true
+            console.log($('li').filter('.c1')[0]);
+            console.log($('li').is('.c1')); //true
+            console.log($('li').not($('.c1')[0]));
+            console.log($('li').is('.c1')); //true
+            console.log($('li:last').scroll());
+            console.log($('li:last').scrollTop(), $('li:last').scrollLeft());
+            console.log($('li:last').offset().top, $('li:last').offset().left);
+            console.log($('li:last').height()); //content
+            console.log($('li:last').width());
+            console.log($('li:last').innerWidth()); //include padding
+            console.log($('li:last').innerHeight());
+            console.log($('li:last').outerHeight()); //include padding border
+            $('.c1').nextUntil($('li:last')).css({
+                'background': 'blue'
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="div1">123345</div>
+    <ul>
+        <li>d1</li>
+        <li>d2</li>
+        <li>d3</li>
+        <li class="c1">d4</li>
+        <li>d5</li>
+        <li>d6</li>
+        <li>d7</li>
+        <li>d8</li>
+    </ul>
+
+</body>
+
+</html>

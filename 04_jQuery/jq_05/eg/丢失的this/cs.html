@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //1, this在全局函数中指向window
+        //2，当函数作为构造函数使用时，this指向当前创建的对象
+        //3，当this在函数中使用，指向调用者(对象)
+        widow.onload = function() {
+
+            var byId = document.getElementById;
+            console.log(typeof byId);
+            var div = byId('.dix1');
+            console.log(div);
+
+            document.getElementById = (function(fn) {
+                return function() {
+                    return fn.apply(document, argumnets);
+                }
+            })(document.getElementById);
+
+            var byId = document.getElementById;
+            console.log(byId('.div1'));
+        }
+    </script>
+</head>
+
+<body>
+    <div class="div1"></div>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+div {
+  -moz-border-top-colors: red, yellow, blue, green;
+  -moz-border-bottom-colors: red, yellow, blue, green;
+  -moz-border-left-colors: red, yellow, blue, green;
+  -moz-border-right-colors: red, yellow, blue, green;
+}

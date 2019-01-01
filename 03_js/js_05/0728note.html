@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		p,u{
+			color: red;
+			font-weight: bold;
+		}
+		p{
+			text-indent: 2em;
+		}
+		p:before{
+			content: url(../../q.png);
+		}
+	</style>
+</head>
+<body style="font-size: 20px;">
+<pre>
+一，函数初步
+	1，函数的定义和调用
+		语法：
+			//定义一个函数，函数就是一组代码的集合
+			function name(a,b){
+				函数功能代码段
+			}
+			//函数调用
+			name(1.2);
+		c语言：
+			声明--调用--定义
+			定义--调用
+		js中：
+			调用--定义
+			定义--调用
+		（<u>script包含着一个代码域，代码是从上到下的，多个script时从上到下执行，</u>
+		<u>此时调用必须在定义的script下的script内（一个script内可随意放置）</u>）
+		关键字：
+			function ：功能 函数定义的关键字
+			空格 函数名：函数名也算得上是一个关键字，命名规范和变量一样
+			紧跟小括号：参数的位置，可以没有参数，可以有多个参数使用都好隔开
+			紧跟大括号：里边是函数的主题，功能的代码段
+		函数如果不被调用，不会执行
+		函数调用：
+			函数名();//在这里执行函数中的所有内容
+		函数的意义:
+			再出现大量程序相同代码的时候，可以封装一个function，这样能减少代码的重复度
+	2，函数的参数
+		定义在函数内部的语句都是一样的，但是可以通过参数，让语句有所差别
+		在定义函数的时候，内部语句可能有一些<u>悬而未决</u>的变量，
+		这些变量都要罗列在小括号中，作为形式参数直到调用时实际参数值(按顺序)的传入才决定
+		function fun(a,b){
+			console.log(a+b);
+		}
+		函数的意义：
+			不用关心函数的实现细节，给团队开发带来了很大的好处
+		鲁棒:
+			鲁棒是Robust的音译，也就是健壮、强壮、坚定、粗野的意思。鲁棒性（robustness）就是系统的健壮性。它是在异常和危险情况下系统生存的关键。比如说，计算机软件在输入错误、磁盘故障、网络过载或有意攻击情况下，能否不死机、不崩溃，就是该软件的鲁棒性。鲁棒控制（Robust Control）方面的研究始于20世纪50年代。在最近的20年中，鲁棒控制一直是国际自控界的研究热点。
+		就是没有bug，容错处理的好
+		函数定义的时候，不需要指定参数类型，参数的类型在函数调用的时候，传进去什么类型，参数就是什么类型
+		<p>函数定义的时候和调用的时候形参和实参的个数可以不一样，不报错
+			多于形参时：按顺序传入，其余丢掉
+			少于形参时：按顺序传入，其余为undefined</p>
+	3，函数返回值
+		return 返回值；
+		返回值类型：
+			不写return								默认undefined
+			空返回值			return；  			赋给变量后为undefined
+			返回数值  			return 1；			返回1
+			返回多数值 			return 1，3,5；		返回最后一个值5
+			返回变量类型和值	return b；			把b变量的值返回
+			返回多个变量时		return a，b；		返回最后一个变量b的值
+			返回字符			return 'a','b'; 	同上
+						return true;/return false;	
+			<p>总结：函数只返回一个值，可以是表达式的值，也可以是其他数据类型和变量，返回逗号隔开的多个值时，取最后一个</p>
+
+		function max (a,b) {
+			if ( a > b )
+				return a;
+			else
+				return b;
+			// body...
+		}
+		console.log(max(3,5));//5
+		函数中的程序一遇到return就立即返回，其后语句不执行，等于break
+	4，应用函数简化程序
+		编程：要将一个复杂的问题，拆分成一个个简单的问题
+		高层的业务使用底层的函数提供的API
+		求2-100以内的质数：
+			约数个数的函数--判断质数的函数--高层业务
+		哥德巴赫猜想：
+			任何一个偶数都能拆分成各个质数
+	5，递归
+		自己调用自己
+		斐波拉切数列
+			1  1  2  3  5  8  13 
+	6，函数表达式
+		定义函数除了使用function之外，还可以使用函数表达式的方法，定义没有名字的函数，叫做匿名函数，为了调用这个函数，我们将这个函数表达式赋给一个变量
+		var fun = function(){
+			//code
+		}
+		调用函数使用变量fun
+		如果函数表达式中有函数名会怎么样
+		var haha = function xixi(a,b){
+			return a+b;
+		}
+		console.log(haha(2,3));//5
+		console.log(xixi(2,3));//error
+		也就是说函数定义方式只有两种，并且不能混淆
+	7，函数声明的提升（预解析）
+		<u>js代码在执行之前，会有一个预解析的过程，会把所有的函数声明提升到最最开头，然后在去执行第一句代码</u>
+		函数的声明会被提升，但是函数表达式不会被提升
+		注意：
+			没有极其特殊的情况，一定要使用function haha(){} 来定义函数，尽量不要使用表达式
+		<p>函数优先：
+			aaa();//函数调用
+			var aaa = 5;////声明提升，值不提升
+			function aaa() {
+				alert(aaa);//输出函数体
+			}
+			alert(aaa);//5
+			aaa();
+			aaa();//error= aaa is not a function(请用动态数据类型来帮助理解)
+			如果在预解析的时候后出现标识符冲突，系统会将标识符给函数</p>
+	8,函数是引用类型
+		五大基本类型:Number，String，boolean，unll，undefined
+		引用类型：object，function，array，RegExp,Math,Date
+		function fun(){}
+		cosnole.log(typeof fun );//function
+		<u>基本类型保存值，引用类型保存(地址)</u>
+		变量a=6，那么a这个变量里边存储的是6这个数值
+		a = function(){} 这是a里边存储的是function的内存地址
+
+
+		<p>这就是对象原型链的末尾，即 null，根据定义，null 没有__proto__.</p>
+
+		<p>对象使用
+		// Animal properties and method encapsulation
+		var Animal = {
+		  type: "Invertebrates", // Default value of properties
+		  age: '1000',
+		  displayType : function() {  // Method which will display type of Animal
+		    console.log(this.type,this.age);
+		},
+		  Animal:function(type,age){
+		  	this.type = type;
+		  	this.age = age;
+		  }
+		  
+		}
+
+		// Create new animal type called animal1 
+		var animal1 = Object.create(Animal);
+		animal1.displayType(); // Output:Invertebrates
+
+		// Create new animal type called Fishes
+		var fish = Object.create(Animal);
+		fish.type = "Fishes";
+		fish.displayType(); // Output:Fishes
+		fish.Animal('fishs','20');
+		fish.displayType();</p>
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+            border-radius: 0;
+        }
+    </style>
+    <script src="./jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            $('button').on('click', function() {
+                $('div').animate({
+                    'top': '200px',
+                    'left': '+=200px',
+                    'border-radius': '50%',
+                    'width': '300px',
+                    'height': 'toggle'
+                }, 3000).delay(2000).animate({
+                    'height': 'toggle'
+                }, 3000);
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <button>动画开始</button>
+    <div></div>
+</body>
+
+</html>

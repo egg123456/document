@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+	div
+	{
+		width:100px;
+		height:100px;
+		background:red;
+		position:relative;
+		animation:mymove 5s infinite;
+		-webkit-animation:mymove 5s infinite; /*Safari and Chrome*/
+	}
+
+	@keyframes mymove
+	{
+		from {left:0px;}
+		to {left:200px;}
+	}
+
+	@-webkit-keyframes mymove /*Safari and Chrome*/
+	{
+		from {left:0px;}
+		to {left:200px;}
+	}
+	div.box2
+	{
+		width:100px;
+		height:100px;
+		background:red;
+		position:relative;
+		animation:mymove2 5s infinite;
+		-moz-animation:mymove2 5s infinite; /* Firefox */
+		-webkit-animation:mymove2 5s infinite; /* Safari and Chrome */
+		-o-animation:mymove2 5s infinite; /* Opera */
+		overflow: hidden;
+	}
+
+	@keyframes mymove2
+	{
+		0%   {top:0px;}
+		25%  {top:200px;}
+		75%  {top:50px}
+		100% {top:100px;}
+	}
+
+	@-moz-keyframes mymove2 /* Firefox */
+	{
+		0%   {top:0px;}
+		25%  {top:200px;}
+		75%  {top:50px}
+		100% {top:100px;}
+	}
+
+	@-webkit-keyframes mymove2 /* Safari and Chrome */
+	{
+		0%   {top:0px;}
+		25%  {top:200px;}
+		75%  {top:50px}
+		100% {top:100px;}
+	}
+
+	@-o-keyframes mymove2 /* Opera */
+	{
+		0%   {top:0px;}
+		25%  {top:200px;}
+		75%  {top:50px}
+		100% {top:100px;}
+	}
+</style>
+</head>
+<body>
+
+<p><strong>注释：</strong>Internet Explorer 9 以及更早的版本不支持 animation 属性。</p>
+
+<div></div>
+<div class="box2"></div>
+
+</body>
+</html>

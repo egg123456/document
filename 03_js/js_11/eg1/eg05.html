@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var d = document.querySelector('.div1');
+            var a = document.querySelector('.div1>a');
+            console.log(d.removeChild(a));
+        }
+    </script>
+</head>
+
+<body>
+    <div class="div1">
+        <a href="#">aaa</a>
+    </div>
+</body>
+
+</html>

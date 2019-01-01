@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function maopao(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                var temp;
+                if (arr[j] > arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+
+
+    function charu(arr) {
+        var pre, key;
+        for (var i = x1; i < arr.length; i++) {
+            pre = i - 1;
+            key = arr[i];
+            while (pre >= 0 && arr[pre] > key) {
+                arr[pre + 1] = arr[pre];
+                pre--;
+            }
+            arr[pre + 1] = key;
+        }
+        return arr;
+    }
+
+
+    var arr = [12, 23, 45, 231, 452, 21, 65, 4];
+    //  12 23 45 231 21 65 4 452
+    //  12 23 45 21 65 4 231 
+    //  22 23 21 45 4 65
+    for (var j = 0; j < arr.length; j++) {
+        for (var i = 0; i < arr.length - j - 1; i++) {
+            var temp;
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+
+        }
+        console.log(arr);
+    }
+
+
+    // console.log(maopao(arr));
+    // console.log(charu(arr));
+</script>
+
+<body>
+
+</body>
+
+</html>

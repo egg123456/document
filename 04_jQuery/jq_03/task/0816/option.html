@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        #tabs {
+            width: 500px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+        }
+        
+        #tabs ul {
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        #tabs ul li {
+            float: left;
+            margin: 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 8px;
+            cursor: pointer;
+        }
+        
+        #tabs div {
+            position: absolute;
+            border: 1px solid #000;
+            margin: 1%;
+            width: 98%;
+            height: 300px;
+            display: none;
+        }
+        
+        #tabs .show {
+            display: block;
+        }
+        
+        #tabs .activ {
+            background-color: greenyellow;
+        }
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            $('ul li').on('click', function() {
+                $('ul li').removeClass('activ');
+                $(this).addClass('activ');
+                //index返回索引值
+                var i = $('li').index($(this));
+                $('#tabs div').removeClass('show');
+                $('div:eq(' + (i + 1) + ')').addClass('show');
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="tabs">
+        <ul>
+            <li class="activ">选项1</li>
+            <li>选项2</li>
+            <li>选项3</li>
+        </ul>
+        <div class="show">选项卡1</div>
+        <div>选项卡2</div>
+        <div>选项卡3</div>
+    </div>
+</body>
+
+</html>

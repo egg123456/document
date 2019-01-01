@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function ready(callback) {
+            if (document.addEventListener) {
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.removeEventListener('DOMContentLoaded', arguments.callee);
+                    callback();
+                });
+            } else if (document.attachEvent) {
+                document.attachEvent('onreadystatechange', function() {
+                    if (document.readyState == 'complete') {
+                        document.detachEvent('onreadystatechange', arguments.callee);
+                        callback();
+                    }
+                });
+            }
+        }
+        ready(function() {
+            var inp = document.getElementById('inp');
+            console.log(inp);
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="inp">
+</body>
+
+</html>

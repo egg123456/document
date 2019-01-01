@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一次性事件绑定</title>
+    <style>
+        #btn {
+            background-color: greenyellow;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px #ccc;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var btn = document.getElementById('btn');
+            btn.addEventListener('click', function() {
+                alert('我被点了');
+                this.style = "background-color:red;";
+                this.setAttribute('disabled', 'disabled');
+                btn.removeEventListener('click', arguments.callee);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">一次性按钮</button>
+</body>
+
+</html>

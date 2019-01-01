@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            function listinit() {
+                var codeList = ['java', 'js', 'c#', 'c'];
+                var list = document.getElementById('code');
+                codeList.forEach(function(elem, index) {
+                    var tempO = document.createElement('option');
+                    tempO.innerHTML = elem[index];
+                    list.appendChild(tempO);
+                })
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- <bdi>china</bdi>//文本突出
+    <bdo dir="rtl">china</bdo>// 设置从右到左的文本 -->
+    <input type="text" list="code">
+    <datalist id="code">    
+    </datalist>
+</body>
+
+</html>

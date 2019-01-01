@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="shortcut icon" href="https://www.baidu.com/favicon.ico">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/calculator.js"></script>
+</head>
+
+<body>
+    <div class="calc">
+        <div class="display">
+            <div class="equation"></div>
+            <div class="val"></div>
+        </div>
+        <div class="btns">
+            <ul>
+                <li class="disable">MC</li>
+                <li class="disable">MR</li>
+                <li class="disable">MS</li>
+                <li class="disable">M+</li>
+                <li class="disable">M-</li>
+            </ul>
+            <ul>
+                <li class="back">←</li>
+                <li class="disable">CE</li>
+                <li class="clear">C</li>
+                <li class="disable">±</li>
+                <li class="sqrt">√</li>
+            </ul>
+            <ul>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li class="sym">/</li>
+                <!--单独的从键盘上使用%会报以下错误  -->
+                <!--Uncaught SyntaxError: Invalid regular expression: missing /  -->
+                <!--解决办法，应用实体编码  -->
+                <li class="disabke">&#37;</li>
+            </ul>
+            <ul>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li class="sym">*</li>
+                <li class="disable">1/x</li>
+            </ul>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li class="sym">-</li>
+                <li class="rowspan2 calculate">=</li>
+            </ul>
+            <ul>
+                <li class="colspan2">0</li>
+                <li>.</li>
+                <li class="sym">+</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

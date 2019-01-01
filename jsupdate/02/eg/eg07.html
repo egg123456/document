@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var push = Function.prototype.call.bind(Array.prototype.push);
+        var bind = Function.prototype.call.bind(Function.prototype.bind);
+        // push.prototype.show = function() {
+        //     console.log(this)
+        // }
+        var arr = [123, 333, 111];
+        push(arr, 456);
+
+        function fn() {
+            console.log(this.a);
+        }
+        var o = {
+            a: 1
+        }
+        bind(fn, o)();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

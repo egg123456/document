@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>transform-style</title>
+    <style>
+        .box1 {
+            perspective: 300px;
+            position: relative;
+            font-size: 80px;
+            width: 2em;
+            margin: 1.5em auto;
+            transform-style: preserve-3d;
+            /*x为正值往里旋转，负值往外旋转*/
+            /*y为正值往右旋转，负值往左旋转*/
+            /* transform: rotateX(-30deg) rotateY(30deg); */
+        }
+        
+        .box1>div {
+            position: absolute;
+            width: 2em;
+            height: 2em;
+            background: rgba(0, 0, 0, .3);
+            border: 1px solid red;
+            color: white;
+            text-align: center;
+            line-height: 2em;
+            border-radius: 20%;
+        }
+        
+        .front {
+            transform: translateZ(1em);
+        }
+        
+        .top {
+            transform: rotateX(90deg) translateZ(1em);
+        }
+        
+        .right {
+            transform: rotateY(90deg) translateZ(1em);
+        }
+        
+        .left {
+            transform: rotateY(-90deg) translateZ(1em);
+        }
+        
+        .bottom {
+            transform: rotateX(-90deg) translateZ(1em);
+        }
+        
+        .back {
+            transform: rotateY(-180deg) translateZ(1em);
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var box = document.getElementById('box'),
+                xdeg = 1;
+            setInterval(function() {
+                box.style = '.transform:rotatex(' + ++xdeg + ')';
+                console.log(xdeg);
+            }, 1000)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box" class="box1">
+        <div id="b1" class="front">1</div>
+        <div id="b2" class="back">2</div>
+        <div id="b3" class="right">3</div>
+        <div id="b4" class="left">4</div>
+        <div id="b5" class="top">5</div>
+        <div id="b6" class="bottom">6</div>
+    </div>
+    <script>
+        document.getElementById("b1").class = "back"
+        document.getElementById("b2").class = "front"
+    </script>
+</body>
+
+</html>

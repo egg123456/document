@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .main{
+            width: 600px;
+            height: 80px;
+            border:1px solid #00ffff;
+            border-radius:20px;
+            font-size: 2.2em;
+            line-height: 2.4em;
+            text-align: center;
+            box-shadow:5px 5px 3px #ccc;
+            background-color: #d5d5d5;
+            margin:0 auto;
+            color:#fff;
+            font-weight: 900;
+        }
+        #btn,#clearlist{
+            margin: 10px auto;
+            display: block;
+            height: 40px;
+            width:180px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 3px #ccc;
+            font-size: 22px;
+        }
+        .list{
+            width: 1000px;
+            text-align: center;
+            margin: 10px auto;
+            border:1px solid #00ffff;
+            box-sizing: border-box;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 8px 8px 5px #ccc;
+        }
+        #inp{
+            display: block;
+            margin: 10px auto;
+            height: 30px;
+        }
+        ol{
+            list-style-position: inside;
+            height: 300px;
+            overflow: auto;
+            font-size: 35px;
+            padding: 0;
+        }
+        #ol1 li:hover{
+            background-color: #00ffff;
+        }
+        ol li:nth-child(even){
+            background-color: #eee;
+        }
+        ol li{
+            padding-left:150px ;
+            background-color: #ddd;
+            text-align: left!important;
+        }
+        ol li:last-child{
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        var ls = localStorage;  //获取LS本地存储对象
+        window.onload=function(){
+            var btn = document.getElementById('btn');
+            var main = document.getElementById('main');
+            var inp = document.getElementById('inp');
+            var ol1 = document.getElementById('ol1');
+            var clearlist = document.getElementById('clearlist');
+            var init;
+            btn.onclick=fn;
+
+			//自动载入本地存储数据
+            (function(){
+                for(var i=0;i<ls.length;i++){
+                    var li = document.createElement('li');
+                    var data = ls.getItem(ls.key(i)).split("-");
+                    li.innerHTML="恭喜 "+data[0]+" 抽中, "+data[1];
+                    ol1.appendChild(li);
+                }
+            })();
+
+            clearlist.onclick = function(){
+                ls.clear(); //清空列表(本地存储)
+                ol1.innerHTML="";//清空列表(页面)
+            }
+        }
+
+        function fn(){
+            var time = 30;
+			var arr = ['俯卧撑','蹲起','仰卧起坐','平板支撑','指压板跳绳','BT指压板踏步','端腹','谢谢参与'];
+            if(btn.innerHTML=="惊喜抽奖开始"){
+                    btn.innerHTML="停止";
+                    init = setInterval(function(){
+                        var ranNumber = Math.floor(Math.random()*arr.length);
+						switch(ranNumber){
+							case 0:
+							case 1:
+							case 2:
+								var num = Math.floor(Math.random()*50)+1;
+                                if(ranNumber==1){
+                                    var msg = num % 2 ? "负重" : "指压板";
+                                    if(num<20) num=20;
+                                    main.innerHTML=(msg+arr[ranNumber]+" &times; " + num);
+                                }else{
+                                    if(num<20) num=20;
+                                    main.innerHTML=(arr[ranNumber]+" &times; " + num);
+                                }
+								break;
+                            case 3:
+                                var num = Math.floor(Math.random()*5)+1;
+                                main.innerHTML=(arr[ranNumber]+" &times; " + (num*30)+ "s");
+                                break;
+                            case 4:
+                                var num = Math.floor(Math.random()*40)+1;
+                                if(num<10) num = 10;
+                                main.innerHTML=(arr[ranNumber]+" &times; " + num);
+                                break;
+                            case 5:
+                                var num = Math.floor(Math.random()*60)+1;
+                                if(num<20) num=20;
+                                main.innerHTML=(arr[ranNumber]+" &times; " + num);
+                                break;
+                            case 6:
+                                var num = Math.floor(Math.random()*10)+1;
+                                if(num<2) num=2;
+                                main.innerHTML=(arr[ranNumber]+" &times; " + num*10 +'s');
+                                break;
+                            default:
+                                main.innerHTML=arr[ranNumber];
+                                break;
+						}
+
+                    },time);
+            }else{
+                btn.innerHTML="惊喜抽奖开始";
+                clearInterval(init); //停止定时器
+                var val = inp.value+"-"+main.innerHTML; //字符串连接
+                ls.setItem(new Date().getTime(),val); //将数据写入本地存储，key为时间戳
+                var li = document.createElement('li');
+                li.innerHTML="恭喜 "+inp.value+" 抽中, "+main.innerHTML; //将抽奖记录写入页面
+                ol1.appendChild(li);
+            }
+        }
+		
+		//随机颜色
+        function ranColor(){
+            var str = "#";
+            for(var i=0;i<6;i++){
+                var num = Math.floor(Math.random()*16).toString(16);
+                str+=num;
+            }
+            return str;
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="main" id="main">欢迎使用</div>
+    <script>
+        setInterval(function(){
+            var rcolor=ranColor();
+            main.style="background-color:"+rcolor;
+        },1000);
+    </script>
+    <input type="text" id="inp" placeholder="请输入用户名">
+    <button id="btn">惊喜抽奖开始</button>
+    <div class="list">
+        中奖列表：
+        <ol id="ol1"></ol>
+    </div>
+    <button id="clearlist" type="button">清空列表</button>
+</body>
+</html>

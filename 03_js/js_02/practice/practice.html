@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0725zuoye</title>
+</head>
+<body>
+	<script>
+		prompt('第一题：(123+45*78)/(34+543)-9*(324-34)=',(123+45*78)/(34+543)-9*(324-34));
+		console.log('第一题：(123+45*78)/(34+543)-9*(324-34)=',(123+45*78)/(34+543)-9*(324-34));
+
+		var a2 =prompt('第二题请输入摄氏度值：');
+		prompt('第二题转换成的华氏度值：',9/5*a2+32);
+		console.log('请输入摄氏度值：\n转换成的华氏度值：',9/5*a2+32);
+
+		var a3 = Math.pow((23+Math.pow(5,7))/45,2);
+		prompt('第三题：',a3);
+		console.log('第三题:Math.pow((23+Math.pow(5,7))/45,2)=',a3);
+
+		var a4 = prompt('请输入六边形的边长：');
+		var b4 = 3*Math.sqrt(3)/2*Math.pow(a4,2);
+		prompt('第四题：六边形面积为：',b4);
+		console.log('第四题：请输入六边形的边长：\n六边形面积为：',b4)
+
+		var a5 = prompt('第五题今天是星期二，请输入计算天数');
+		var b5 = (a5+2)%7;
+		prompt('今天是星期',b5);
+		console.log('今天是星期二，请输入计算天数\n今天是星期',b5);
+
+		var a6 = prompt('第六题请输入一个三位数');
+		var c1 = parseInt(a6/100);
+		var c2 = parseInt((a6-c1*100)/10);
+	 	var c3 = a6-c1*100-c2*10;
+		var b6 = c1+c2+c3;
+		prompt('百位',c1);
+		prompt('十位',c2);
+		prompt('个位',c3);
+		prompt('各位数之和',b6);
+		console.log('各位数之和',b6);
+	</script>
+</body>
+</html>

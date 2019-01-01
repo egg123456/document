@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>filereader</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            height:300px;
+            border: 1px solid #000;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box" ondragover="allowDrop(event)">
+
+    </div>
+    <button>tips</button>
+<script>
+    function allowDrop(ev)
+    {
+        ev.preventDefault();
+    }
+    // 图片拖拽进入
+    box = document.querySelector('#box'),img=null;
+    box.addEventListener('drop',function(ev){
+        ev.preventDefault();
+        console.log(ev.dataTransfer.files[0]);
+        var reader = new FileReader();
+        reader.readAsDataURL(ev.dataTransfer.files[0]);
+        reader.onload = function(){
+            console.log(this)
+            img = new Image();
+            img.src = reader.result;
+            box.style.background = "url("+reader.result+") no-repeat center top";
+            box.style.margin ="auto";
+            box.style.width = img.width+"px";
+            box.style.height = img.width+"px";
+        }       
+    })
+    var btn= document.querySelector('button');
+    btn.addEventListener('click',function(){
+        console.log(box.style.width,img.width)
+    })
+</script>
+</body>
+</html>

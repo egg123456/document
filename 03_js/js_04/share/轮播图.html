@@ -1,0 +1,83 @@
+<!DOCTYPE html>  
+<html>  
+  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>轮播图</title>  
+        <style type="text/css">  
+            * {  
+                margin: 0 auto;  
+            }  
+              /*容器*/
+            #container {  
+                width: 500px;  
+                height: 500px;  
+                background-color: pink;  
+                text-align: center;  
+            }  
+              /*容器的儿子==子容器*/
+            #container_son {  
+                margin: 10px;  
+            }  
+        </style>  
+  
+    </head>  
+  
+    <body>  
+         <!--  html部分 -->
+        <div id="container">  
+            <img id="pic" src="image/1.jpg" width="400px" height="400px" />  
+            <div id="container_son">  
+
+             <!--  onmouseover 鼠标移到目标上
+                            showPic  允许看图 -->
+                <img src="image/1.jpg" width="100px" height="80px" id="image1"                         
+                onmouseover="showPic(1)" onmouseout="movePic()"/>  
+                <img src="image/2.jpg" width="100px" height="80px" id="image2" onmouseover="showPic(2)" onmouseout="movePic()"/>  
+                <img src="image/3.jpg" width="100px" height="80px" id="iamge3" onmouseover="showPic(3)" onmouseout="movePic()"/>  
+  
+            </div>  
+        </div>  
+    </body>  
+  
+    <script type="text/javascript">  
+           // interval幕间休息
+           // setInterval设置时间间隔
+        var intervalId = setInterval("lunBo()", 200);  
+        var i = 1;  
+       // function函数
+       //轮播的循环，当到第三张图时回到第一张图
+        function lunBo() {  
+  
+            i++;  
+            if(i > 3) {  
+                i = 1;  
+            }  
+            
+            //document 文档
+           // getElementById 解决方法统一用文档对象模型
+
+            document.getElementById("pic").src = "image/" + i + ".jpg";  
+  
+        }  
+
+          //showPic 允许看图
+        function showPic(num){ 
+
+        //clearInterval解除计时器方法
+        //鼠标移到图片上解除计时器，停止轮播
+            clearInterval(intervalId);  
+            document.getElementById("image"+num).style.border = "2px solid red";  
+            document.getElementById("pic").src = "image/" + num + ".jpg";  
+        }  
+          //移动函数
+          //可以让停止轮播的图片重新轮播
+        function movePic(){  
+            intervalId = setInterval("lunBo()", 200);  
+            document.getElementById("image1.jpg").style.border = "0px";  
+            document.getElementById("image2.jpg").style.border = "0px";  
+            document.getElementById("image3.jpg").style.border = "0px";  
+        }  
+    </script>  
+  
+</html>  

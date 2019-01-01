@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 200px;
+            height: 200px;
+            list-style-type: none;
+            /* padding: 0; */
+            position: relative;
+            transform-style: preserve-3d;
+            margin: 100px auto;
+            /* transform: rotateX(-30deg) rotateY(30deg); */
+            transition: transform 1s;
+        }
+        
+        ul li {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 200px;
+            font-size: 40px;
+            position: absolute;
+            border: 1px solid black;
+            /* transform: scaleX(2.5) scaleY(1.5); */
+        }
+        
+        ul li:nth-child(1) {
+            background: url(img/1.jpg) no-repeat;
+            background-size: cover;
+            transform: translateZ(100px) scaleX(2.5) scaleY(1.5);
+        }
+        
+        ul li:nth-child(2) {
+            background: url(img/2.jpg) no-repeat;
+            background-size: cover;
+            transform: rotateX(90deg) translateZ(100px) scaleX(2.5) scaleY(1.5);
+        }
+        
+        ul li:nth-child(3) {
+            background: url(img/3.jpg) no-repeat;
+            background-size: cover;
+            transform: rotateX(180deg) translateZ(100px) scaleX(2.5) scaleY(1.5);
+        }
+        
+        ul li:nth-child(4) {
+            background: url(img/4.jpg) no-repeat;
+            background-size: cover;
+            transform: rotateX(270deg) translateZ(100px) scaleX(2.5) scaleY(1.5);
+        }
+        
+        ul li:nth-child(5) {
+            background: url(img/2.jpg) no-repeat;
+            background-size: cover;
+            transform: rotateY(90deg) translateZ(100px) scaleX(2.5) scaleY(1.5);
+        }
+        
+        ul li:nth-child(6) {
+            background: url(img/1.jpg) no-repeat;
+            background-size: cover;
+            transform: rotateY(-90deg) translateZ(100px) scaleX(2.5) scaleY(1.5);
+        }
+        
+        span {
+            font-size: 40px;
+        }
+    </style>
+    <script src="../../../../jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            var num = 0,
+                ul = $('ul');
+            $('.next').on('click', function() {
+                num++;
+                ul.css('transform', 'rotateX(' + num * 90 + 'deg)');
+            })
+            $('.prev').on('click', function() {
+                num--;
+                ul.css('transform', 'rotateX(' + num * 90 + 'deg)');
+            })
+            timeout = setInterval(function() {
+                num++;
+                ul.css('transform', 'rotateX(' + num * 90 + 'deg)');
+            }, 1000)
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>d1</li>
+            <li>d2</li>
+            <li>d3</li>
+            <li>d4</li>
+            <li>d5</li>
+            <li>d6</li>
+        </ul>
+        <span class="prev">&lt;</span>
+        <span class="next">&gt;</span>
+    </div>
+</body>
+
+</html>

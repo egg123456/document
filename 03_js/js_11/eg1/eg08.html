@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function fn(num, callback) {
+            if (isNaN(num)) {
+                var err = new Error('传入的不是有效数字');
+                callback(err);
+            } else {
+                if (num % 2) {
+                    callback(null, '传入的是基数');
+                } else {
+                    callback(null, '传入的是偶数');
+                }
+            }
+        }
+        fn('1a56', function(err, msg) {
+            if (err) {
+                throw err;
+            } else {
+                console.log(msg);
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

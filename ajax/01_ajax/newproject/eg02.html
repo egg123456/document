@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            function getXhr() {
+                var xhr = null;
+                if (window.XMLHttpRequest) {
+                    xhr = new XMLHttpRequest();
+                } else {
+                    xhr = new ActiveXObject('Microsoft.XMLHttp');
+                }
+                return xhr;
+            }
+            var inp = document.getElementById('uname');
+            inp.onblur = function() {
+                var xhr = getXhr();
+                xhr.open('get', 'php/eg02.php?userName=' + this.value, true);
+                xhr.send();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var s = document.getElementById('s1');
+                        s.innerHTML = xhr.responseText;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="uname" /><span id="s1"></span>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul li {
+            list-style: none;
+        }
+    </style>
+    <script>
+        function myCallback(data) {
+            console.log(data);
+            ul = document.getElementById('ul1');
+            ul.innerHTML = "";
+            for (var i = 0; i < data.s.length; i++) {
+                var li = document.createElement('li');
+                li.innerHTML = data.s[i];
+                li.addEventListener('click', function(ev) {
+                    inp.innerHTML = '';
+                    window.open('https://www.baidu.com/s?ie=utf-8&wd=' + this.innerHTML);
+                })
+                li.addEventListener('mouseover', function() {
+                    this.style = 'background-color:#eee;';
+                })
+                li.addEventListener('mouseout', function() {
+                    this.style = 'background-color:#fff;';
+                })
+                ul.appendChild(li);
+            }
+
+        }
+        var num = 0;
+        window.onload = function() {
+            //该案例涉及到了数据交互，以下代码是jsonp技术的原理代码
+            //jsonp 是用来获取非同源数据
+            //同源 指的是，协议，域名，端口全部一致。
+            //jsonp的原理是通过动态的创建script元素
+            //将数据接口写入src属性，让服务器返回的字符串调用本地的callback
+
+            //获取百度搜索接口
+
+            var inp = document.getElementById('inp');
+            var wd = "";
+            inp.addEventListener('keyup', function(ev) {
+                if (ev.keyCode == 40 || ev.keyCode == 38) {
+                    if (ev.keyCode == 40 && ul.children.length > num) {
+                        var index = ul.children;
+                        console.log(index[num]);
+                        index[num].style = 'background-color:#eee;';
+                        num++;
+                    } else if (ev.keyCode == 38 &&
+                        var index = ul.children; console.log(index[num]); index[num].style = 'background-color:#eee;'; num++;) {
+
+                    }
+
+                } else {
+                    wd = this.value;
+                    var url = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + wd + "&json=1&p=3&cb=myCallback";
+                    var sc = document.createElement('script');
+                    sc.src = url;
+                    document.body.appendChild(sc);
+                    document.body.removeChild(sc);
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <input type="search" id="inp">
+    <ul id="ul1"></ul>
+    https: //sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=3333&json=1&p=3&cb=myCallback <br>https://www.baidu.com/s?ie=utf-8&wd=%E4%BA%AC%E4%B8%9C
+
+</body>
+
+</html>

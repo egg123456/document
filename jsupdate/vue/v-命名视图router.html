@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<div id="app">
+      <h1>Named Views</h1>
+  <ul>
+    <li>
+      <router-link to="/">/</router-link>
+    </li>
+    <li>
+      <router-link to="/other">/other</router-link>
+    </li>
+  </ul>
+  <router-view class="view one"></router-view>
+  <router-view class="view two" name="a"></router-view>
+  <router-view class="view three" name="b"></router-view>
+</div>
+
+<script>
+const Home = { template: '<div>This is Home</div>' }
+const Foo = { template: '<div>This is Foo</div>' }
+const Bar = { template: '<div>This is Bar {{ $route.params.id }}</div>' }
+
+const router = new VueRouter({
+  routes: [
+    { path: '/',
+      // a single route can define multiple named components
+      // which will be rendered into <router-view>s with corresponding names.
+      components: {
+        default: Foo,
+        a: Bar,
+        b: Home
+      }
+    },
+    {
+      path: '/other',
+      components: {
+        default: Home,
+        a: Bar,
+        b: Foo
+      }
+    }
+  ]
+})
+
+const app = new Vue({ router }).$mount('#app')
+</script>
+</body>
+</html>

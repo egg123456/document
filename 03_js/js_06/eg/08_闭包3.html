@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		function outer(x) {
+			function inner(y) {
+				console.log(x + y);
+			}
+			return inner;
+		}
+
+		var inn = outer(3);
+		inn(5);//8
+		inn(10);//13
+		inn(7);//10
+	</script>
+</body>
+</html>

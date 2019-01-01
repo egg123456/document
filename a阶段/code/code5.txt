@@ -1,0 +1,77 @@
+打开  langsin 在   </div><!--菜单结束-->  下加入
+
+ <div id="left"><!--左边区域-->
+      	<div id="left_model"><!--左区域模板-->
+        	<div id="left_model_top"><span>个人信息</span></div>
+            <br />新浪在线
+            <br />http://www.sina.com
+        </div><!--左区域模板结束-->
+  </div><!--左边区域结束-->
+
+打开  style.css 加入
+
+#left
+{
+	float:left;
+}
+
+#left_model
+{
+	width:208px;
+	border-style:solid;
+	border-color:#000000;
+	border-left-width:1px;
+	border-right-width:1px;
+	border-bottom-width:2px;
+	border-top-width:0px;
+	position:relative;
+	top:4px;
+	left:2px;
+	margin-bottom:4px;
+	background-color:#efefef;
+}
+
+#left_model_top
+{
+	width:210px;
+	height:24px;
+	background-image:url(images/left_model_top.gif);
+	background-repeat:no-repeat;
+	position:relative;
+	margin-left:-1px;
+	margin-right:-1px;
+	font-weight:bold;
+	color:#FFFFFF;
+	font-size:12px;
+}
+
+   将图片 left_model_top.gif 放到 image文件夹下
+
+预览  langsin.html     继续
+
+打开  style.css 加入
+
+#left_model_top span
+{
+	float:left;
+	position:relative;
+	top:5px;
+	left:20px;
+}
+
+
+打开  langsin 在   </div><!--左区域模板结束-->  下加入
+
+ <div id="left_model"><!--活力地带-->
+        	<div id="left_model_top"><span>活力地带</span></div>
+            <br />新浪在线
+            <br />http://www.sina.com
+        </div><!--活力地带结束-->
+
+预览  langsin.html
+
+
+
+
+
+

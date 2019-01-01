@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a name="maodian"href="images\longlong.jpg">图片</a>
+	<p>
+		0704笔记
+一：上网
+	1，https请求
+		ftp请求
+		file请求
+	2，http协议 超文本传输协议（Hypertext transfer Protocal）
+		分为两部分：请求部分和响应部分
+			请求是浏览器发出的，在浏览器地址栏输入网址可以发送http请求，服务器予以响应，将请求的内容发送给浏览器（内容可以是文件，图片，音乐，视频……）
+			注意：
+				1）一个页面加载不一定只进行一次http请求，可能要多次请求，每一张图片每一个文件都是一次单独的http请求
+				2）当点击超链接的时候也会发送http请求
+	3，服务器
+		server也是计算机，拥有CPU，内存，存储，但是服务器必须24小时开机，服务器上的数据需要远程计算机对他操控，可以被广大用户访问，
+	4，浏览器
+		用户电脑中安装的一个软件，用于向服务器发送请求的作用以及打开页面渲染页面的能力，浏览器可以用于缓存页面，缓存请求状态码304，
+		ie 6 7 8 9 10  兼容性非常差，我们称之为杂碎
+二：HTML初步
+	HTML（HyperText Markup Language）超文本标记语言,网页不止有HTML文件还有.php,.asp,.jsp等，HTML文件是最常用的一种形式
+	1，纯文本
+		相同内容的txt文档和doc文档，doc文档占用空间非常大，原因是txt是纯文本文档，里边只有文字，没有其他任何样式，但是doc文档存放着页边距，行号等文本样式
+		HTML文件是纯文本文件,所以任何纯文本编辑器都能够写网页，不依赖任何编辑器
+	2，HTML是负责描述的文本语义语言
+		使用标签对儿添加语义
+		h2:作用：字体变大，加粗，黑体
+			语义：为文字添加2级标题
+		p：作用，一块一块分割开
+			语义：为文字添加段落
+		html通过语义标签对进行编程：
+			&lt;p>  :起始标签
+			&lt;/p>:结束标签
+			eg:&lt;h1>&lt;/h1>
+		当页面渲染的时候，这些标签对是不会被渲染的，这就是超文本中的‘超’，文本就是需要显示的文本，但是这些标签对是描述文本语义的内容，所以不会被渲染
+三：sublime的基本使用
+	1，sublime：宏大的，壮丽的
+		http://www.sublimetext.com/
+		快捷键：Ctrl+n新建文件
+			Ctrl+s 保存文件
+			Ctrl+f 查找内容
+			Ctrl+z 撤销
+			输入标签名，按tab键，自动补全标签
+			Ctrl+shift+d 复制本行到下一行
+			Ctrl+enter 换行下一行
+			Ctrl+shift+enter换上一行
+			Ctrl+x删除当前一整行（不选中） 剪切（选中）
+			Ctrl+鼠标滚轮 放大缩小字体
+			Ctrl+k，Ctrl+b 打开关闭侧边栏
+			按住鼠标滚轮移动，拖拽，可出现多行光标
+			p*10 + tab 快速创建10个p标签
+			//  sublime失去焦点自动保存代码
+			"save_on_focus_lost": true
+			"highlight_modified_tabs": true,
+			<p id="idmaodian">id锚点</p>
+四：HTML的基本骨架
+	&lt;!DTD>告诉浏览器当前文档是一个什么类型的文档
+	&lt;html>   当前文档最大的容器，与浏览器窗口大小一致
+		&lt;head>头部
+			文档的说明信息
+			&lt;meta name="" content="" />基本类型
+			&lt;meta charset="UTF-8" />
+			&lt;title>标题&lt;/title>页面标题(没有则显示文档名)
+		&lt;/head>
+		&lt;body>身体
+			文档布局的主要位置
+		&lt;/body>
+	&lt;/html>
+	1，DTD文档声明头
+		&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		DTD   DocType Definition
+		告诉浏览器我们的文档是一个什么类型的文档，哪一个版本的HTML文件
+		HTML和CSS标准为W3C标准，官网https://www.w3.org/
+		HTML4.01有三个标准：
+			HTML4.01 Strict 严格版：不能使用font、b、u、i等等的废弃标签，不能使用框架集，结构和样式分离。
+			HTML4.01 Transitional	 过渡版（通用版）：没有那么多限制，可以使用font等废弃标签，不能使用框架集
+			HTML4.01 Frameset：框架集版：可以使用框架集
+		XHTML 为了解决不严格的问题，推出了XHTML版本。X表示extensional“拓展的”HTML。
+		在XHTML1.0中，严格规定了标签必须是小写，所有的属性都必须用双引号封闭啊，必须有结尾反斜杠……
+			XHTML也有三种标准，基本与4.01的相同，
+			所以DTD会有6种，HTML4.01的有3种，XHTML1.0的有3种
+		HTML5 是目前最新的版本，没有严格模式，没有这么标准
+	2，命名空间
+		DTD下边是HTML标签
+			&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">&lt;/html>
+		xmlns这个属性是干嘛的呢？xmlns的全称，叫做XML NameSpace， HTML是XML中的一种，但是我们现在不准备展开说这事儿。Ajax课上会详细介绍XML与json这个东西。NameSpace叫做命名空间。很简单，就是你的文章里面的h1表示的是1级标题的，别人的是不是也是1级标题？所以就需要有人统一一下标准，使用的就是一个固定的网址http://www.w3.org/1999/xhtml
+		xml:lang='en'    必须写的表示所有的标签的语言都是英文
+	3，字符集
+		简体中文字符集：GBK，UTF-8
+		GBK国标：中国人制定的标准，gb2312
+		UTF-8：国际标准字符集
+		GBK每个汉字2字节
+		UTF-8每个汉字3字节
+		在html文件中一般使用&lt;meta/>设置字符集，这是一个单标签，
+		&lt;meta charset='UTF-8'/>
+		怎么能让打开页面的速度更快？
+		在字符集上来说，将字符集改成gb2312可以加快浏览速度
+	4，关键词和页面描述
+		关键词：&lt;meta name='keywords' content='…………'>
+		页面描述：&lt;meta name='description' content='…………'>
+		作用：被引擎抓取，用户在搜索引擎中可以搜索到你的页面，搜索出的词条可以展示页面描述
+	5，标题title
+		&lt;title>页面描述或者关键词&lt;/title> 页面标题
+		没有的话就会以文件名字作为显示
+五，HTML页面特点
+	1，HTML对换行，tab缩进，空格都是不敏感的
+		&lt;body>
+			&lt;h1>我是主题&lt;/h1>
+			&lt;p>我是段落&lt;/p>
+		&lt;/body>
+		//上下两种方式是等价的
+		&lt;body>
+		&lt;h1>我是主题&lt;/h1>
+		&lt;p>我是段落&lt;/p>
+		&lt;/body>
+		注释：&lt;!-- 这里说明tab缩进对文本没有影响 -->注释内容在页面中是不会被渲染的
+		严格分级，注意代码规范
+	2，空白折叠现象
+		在HTML中，文本中不管有多少个空格，多只会认一个空格，包括缩进，换行，等
+		&lt;p>
+			dfadsf
+			adsfasdf       dsfasf
+		&lt;/p>
+		br标签，换行  &lt;br/>
+		&nbsp; 空格
+六，h标签和p标签
+	1，h系列标签
+		h是header的意思，标题标签，级别从1-6级
+		h1 一级标签 --- h6 六级标签
+		注意：一个页面上一般来说只要一个一级标题，这个不是w3c的规则，是搜索引擎的规则，h1标签中的内容，权重非常高，搜索引擎会特别注意抓取里面的文字。搜索引擎如果看见页面有多个h1，视为作弊，降低你的权重。
+		h标签是文本标签
+	2，p标签
+		p表示paragraph 段落
+			&lt;p>段落&lt;/p>
+		p标签需要注意，p标签中只能放文字，图片，表单元素，不能放其他东西，p标签也是一个文本标签
+		//这是一种错误的写法
+		&lt;p>
+			&lt;h3>我是标题&lt;/h3>
+			我是内容
+		&lt;/p>
+		会被浏览器解析成以下情况：
+		&lt;p>
+				&lt;/p>
+		&lt;h3>dafa&lt;/h3>
+		"
+				我是段落
+			"
+		&lt;p>&lt;/p>
+		<b style="color: #ff0000">p这个段落级标签，会实现段落级换行，段落之间会有段间距
+		标签分类，基本分为两类，容器级标签，文本级标签：
+		容器级标签：其中可以存放任何标签，包括自己的嵌套
+		文本级标签：其中只能存放文字，图片，表单元素和其他文本级标签</b>
+七：img和a标签
+	1，img 图片标签
+		语法：&lt;img src='' />   单标签
+		src属性是图片的路径
+		<b style="color: #ff0000">路径分为绝对路径和相对路径
+		绝对路径：
+				1）本机路径，/Users/maindek/Desktop/1.png  带有盘符从硬盘根目录找到的文件路径
+				2）网络绝对路径https://www.baidu.com/img/bd_logo1.png
+		相对路径：相对的是当前的这个文档,从当前文档触发，到达目标文件 images/1.png（同级）</b>(../../images/1.png上升两级找到其堂表兄弟)
+	2,a超链接标签
+		语法：&lt;a href='http://www.baidu.com'>百度&lt;/a>  双标记
+		href超链接地址
+		绝对路径：http://www.baidu.com  网址
+		相对路径：08_p标签.html  本站的页面	
+	</p>
+	<a href="#maodian">跳转到锚点</a>
+	<a href="#idmaodian">跳转到id锚点</a>
+	<p>其他标签锚点只能用id来做</p>
+	
+</body>
+</html>

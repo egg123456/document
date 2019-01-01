@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: "微软雅黑";
+        }
+        
+        .main {
+            width: 400px;
+            height: 400px;
+            background: black;
+            border: 4px solid #ccc;
+            margin: 100px auto;
+            box-shadow: 0px 0px 10px #000;
+        }
+        
+        .main h3 {
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            box-shadow: 0px 0px 10px #fff;
+            margin: 40px 0px 0px;
+        }
+        
+        .main .time {
+            padding: 20px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        .main .time input {
+            width: 60px;
+            height: 30px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0px 0px 10px #fff;
+            border-radius: 10px;
+        }
+        
+        .main .time input:hover {
+            border: 1px solid red;
+        }
+        
+        .main .time input.time3 {
+            border-radius: 0px;
+            width: 100px;
+            height: 40px;
+            margin-left: 130px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+        
+        .main .time input:hover.time3 {
+            border: 1px solid #000;
+        }
+        
+        .main .dis_time {
+            color: #fff;
+            margin: 20px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 18px;
+        }
+        
+        .main .dis_time span {
+            width: 60px;
+            height: 35px;
+            display: inline-block;
+            background: #fff;
+            color: #fff;
+            margin: 0px 3px;
+            font-size: 22px;
+            text-shadow: 1px 1px 2px #000, 1px 1px 2px #000, 1px 1px 2px #000, 2px 2px 1px blue;
+        }
+    </style>
+    <script src="../../jquery-3.2.1.js"></script>
+
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <h3>开始倒计时</h3>
+        <div class="time">
+            <form>
+                结束时间:<input type="text" /> 年<input type="text" />月<input type="text" />日
+                <input class="time3" type="button" value="开始计时" />
+            </form>
+        </div>
+        <div class="dis_time">
+            <span>000</span>天<span>00</span>时<span>00</span>分<span>00</span>秒
+
+        </div>
+
+        <div>
+            <script type="text/javascript">
+                //alert(1);
+                $(".main .time input.time3").click(function() { //计时开始按钮点击事件绑定以下两个方法。
+                    uptimes(); //确保点击计时开始按钮后立即更新获取的时间。
+                    setInterval(uptimes, 1000); //定时器定时更新调用时间获取函数
+                });
+                /*获取时间函数开始*/
+                function uptimes() {
+                    var years = $(".main .time input").eq(0).val();
+                    var months = $(".main .time input").eq(1).val();
+                    var days = $(".main .time input").eq(2).val();
+                    //alert(years+"年"+months+"月"+days+"日");
+                    var overtime = new Date(); //定义一个日期对象为了接收输入框的数值。这里的值还是当前事件，通过后面的对象赋值，重新定义对象元素的各个值
+                    var newdate = new Date(); //定义一个日期对象为当前的事件对象
+                    /*为第一个日期对象赋值：分别是年月日时分秒的方法赋值*/
+                    overtime.setFullYear(years);
+                    overtime.setMonth(months - 1); //这里减去1，因为外国的月份从0月开始的。
+                    overtime.setDate(days);
+                    overtime.setHours(0);
+                    overtime.setMinutes(0);
+                    overtime.setSeconds(0);
+                    /*为第一个日期对象赋值结束*/
+                    var s = overtime.getTime() - newdate.getTime(); //获取倒计时的毫秒数，第一个日期对象-第二个当前时间对象的差值，结果为毫秒数，下面进行转换天时分秒的方法。
+                    d = Math.floor(s / 86400000); //除去一天的毫秒数取整得到倒计时的天数
+                    h = (s - d * 86400000) / 3600000; //总毫秒数减去倒计时的天数乘以一天的毫秒数，除以一个小时的毫秒数得到倒计时的天数。
+                    nh = Math.floor(h); //取整才是正式的天数
+                    f = (s - d * 86400000 - nh * 3600000) / 60000; //同小时的获取一样的方式
+                    nf = Math.floor(f);
+                    m = (s - d * 86400000 - nh * 3600000 - nf * 60000) / 1000; //同小时的获取一样的方式
+                    nm = Math.floor(m);
+
+
+                    $(".main .dis_time span").eq(0).html(fullzero(d, 3)); //调用补零方法，将返回值做为内容更新到span标签里。
+                    $(".main .dis_time span").eq(1).html(fullzero(nh, 2)); //同上
+                    $(".main .dis_time span").eq(2).html(fullzero(nf, 2)); //同上
+                    $(".main .dis_time span").eq(3).html(fullzero(nm, 2)); //同上
+                };
+                /*获取时间函数结束*/
+                /*时间格式自动补零函数开始*/
+                function fullzero(op1, op2) { //传入上面的连个参数，op1为时分秒，0p2为天时分秒的位数：3或2位；
+                    str = "" + op1; //数值型参数转为字符传，根据字符串的长度作为判断的条件
+                    while (str.length < op2) {
+                        str = "0" + str; //小于参数op2长度的字符串循环加0，知道不满足条件字符串长度大于参数OP2时退出。
+                    };
+                    return str; //返回字符串值给调用的地方。
+                };
+                /*时间格式自动补零函数结束*/
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="fullHeight">
+
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+<body class="fullHeight">
+
+    <div class="kong"></div>
+    <div class='sidebar fullHeight'>
+        <ul>
+            <dd>会动的侧边栏1</dd>
+            <dd>会动的侧边栏1</dd>
+            <dd>会动的侧边栏1</dd>
+        </ul>
+    </div>
+    <div class="controller">
+        <div>
+            <button onclick="fadeIn()">淡进</button>
+            <button onclick="fadeOut()">淡出</button>
+            <button onclick="fadeInUp()">向上淡进</button>
+        </div>
+    </div>
+
+
+    <script>
+        var sidebarEl = document.querySelector(".sidebar");
+
+        function fadeIn(e) {
+            sidebarEl.className = 'sidebar ';
+            sidebarEl.style.left = '120px';
+            sidebarEl.classList.add('move_right');
+        }
+
+        function fadeOut(e) {
+            sidebarEl.className = 'sidebar ';
+            sidebarEl.style.left = '120px';
+            sidebarEl.classList.add('move_left');
+        }
+
+        function fadeInUp(e) {
+            sidebarEl.className = 'sidebar ';
+            sidebarEl.style.top = '250px';
+            sidebarEl.style.left = '120px';
+            sidebarEl.classList.add('move_up');
+
+        }
+    </script>
+</body>
+
+</html>

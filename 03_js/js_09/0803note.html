@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<pre style="font-size:16px;">
+//当页面内容全部加载完毕，然后执行该事件处理函数 window.onload
+JavaScript高级程序设计
+# dom操作
+### javascript由3部分组成
+> ECMAScript DOM BOM
+
+> ECMAScript是javascript的核心，内置对象，关键字，保留字，基础语法
+获取的到的元素，如何设置类名，使用 element.className
+为什么不是.class  应为class是ECMA的保留字，无法作为命名，
+tips:ECMA2015(ES6)中，class由保留字提升为关键字
+
+DOM-> Document Objcet Model
+1. 定义了访问和操作HTML文档内容的操作方法和属性
+2. 通过对DOM树的操作，实现对HTML文档内容的操作
+3. W3C组织定义了相关操作的标准
+
+> W3C dom标准被分为了三个部分
+1. 核心DOM 针对和任何机构的文档标准模型
+2. XML DOM 针对XML文档的标准模型
+3. HTML DOM 针对的是HTML文档的标准模型
+
+学习dom主要是学习document对象
++ 浏览器内置js解析器会为每一HTML文档创建一个对应的document对象
++ 使用浏览器打开一个html文件的时候。document就已经被创建了
++ 通过使用document对象，可以从脚本中对html页面里的元素进行访问
+
+dom常用方法|说明
+----|----
+getElementById()|通过id属性获取元素
+getElementsByTagName()|通过标签名获取元素集合
+getElementsByClassName()|通过类名获取元素集合
+getElementsByName()|通过name属性获取元素集合
+querySelector()|通过css选择器来获取元素
+qeerySelectorAll()|通过css选择器来获取元素集合
+appendChild()|追加子元素到结尾
+removeChild()|移出子元素
+replaceChild()|替换子元素
+insertBefore()|在...之前插入
+createElement()|创建元素
+createAttribute()|创建属性
+createTextNode()|创建文本节点
+getAttribute()|获取属性
+setAttribute()|设置属性
+
+------------------------
+
+dom常用属性|说明
+----|----
+innerHTML|读取/设置 HTML内容
+parentNode|获取父节点
+childNodes|获取子节点集合
+attributes|获取属性节点集合
+
+## 节点树
+> 节点到底是什么东西？
+ HTML DOM将HTML文档视为一个树结构
+ 树结构有一个根，document对象就是我们根节点
+
+> 文档中节点类型
+ 1. 文档声明
+ 2. 元素
+ 3. 文本
+ 4. 属性
+ 5. 注释
+ 6. 文档
+
+
+## 上下层节点
+属性|描述
+----|----
+parentNode|获得父级节点
+childNodes|获得子节点集合
+firstChild|获得第一个子节点
+lastChild|获得最后一个子节点
+firstElementChild|获得第一个子元素
+lastElementChild|获得最后一个子元素
+children|获得子元素节点集合
+
+## 平行节点
+属性|描述
+----|----
+previousSibling|获得上一个兄弟节点
+nextSibling|获得下一个兄弟节点
+previousElementSibling|获得上一个兄弟元素
+nextElementSibling|获得下一个兄弟元素
+
+## 特殊的元素获取
+属性|描述
+----|----
+document.body|获得body元素
+document.head|获得head元素
+document.documentElement|获得根元素（HTML元素）
+</pre>
+</body>
+</html>

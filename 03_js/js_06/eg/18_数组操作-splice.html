@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script>
+		var arr = ['A','B','C','D','E','F','G'];
+		// arr.splice(3,2,'X','Y','Z','hello');
+		// console.log(arr);//'A','B','C','X','Y','Z','hello','F','G'
+
+		// arr.splice(2,4,'哈哈');
+		// console.log(arr);//'A','B','哈哈','G'
+
+		// arr.splice(2,1,'哈哈');
+		// console.log(arr);//'A','B','哈哈','D','E','F','G'
+
+		// arr.splice(2,4);
+		// console.log(arr);//'A','B','G'
+
+		// arr.splice(2);//将下标为2的以后全部删除
+		// console.log(arr);//'A','B'
+
+		// arr.splice(2,0,'嘻嘻','哈哈');//
+		// console.log(arr);//'A','B','嘻嘻','哈哈','C','D','E','F','G'
+
+		arr.splice(-5);//倒数第五个以后全部删除
+		console.log(arr);//'A','B'
+	</script>
+</body>
+</html>

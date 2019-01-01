@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title>
+<style>
+
+ /*CSS3 过渡是元素从一种样式逐渐改变为另一种的效果。
+要实现这一点，必须规定两项内容：
+      指定要添加效果的CSS属性
+      指定效果的持续时间。
+      为了添加某种效果可以从一种样式转变到另一个的时候，无需使用Flash动画或JavaScript。
+*/
+/*应用于宽度属性的过渡效果，时长为 2 秒：*/
+div
+{
+	width:100px;
+	height:100px;
+	background:red;
+	transition:width 2s;
+	-webkit-transition:width 2s; /* Safari */
+}
+
+div:hover
+{
+	width:300px;
+}
+</style>
+</head>
+<body>
+
+<p><b>注意：</b>该实例无法在 Internet Explorer 9 及更早 IE 版本上工作。</p>
+
+<div></div>
+
+<p>鼠标移动到 div 元素上，查看过渡效果。</p>
+
+</body>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var div = document.getElementById('div1');
+            console.log(div.innerHTML);
+            div.innerHTML = "欢迎学习<span style='color:red;' id='s1'>JavaScript</span>";
+            var s1 = document.getElementById('s1');
+            console.log(s1);
+
+
+            div.innerHTML += "Scirpt"; //div.innerHTML = div.innerHTML+"Script"
+            //先读取HTML内容，然后拼接字符串，最后赋值
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">欢迎学习Java</div>
+</body>
+
+</html>

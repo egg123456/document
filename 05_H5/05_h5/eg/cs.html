@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .canvasbox {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canvasbox">
+        <canvas width="500" height="500" id="myCanvas">
+            您的浏览器不支持canvas。请升级到IE9+
+        </canvas>
+    </div>
+    <script>
+        var myCanvas = document.getElementById('myCanvas'),
+            context = myCanvas.getContext('2d');
+        var i = 0;
+        var timeout = setInterval(function() {
+            context.clearRect(0, 0, 500, 500);
+            context.beginPath();
+            context.arc(300, 300, 200, Math.PI / 2 + i + 1, Math.PI * 3 / 2 + i, true);
+            context.stroke();
+            context.fillStyle = "black";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300, 300, 200, Math.PI / 2 + i, Math.PI * 3 / 2 + i);
+            context.stroke();
+            context.fillStyle = "white";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300 + 100 * Math.cos(Math.PI * 3 / 2 - i), 300 - 100 * Math.sin(Math.PI * 3 / 2 - i), 100, 0, Math.PI * 2);
+            // context.stroke();
+            context.fillStyle = "white";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300 + 100 * Math.cos(Math.PI * 3 / 2 - i), 300 - 100 * Math.sin(Math.PI * 3 / 2 - i), 20, 0, Math.PI * 2);
+            context.stroke();
+            context.fillStyle = "black";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300 + 100 * Math.cos(Math.PI / 2 - i), 300 - 100 * Math.sin(Math.PI / 2 - i), 100, 0, Math.PI * 2);
+            context.stroke();
+            context.fillStyle = "black";
+            context.fill();
+            context.closePath();
+
+            context.beginPath();
+            context.arc(300 + 100 * Math.cos(Math.PI / 2 - i), 300 - 100 * Math.sin(Math.PI / 2 - i), 20, 0, Math.PI * 2);
+            context.stroke();
+            context.fillStyle = "white";
+            context.fill();
+            context.closePath();
+            i--;
+        }, 200)
+    </script>
+</body>
+
+</html>

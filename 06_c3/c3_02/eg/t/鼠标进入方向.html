@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .demo {
+            width: 1000px;
+            margin: 50px auto;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        
+        .list {
+            width: 300px;
+            height: 200px;
+            float: left;
+            margin: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .list div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(-100deg);
+            transform-origin: top left;
+            transition: all .8s;
+        }
+        
+        .current div {
+            transform: rotate(0deg);
+        }
+        
+        .list div.top {
+            transform-origin: top left;
+        }
+        
+        .list div.right {
+            transform-origin: top right;
+        }
+        
+        .list div.bottom {
+            transform-origin: bottom right;
+        }
+        
+        .list div.top {
+            transform-origin: bottom left;
+        }
+    </style>
+    <script src="../../../../jquery-3.2.1.js"></script>
+    <script>
+        $(function() {
+            $('.list').on('mouseenter mouseleave', function(ev) {
+                var _that = $(this);
+                var w = $(this).width(),
+                    h = $(this).height();
+                var x = (ev.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1),
+                    y = (ev.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+                var regin = Math.round(((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90) + 3) % 4;
+                if (ev.type === 'mouseenter') {
+                    switch (regin) {
+                        case 0:
+                            into('top');
+                            break;
+                        case 1:
+                            into('right');
+                            break;
+                        case 2:
+                            into('bottom');
+                            break;
+                        case 3:
+                            into('left');
+                            break;
+                    }
+                } else {
+                    switch (regin) {
+                        case 0:
+                            goout('top');
+                            break;
+                        case 1:
+                            goout('right');
+                            break;
+                        case 2:
+                            goout('bottom');
+                            break;
+                        case 3:
+                            goout('left');
+                            break;
+                    }
+                }
+
+                function into(str) {
+                    _that.addClass('current');
+                    _that.children('div').removeClass().addClass(str);
+                }
+
+                function goout(str) {
+                    _that.removeClass('current');
+                    _that.children('div').removeClass().addClass(str);
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="demo">
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/1.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/2.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/3.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/4.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/6.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/7.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/8.jpg" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <img src="./images/00.jpg" alt="">
+            <div>
+                <img src="./images/9.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

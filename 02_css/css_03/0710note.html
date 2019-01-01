@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		u p{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<pre>
+课堂笔记
+一，复习
+	1，表格
+		HTML表格：table tr td  th thead tbody caption 
+			table属性：border width height bgcolor cellspacing cellpadding style align
+			tr中的align 单元格中的文本对齐方式
+			<u>style中设置边框合并：border-collapse:collapse;cellspacing=0</u>
+			单元格合并：rowspan  跨行合并  竖着合并
+						colspan  跨列合并  横着合并
+	2，HTML注释，换行，实体字符
+		<!-- 注释内容 -->
+		<br>  标签换行
+		&nbsp;空格    &lt;小于号  &gt;大于号
+	3，废弃标签
+		b u i del strong em 
+	4,css
+		cascading style sheet   层叠样式表
+	5，选择器
+		基础选择器：标签选择器，id选择器，类选择器
+		高级选择器：交集选择器，并集选择器，通配符，后代选择器
+二：继承性和层叠性<p>
+	1，层叠性第一层含义：同一个标签可以从多个选择器哪里获得样式
+	2，继承性是层叠性的第二层含义
+		符合继承性的样式有：
+			color  文本颜色
+			text-  文本修饰
+			font-  字体修饰
+			line-  行修饰
+		不能继承的基本属性：background-color，所有的盒模型的属性（width，height，border，padding,margin）
+	3,层叠性（第三层）
+		层叠性就是处理冲突的能力，按照权重显示，没有现实的就是被‘层叠’掉了
+		列表中默认的点是li的，想要改变点的颜色，给li设置相应的颜色即可</p>
+	4,层叠性的应用场景
+		应用场景
+	5,!important 权重提升
+		我们希望页面中的所有原子类，都有较大的权重，一旦页面中的任何原色携带了这个原子类，立马变成相应的样式，不会受到原有样式的影响，，这是我们可以给原子类使用 !important来提升权重。
+		!important只针对单个样式属性，如果有多个属性必须每个都写，写在每个样式属性后边的分号前边
+		注意：
+			1）页面中严重禁止滥用 !important，只能在原子类中使用
+			2） !important 不影响继承，权重该是0还是0，一个标签通过继承影响的，权重为0，就算加上 !important也是0，不能喝已经选中的选择器相比
+			3） !important不影响就近原则，离得远的加上 !important也没有用，
+		层叠性：
+			1）同一个标签可以被多个选择器选中，增加样式
+			2）有继承性，祖先的标签一些样式可以继承给后代标签
+			3）有层叠性，当遇到冲突的时候有这严格的法律，规定谁会被谁干掉，（权重的计算）<p>
+		css的属性，有以下几类：
+			1）文字样式
+			2）盒模型
+			3）浮动
+			4）定位
+			5）背景
+			6）表格和列表</p>
+三，css2.1中的颜色表示法
+	<u>分为三类表示法：单词表示，rgb()，十六进制表示</u>
+	1，单词表示
+		black，white，red,orange,yellow,green,blue,pink,purple,gold,gray,yellowgreen,greenyellow,skyblue等等
+	2，rgb()表示
+		三原色表示：红red绿green蓝blue，通过不同的亮度组成不用的颜色
+		他们值的区间0~255，共256个数字
+		语法：rgb(1,1,1); 数字之间逗号隔开  
+		一共有256*256*256=16777216种颜色
+	3，十六进制表示法
+		<style>
+			color: #123456;
+			color: #223344;  #234
+			color: #223345;
+		</style>
+		#号开头，两两组合，前两位表示r，中间两位表示g，后边两位表示b
+		rgb()与十六进制之间的对应
+		rgb(255,255,255)  ==> #fff ==> #ffffff
+		red ==> rgb(255,0,0) ==> #f00 ==> #ff0000
+		如果三个数字是一样的，就是灰色
+四，文字相关的属性
+	1，color
+		设置文本颜色，可以继承，能够使用三种基本颜色表示法作为值
+	2,font-size属性
+		文本大小，有单位，目前单位学习一种像素（px），将来会说到em和rem
+		语法：font-size:20px;
+		chrome浏览器默认字体是14px，有些浏览器默认12px
+		一个文字设置为20像素大小，实际使用ps测量饱满高度18px
+		eg：chrome最小支持字体大小是12px
+	3,line-height行高属性
+		lnh20
+		文字所在行的高度，为行高，文字在行里边垂直居中
+		语法：line-height:20px;
+			  line-height:200%;  百分比为单位，是当前字体的200%
+			  font-size:20px;
+			  line-height:150%;
+			  等价余：
+			  font-size:20px;
+			  line-height:30px;
+		字号和行高可以写在一起：
+			font:14px/28px '宋体';
+			==>
+			font:14px/200% '宋体';
+			==>
+			font-size:14px;
+			line-height:28px;
+			font-family:'宋体';
+	4,font-family字体属性
+		语法：font-family:'宋体';
+		在网页中，为了让用户有一致的体验，只能使用宋体和微软雅黑，有个别公司也有使用黑体和楷体的
+		font-family:'楷体','黑体','宋体';
+		有的服务器中为了追求css的加载速度，一般吧字体改为英文：
+			font-family：'Microsoft Yahei','SimSun';
+			==>
+			font-family：'微软雅黑','宋体';
+		如果有英文字体，要把英文字体写在前边：
+			font-family:'Arial','Microsoft Yahei','SimSun';
+		font和font-family不要同时存在，font属性会被覆盖
+	5，font-weight 加粗
+		bold 粗体
+		语法：font-weight:bold;
+			==>
+			font-weight:700;
+		font-weight:normal;
+		==>
+		font-weight:400;
+		是可以继承的属性（400-700）超过将按400或700显示
+	6,font-style 属性
+		语法：font-style:italic;  斜体
+			  font-style:normal;  正常
+			font-style:oblique;   倾斜
+		italic倾斜会找到新的斜体字形来替代原来的字体，oblique单纯的将原来的字体倾斜
+		一般情况使用italic就可以了
+	7，text-decoration 文本装饰属性
+		可能的值：
+			none:默认，定义标准文本
+			underline：定义文本下的一条线
+			overline：文本上的一条线
+			line-through：穿过文本的一条线
+	8,font综合属性
+		语法：font:italic bold 12px/24px arial,sans-serif;
+		==>
+		font-style:italic;
+		font-weight:bold;
+		font-size:12px;
+		line-height:24px;
+		font-family:'arial','sans-serif';
+		但是一般情况我们不会直接写这么大的组合，一般情况三种组合
+		font:12px/24px arial,sans-serif;
+		其他文本属性：text-indent、text-align等
+五，盒模型
+	1，盒模型整体感知
+		盒模型就是width,height,border,margin,padding这几个属性组成
+		width：内容的宽度
+		height：内容的高度
+		border：边框的宽度
+		padding：内边距（内容与边框之间的距离）
+		margin：外边距
+		盒模型的真实宽度=width + 左padding + 右padding +左border + 右border；
+	2，padding属性
+		内容和边框之间的距离
+		语法：padding:50px;
+			这样设置说明四个方向的padding都是50px；
+		单独设置各个方向的padding：
+			padding-top:10px;
+			padding-left:20px;
+			padding-bottom:30px;
+			padding-right:40px;
+			==>
+			padding:10px 40px 30px 20px;
+			顺序是：上右下左  
+			padding:10px 20px 30px;
+			上10 右左20 下30
+			padding:10px 20px;
+			上下10  左右20</pre>
+</body>
+</html>

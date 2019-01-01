@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            // btn.onclick = function() {
+            //     alert(1);
+            // }
+            // btn.onclick = function() {
+            //     alert(2);
+            // }
+
+            function show1() {
+                alert(1);
+            }
+
+            function show2() {
+                alert(2);
+            }
+            btn.addEventListener('click', show1);
+            btn.addEventListener('click', function() {
+                alert(3);
+            });
+            btn.addEventListener('mouseover', function() {
+                console.log('over')
+            });
+            btn.addEventListener('mouseout', function() {
+                console.log('out')
+            });
+            // btn.removeEventListener('click', show1);
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+</body>
+
+</html>

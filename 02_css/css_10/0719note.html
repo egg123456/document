@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+		0719笔记
+一，图片透明
+	1，opacity:.6;
+		取值0-1
+	2，filter:alpha(opacity=40);
+	3,png图片和jpg图片对比
+	4，gif支持固定数量的颜色，严重失真，支持动态，支持透明不止半透明
+	在ie6中png不支持透明，使用gif替代png,这里的透明半透明是作图工具（ps）做出的半透明显示，而不是css设置的半透明
+	5,使用js解决png在ie6中半透明的问题
+		png.js这个文件，原理就是反编译图片，将所有的透明像素点都是用ie特有的滤镜反编译出来
+		所有有背景定位的图片，这个js包就会有bug，所以精灵图不能使用这个js包解决问题
+	6，display:none;让元素隐藏，形影隐藏
+		visibility:hidden;形在影藏
+		opacity:0;
+二，样式表组织形式
+	样式表有三种常见组织形式：
+	1，内嵌样式表
+		将样式表写在&lt;style>&lt;/style>标签中，叫内嵌样式表；感觉上css与HTML没有分离
+		优点：可以保证HTML加载的时候，就已经有样式了，页面不会出现css样式加载不正常现象，如果样式表外联，会出现小概率的样式表没有加载成功的现象，页面以标签原始状态显示，刷新页面即可
+		缺点：HTML和css不能分离，混在一个文件中，不易维护，并且css样式不可公用
+	2，外联样式表
+		可以吧css样式表单独写成一个.css文件，在HTML中使用link标签链接这个样式表
+		语法：&lt;link rel="stylesheet" href="css/css.css" type="text/css">
+			link:链接的意思，表示这个HTML文件要链接一个样式表
+			rel：relationship  关系，就是我们引用这个文件和当前HTML文件之间的关系，stylesheet 样式表
+			href:就是超文本地址的意思，需要链接的css文件的位置，可以是相对路径和绝对路径
+			type：类型，text/css 纯文本的css文档
+			三小件：rel（必写），href（必写），type（H5选写）
+			link标签是一个单标签，自封闭标签，学过的自封闭标签：
+				&lt;img src="" alt="">
+				&lt;br>
+				&lt;hr>
+				&lt;input type="text">
+				&lt;meta name="" content="">
+				&lt;link rel="stylesheet" href="">
+			外联样式表优点：
+				1）HTML文件和css文件分离，HTML文件中仅有HTML骨架，css样式单独放进css文件中
+				2）多个HTML文件可以共用一个css文件，页面中相同的部分可以引用同一个css文件
+			两个非常重要的注意：
+				1）外联样式表，如果使用背景图片，路径是从css文件出发的，不是从HTML文件出发的
+				2）外联样式表不影响权重，权重就近原则都不影响
+	3,行内样式表
+		想给一个元素添加样式，可以直接在这个元素中添加style属性，添加样式
+		语法: &lt;div style="width: 100px;height: 100px;background-color: #f00;background-image: url(images/1.jpg);">&lt;/div>
+		行内样式丧失了css的一些优点，没有了选择器的概念，工作中少用，后台人员喜欢使用
+		在chrome中，控制台样式使用element.style{}表示行内的样式，在js中使用element.style.width='100px'; 设置进行内
+		行内设置的样式的权重是最大的，可以认为是第四位权重，比id大，但是没有！important大
+	4，导入式样式表
+		基本已经绝迹，没有在使用了
+		语法：
+			&lt;style>
+				@import url(css/css.css);
+				body{
+					background: url(images/1.jpg);
+				}
+			&lt;/style>
+			@import url();固定语法，一定写在第一行
+	5,站点的css组织
+		css文件分层：
+			page.css
+			common.css
+			base.css
+			reset.css
+		reset.css:
+			让所有元素都有默认样式，比如ul去掉原点，，比如h1字号为22px……为什么使用它？因为不同的浏览器对标签是有不同的默认样式
+			最有名的reset.css文件是雅虎公司YUI的reset.css
+			网址：http://yuilibrary.com/yui/docs/cssreset/
+			&lt;link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">获取
+			或者
+			&lt;link rel="stylesheet" href="css/cssreset-min.css">
+			以后页面上不允许出现：*{margin:0;padding:0;}
+			&lt;script>
+				var name = 'lisi';
+				console.log(name);
+			&lt;/script>
+			混淆后==>
+			&lt;script>			var iaKrUy1 = '\x6c\x69\x73\x69';			console["\x6c\x6f\x67"](iaKrUy1);		&lt;/script>
+			这个文件是不允许被更改
+		base.css:
+			公共类，就是原子类
+			.f12{font-size:12px;}
+			.f14{font-size:14px;}
+			.f16{font-size:16px;}
+			.f18{font-size:18px;}
+			.f20{font-size:20px;}
+			.line-h20{line-height:20px;}
+			自己总结一个css文件，公用原子类文件
+		common.css:
+			页面与页面之间，公共的样式部分
+		page.css:
+			每个页面自己的样式
+三，display:inline-block;
+	在标准流中，元素分为块和行内，这个属性可以是元素同事具备块和行内的属性
+	为什么不用这个东西，而使用浮动？
+		1）空白折叠现象，如果元素贴边，总喜欢默认一个空格
+		2）只有左，没有右
+		3）所有的div和span都一样
+		4）时代因素，没有火起来
+	但是，inline-block能够解决一些兼容性问题：
+		浮动的父类元素不写宽度，会收缩到子类撑出的宽度；如果儿子转了块，也没有宽度，所以要撑满父亲。
+		如果是高级浏览器，ie7，ie8等，会尽全力满足父亲的收缩，缩到不能收缩为止
+		ie6会尽量满足儿子撑满，撑到不能称为止
+		display:inline-block;可以解决这个问题
+四，iconFont
+	字体图标：图标不再是图片，也不是精灵图，而是文字
+	文字在某种字体下，显示图标状态
+	icomoon.io 是国外一个很有名的字体图标引擎，可以免费的在线把任何矢量图图片变成字体
+	https://icomoon.io/app/
+	优点：
+		1）不需要下载图片，节省http请求
+		2）只能是单色，自己设置，不能是多种颜色
+		3）控制这个图片，就如同控制字体就可以
+	</pre>
+</body>
+
+</html>

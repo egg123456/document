@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var counter = {
+            count: 0
+        }
+        counter.fn = function() {
+                // 'use strict';
+                this.count++;
+            }
+            // counter.fn();
+            // console.log(counter.count);
+        var fn = counter.fn;
+        fn.call(counter);
+        console.log(counter.count)
+            // console.log(counter.count);
+            // console.log(this.count);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

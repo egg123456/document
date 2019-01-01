@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            margin: 50px 100px;
+            float: left;
+        }
+        
+        .enter {
+            border-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"><img src="./icon.jpg" width="50" alt=""></div>
+    <div class="box2"></div>
+    <script>
+        (function() {
+            var box = document.querySelectorAll('div');
+            // console.log(box.length)
+            for (var i = 0; i < box.length; i++) {
+                box[i].addEventListener('dragenter', function() {
+                    this.classList.add('enter');
+                })
+                box[i].addEventListener('dragleave', function() {
+                    this.classList.remove('enter')
+                })
+                box[i].addEventListener('dragover', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                });
+                box[i].addEventListener('drop', function(ev) {
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                    this.classList.remove('enter');
+                    var data = ev.dataTransfer.getData('text/uri-list');;
+                    console.log(data);
+                    if (data) {
+                        var img = document.createElement('img');
+                        img.src = data;
+                        img.style = 'width:50px'
+                        this.appendChild(img);
+                    } else {
+                        this.innerHTML += ev.dataTransfer.getData('text/plain');
+                    }
+                })
+            }
+        })()
+    </script>
+</body>
+
+</html>

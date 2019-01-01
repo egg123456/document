@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        div {
+            position: fixed;
+            bottom: 70px;
+            left: 30px;
+            display: none;
+            background-color: skyblue;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        div a {
+            display: block
+        }
+    </style>
+    <script src='jquery-3.2.1.js'></script>
+    <script>
+        $(function() {
+            console.log(123);
+            console.log($('body').css('scrolltop'));
+            setInterval(function() {
+                console.log($('body').scrollTop());
+                if ($('body').scrollTop() > 100) {
+                    $('div').css({
+                        'display': 'block',
+                    });
+                } else {
+                    $('div').css({
+                        'display': 'none',
+                    });
+                }
+            }, 1000)
+            $('#gotop').on('click', function(event) {
+                event.preventDefault();
+                //   $(document.body)
+                $('body').animate({
+                    scrollTop: 0
+                }, 1500);
+            });
+            $('a[id$="0"]').on('click', function(event) {
+                console.log(Number($(this).attr('id').substr(4)) - 1);
+                event.preventDefault();
+                var top = $('h2:eq(' + (Number($(this).attr('id').substr(4)) - 1) + ')').offset().top;
+                $('body').animate({
+                    scrollTop: top
+
+                }, 1500);
+            })
+            $('#gobottom').on('click', function(event) {
+                event.preventDefault();
+                var bottom = $('body').outerHeight();
+                $('body').animate({
+                    scrollTop: bottom
+                }, 500)
+            })
+        });
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <a href="" id="gotop">gotop</a>
+        <a href="" id="goto10">10</a>
+        <a href="" id="goto20">20</a>
+        <a href="" id="goto30">30</a>
+        <a href="" id="goto40">40</a>
+        <a href="" id="goto50">50</a>
+        <a href="" id="gobottom">gobottom</a>
+    </div>
+    <h2>第1楼</h2>
+    <h2>第2楼</h2>
+    <h2>第3楼</h2>
+    <h2>第4楼</h2>
+    <h2>第5楼</h2>
+    <h2>第6楼</h2>
+    <h2>第7楼</h2>
+    <h2>第8楼</h2>
+    <h2>第9楼</h2>
+    <h2>第10楼</h2>
+    <h2>第11楼</h2>
+    <h2>第12楼</h2>
+    <h2>第13楼</h2>
+    <h2>第14楼</h2>
+    <h2>第15楼</h2>
+    <h2>第16楼</h2>
+    <h2>第17楼</h2>
+    <h2>第18楼</h2>
+    <h2>第19楼</h2>
+    <h2>第20楼</h2>
+    <h2>第21楼</h2>
+    <h2>第22楼</h2>
+    <h2>第23楼</h2>
+    <h2>第24楼</h2>
+    <h2>第25楼</h2>
+    <h2>第26楼</h2>
+    <h2>第27楼</h2>
+    <h2>第28楼</h2>
+    <h2>第29楼</h2>
+    <h2>第30楼</h2>
+    <h2>第31楼</h2>
+    <h2>第32楼</h2>
+    <h2>第33楼</h2>
+    <h2>第34楼</h2>
+    <h2>第35楼</h2>
+    <h2>第36楼</h2>
+    <h2>第37楼</h2>
+    <h2>第38楼</h2>
+    <h2>第39楼</h2>
+    <h2>第40楼</h2>
+    <h2>第41楼</h2>
+    <h2>第42楼</h2>
+    <h2>第43楼</h2>
+    <h2>第44楼</h2>
+    <h2>第45楼</h2>
+    <h2>第46楼</h2>
+    <h2>第47楼</h2>
+    <h2>第48楼</h2>
+    <h2>第49楼</h2>
+    <h2>第50楼</h2>
+    <h2>第51楼</h2>
+    <h2>第52楼</h2>
+    <h2>第53楼</h2>
+    <h2>第54楼</h2>
+    <h2>第55楼</h2>
+    <h2>第56楼</h2>
+    <h2>第57楼</h2>
+    <h2>第58楼</h2>
+    <h2>第59楼</h2>
+    <h2>第60楼</h2>
+    <h2>第61楼</h2>
+    <h2>第62楼</h2>
+    <h2>第63楼</h2>
+    <h2>第64楼</h2>
+    <h2>第65楼</h2>
+    <h2>第66楼</h2>
+    <h2>第67楼</h2>
+    <h2>第68楼</h2>
+    <h2>第69楼</h2>
+    <h2>第70楼</h2>
+    <h2>第71楼</h2>
+    <h2>第72楼</h2>
+    <h2>第73楼</h2>
+    <h2>第74楼</h2>
+    <h2>第75楼</h2>
+    <h2>第76楼</h2>
+    <h2>第77楼</h2>
+    <h2>第78楼</h2>
+    <h2>第79楼</h2>
+    <h2>第80楼</h2>
+    <h2>第81楼</h2>
+    <h2>第82楼</h2>
+    <h2>第83楼</h2>
+    <h2>第84楼</h2>
+    <h2>第85楼</h2>
+    <h2>第86楼</h2>
+    <h2>第87楼</h2>
+    <h2>第88楼</h2>
+    <h2>第89楼</h2>
+    <h2>第90楼</h2>
+    <h2>第91楼</h2>
+    <h2>第92楼</h2>
+    <h2>第93楼</h2>
+    <h2>第94楼</h2>
+    <h2>第95楼</h2>
+    <h2>第96楼</h2>
+    <h2>第97楼</h2>
+    <h2>第98楼</h2>
+    <h2>第99楼</h2>
+    <h2>第100楼</h2>
+    <h2>第101楼</h2>
+    <h2>第102楼</h2>
+    <h2>第103楼</h2>
+    <h2>第104楼</h2>
+    <h2>第105楼</h2>
+    <h2>第106楼</h2>
+    <h2>第107楼</h2>
+    <h2>第108楼</h2>
+    <h2>第109楼</h2>
+    <h2>第110楼</h2>
+    <h2>第111楼</h2>
+    <h2>第112楼</h2>
+    <h2>第113楼</h2>
+    <h2>第114楼</h2>
+    <h2>第115楼</h2>
+    <h2>第116楼</h2>
+    <h2>第117楼</h2>
+    <h2>第118楼</h2>
+    <h2>第119楼</h2>
+    <h2>第120楼</h2>
+</body>
+
+</html>

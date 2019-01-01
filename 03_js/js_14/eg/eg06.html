@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+        
+        body {
+            padding: 100px;
+        }
+        
+        div {
+            height: 600px;
+            border: 2px solid red;
+        }
+        
+        p {
+            position: absolute;
+            width: 5px;
+        }
+        
+        .p1 {
+            top: -16px;
+            height: 500px;
+            left: 500px;
+            background-color: #f00;
+        }
+        
+        .p2 {
+            top: 84px;
+            height: 400px;
+            left: 510px;
+            background-color: #f00;
+        }
+        
+        i {
+            position: absolute;
+            top: 500px;
+            left: 500px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: blue;
+        }
+        
+        hr {
+            height: 5px;
+            position: absolute;
+            background-color: purple;
+        }
+        
+        .h1 {
+            top: 500px;
+            left: 0;
+            width: 500px;
+        }
+        
+        .h2 {
+            top: 510px;
+            left: 100px;
+            width: 400px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            function showEvent(event) {
+                for (var i in event) {
+                    console.log(i + ":" + event[i]);
+                }
+            }
+            var d = document.getElementById('div1');
+            d.addEventListener('click', function(event) {
+                // showEvent(event);
+                console.log('event.clientX', event.clientX);
+                console.log('event.clientY', event.clientY);
+                console.log('event.offsetX', event.offsetX);
+                console.log('event.offsetY', event.offsetY);
+                console.log('event.pageX', event.pageX);
+                console.log('event.pageY', event.pageY);
+                console.log('event.screenX', event.screenX);
+                console.log('event.screenY', event.screenY);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <!-- <i></i> -->
+    </div>
+    <p class="p1"></p>
+    <p class="p2"></p>
+    <p class="p3"></p>
+    <p class="p4"></p>
+    <p class="p5"></p>
+    <p class="p6"></p>
+    <hr class="h1">
+    <hr class="h2">
+    <hr class="h3">
+    <hr class="h4">
+    <hr class="h5">
+    <hr class="h6">
+</body>
+
+</html>

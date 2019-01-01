@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div+css+js布局</title>
+	<style>
+		.header{
+			width: 1000px;
+			height: 100px;
+			margin: 0 auto;
+			background-color: green;
+			position: relative;
+		}
+		.content{
+			width: 1000px;
+			height: 400px;
+			margin: 10px auto;
+			background-color: pink;
+		}
+		.footer{
+			width: 1000px;
+			height: 100px;
+			margin: 0 auto;
+			background-color: skyblue;
+		}
+		.logo{
+			width: 220px;
+			height: 100px;
+			float: left;
+			position: absolute;
+			background-color: red;
+		}
+		.nav{
+			float: right;
+			width: 700px;
+			height: 60px;
+			background-color: blue;
+			position: relative;
+			top: 40px;
+		}
+		.ad{
+			float: left;
+			width: 200px;
+			height: 400px;
+			background-color: yellow;
+		}
+		.main{
+			float: right;
+			margin-left: 10px;
+			background-color: yellow;
+			height: 400px;
+			width: 760px;
+		}
+		.c1{
+			height: 200;
+			width: 400;
+			float: left;
+			background-color: #f00;
+		}
+		.c2{
+			height: 500;
+			width: 200;
+			float: right;
+			background-color: #0f0;
+		}
+		.c3{
+			height: 300;
+			width: 400;
+			float: right;
+			background-color: #00f;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="logo" id="logo">
+			我是网页的logo
+		</div>
+		<div class="nav">
+			我是导航
+		</div>
+	</div>
+	<div class="content">
+		<div class="ad"></div>
+		<div class="main">
+			<div class="c1">diyibufen</div>
+			<div class="c2">dierbufen</div>
+			<div class="c3">disanbufen</div>
+		</div>
+	</div>
+	<div class="footer">
+		我是页脚
+	</div>
+	<script>
+		var logo=document.getELementById('logo');
+		var a=200;
+		setInterval(function () {
+			a++;
+			logo.style.left=a +'px';
+		},30);
+	</script>
+</body>
+</html>

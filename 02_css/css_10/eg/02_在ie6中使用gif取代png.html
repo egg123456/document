@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的案例</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 310px;
+			height: 220px;
+			border: 1px solid black;
+			margin: 100px auto;
+			position: relative;
+		}
+		.left_btn{
+			position: absolute;
+			width: 20px;
+			height: 30px;
+			background: url(images/icon_v9.png) no-repeat 0 0;
+			_background-image: url(images/icon_v9.gif);
+			left: 10px;
+			top: 50%;
+			margin-top: -17px;
+			opacity: .6;
+			filter: alpha(opacity=60);
+		}
+		.right_btn{
+			position: absolute;
+			width: 20px;
+			height: 34px;
+			background: url(images/icon_v9.png) no-repeat -9px -45px;
+			_background-image: url(images/icon_v9.gif);
+			right: 10px;
+			top: 50%;
+			margin-top: -17px;
+			opacity: .6;
+			filter: alpha(opacity=60);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/163.jpg" alt="">
+		<span class="left_btn"></span>
+		<span class="right_btn"></span>
+	</div>
+</body>
+</html>

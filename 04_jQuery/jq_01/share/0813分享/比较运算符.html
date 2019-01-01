@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+
+<body>
+
+    <p id="demo"></p>
+    <script>
+        var x = 10;
+        switch (x) {
+            case 10:
+                alert("Hello");
+                // case "10":  alert("Hello");
+        }
+    </script>
+    <!-- 在常规的比较中，数据类型是被忽略的，以下 if 条件语句返回 true：
+    var x = 10;
+    var y = "10";
+    if (x == y)
+
+    在严格的比较运算中，=== 为恒等计算符，同时检查表达式的值与类型，以下 if 条件语句返回 false：
+    var x = 10;
+    var y = "10";
+    if (x === y) -->
+
+    <!-- 这种错误经常会在 switch 语句中出现，switch 语句会使用恒等计算符(===)进行比较:
+    以下实例会执行 alert 弹窗：
+    var x = 10;
+    switch(x) {
+        case 10: alert("Hello");
+    } -->
+
+</body>
+
+</html>
